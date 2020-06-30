@@ -53,7 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="JsonSerializer.cs" />
-    <Compile Include="Models\Key.cs" />
+    <Compile Include="Models\KeyModel.cs" />
     <Compile Include="Models\LayoutSound.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
