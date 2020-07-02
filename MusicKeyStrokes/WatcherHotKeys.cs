@@ -44,15 +44,27 @@ namespace MusicKeyStrokes
             }
         }
 
-        public void Keyhandler(Message message)
+        static int[] IdKeysManager = new int[] { 1,2,3 };
+
+        public void KeyHandler(Message message)
         {
             for (int i = 0; i < MYACTION_HOTKEY_IDS.Length; i++)
             {
                 if (message.Msg == MYACTION_HOTKEY_IDS[i])
                 {
+                    KeyImplementer(MYACTION_HOTKEY_IDS[i]);
                     break;
                 }
             }
+        }
+
+        private void KeyImplementer(int keyID)
+        {
+            if (IdKeysManager.Contains(keyID))
+            {
+                //doSomefunction
+            }
+            //AutioStart(keyID);
         }
 
     }

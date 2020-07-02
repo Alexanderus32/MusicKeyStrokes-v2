@@ -11,11 +11,11 @@ namespace MusicKeyStrokes
     class JsonSerializer
     {
 
-        public static void addJsonDocumentKey(Key key)
+        public static void addJsonDocumentKey(KeyModel key)
         {
             using (FileStream fs = new FileStream("keyList.json", FileMode.OpenOrCreate))
             {
-                Key key1 = new Key { Layout = key.Layout, KeyValue = key.KeyValue, NameSound = key.NameSound, PathSound = key.KeyValue };
+            //    Key key1 = new Key { Layout = key.Layout, KeyValue = key.KeyValue, NameSound = key.NameSound, PathSound = key.KeyValue };
 
                 // string json = JsonSerializer.Serialize<Person>(tom);
             }
