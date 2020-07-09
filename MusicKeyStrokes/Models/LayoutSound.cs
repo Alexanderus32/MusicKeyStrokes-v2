@@ -9,6 +9,6 @@ namespace MusicKeyStrokes.Models
 
     enum LayoutSound
     {
-        Valakas
+        Valakas1
     }
 }
