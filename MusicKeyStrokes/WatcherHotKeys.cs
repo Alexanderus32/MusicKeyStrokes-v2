@@ -38,6 +38,8 @@ namespace MusicKeyStrokes
         Keys.Decimal,Keys.Home, Keys.PageDown,
         Keys.PageUp, Keys.End, Keys.Pause, Keys.CapsLock};
 
+        Audio audio = new Audio();
+
         public readonly int[] MYACTION_HOTKEY_IDS = new int[keys.Length];
 
         private void RegisterHotkeys()
@@ -56,6 +58,10 @@ namespace MusicKeyStrokes
             {
                 var a = new KeyEventArgs(WatcherHotKeys.keys[keyId.Value]);
                 //todo
+            }
+            else
+            {
+              audio.PlayKey(keys[keyID]);
             }
         }
     }
