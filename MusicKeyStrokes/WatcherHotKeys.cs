@@ -34,6 +34,8 @@ namespace MusicKeyStrokes
         Keys.Decimal,Keys.Home, Keys.PageDown,
         Keys.PageUp, Keys.End, Keys.Pause, Keys.CapsLock};
 
+        Audio audio = new Audio();
+
         static int[] MYACTION_HOTKEY_IDS = new int[keys.Length];
 
         public static void  WatcherArrayHotKey()
@@ -64,7 +66,10 @@ namespace MusicKeyStrokes
             {
                 //doSomefunction
             }
-            //AutioStart(keyID);
+            else
+            {
+              audio.PlayKey(keys[keyID]);
+            }
         }
 
     }

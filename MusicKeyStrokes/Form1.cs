@@ -19,6 +19,8 @@ namespace MusicKeyStrokes
         {
             InitializeComponent();
             WatcherHotKeys.WatcherArrayHotKey();
+            Audio.LoadAudioModels();
+
         }
 
 
@@ -27,7 +29,7 @@ namespace MusicKeyStrokes
            if (m.Msg == 0x0312)
            {
               WatcherHotKeys watcher = new WatcherHotKeys();
-              watcher.Keyhandler(m);
+              watcher.KeyHandler(m);
            }
             base.WndProc(ref m);
         }
@@ -41,9 +43,9 @@ namespace MusicKeyStrokes
             if (music == null)
                 music = new List<KeyModel>();
 
-            var model = new KeyModel() { NameSound = "ban", KeyValue = Keys.Q, Layout = LayoutSound.Valakas1,PathSound = "music/valakas1/ban.mp3" };
-            music.Add(model);
-            sr.Serialize<KeyModel>(music);
+          // var model = new KeyModel() { NameSound = "ban", KeyValue = Keys.Q, Layout = LayoutSound.Valakas1,PathSound = "music/valakas1/ban.mp3" };
+          // music.Add(model);
+          // sr.Serialize<KeyModel>(music);
             
         }
     }

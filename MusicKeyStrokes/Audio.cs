@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MusicKeyStrokes.Models;
+using System.Windows.Forms;
 
 namespace MusicKeyStrokes
 {
@@ -32,7 +33,35 @@ namespace MusicKeyStrokes
         static bool loop = false;
         static bool looplist = false;
 
+        private static  LayoutSound layoutSound = LayoutSound.Valakas1;
 
+        static List<Models.KeyModel> ListAudio = new List<Models.KeyModel>();
+
+        public static void LoadAudioModels()
+        {
+            JsonSerializer sr = new JsonSerializer();
+            var music = sr.Deserialize<KeyModel>();
+
+            ListAudio.AddRange(music);
+
+        }
+
+
+        public void ChangeLayout(LayoutSound layout)
+        {
+            layoutSound = layout;
+        }
+
+        public void PlayKey(Keys idKey)
+        {
+            var selectPathMusic = from audio in ListAudio
+                                  where audio.KeyValue == idKey
+                                  where audio.Layout == layoutSound
+                                  select audio;
+
+            Play(selectPathMusic.First().PathSound);
+
+        }
 
 
         private void Play(string path)
@@ -40,7 +69,7 @@ namespace MusicKeyStrokes
 
             if (waveOutDevice?.PlaybackState == PlaybackState.Playing)
                 Pause();
-         //   if (loop || looplist)
+               //if (loop || looplist)
              //   LoopPlay(path);
             else
             {
