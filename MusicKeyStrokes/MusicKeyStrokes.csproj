@@ -59,6 +59,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IAudio.cs" />
     <Compile Include="JsonSerializer.cs" />
     <Compile Include="Models\KeyModel.cs" />
     <Compile Include="Models\LayoutSound.cs" />
