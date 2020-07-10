@@ -21,23 +21,27 @@ namespace MusicKeyStrokes
         Keys.Q, Keys.W, Keys.E, Keys.R, Keys.T,
         Keys.Y, Keys.U,Keys.I,
         Keys.O, Keys.P, Keys.Oem4, Keys.Oem6, Keys.Oem5,
-        Keys.ShiftKey, Keys.A, Keys.S, Keys.D, Keys.F,
+        Keys.A, Keys.S, Keys.D, Keys.F,
         Keys.G, Keys.H, Keys.J, Keys.K, Keys.L, Keys.Oem1,
         Keys.Oem7, Keys.Z, Keys.Left, Keys.Right,
-        Keys.Up, Keys.Down, Keys.Back, Keys.Shift,
+        Keys.Up, Keys.Down, Keys.Back,
         Keys.X, Keys.C, Keys.V, Keys.B, Keys.N,
         Keys.M, Keys.Oemcomma, Keys.OemPeriod, Keys.Oem2,
-        Keys.F1, Keys.F2, Keys.F3, Keys.F4, Keys.F5, Keys.F6,
-        Keys.F7, Keys.F8, Keys.F9,  Keys.F10, Keys.F11,
-        Keys.F12, 
+        //Keys.F1, Keys.F2, Keys.F3, Keys.F4, Keys.F5, Keys.F6,
+        //Keys.F7, Keys.F8, Keys.F9,  Keys.F10, Keys.F11,
+        //Keys.F12, 
         //Keys.NumPad0, Keys.NumPad1, Keys.NumPad2,
         //Keys.NumPad3, Keys.NumPad4, Keys.NumPad5, Keys.NumPad6,
         //Keys.NumPad7, Keys.NumPad8, Keys.NumPad9,
-        Keys.Divide,
-        Keys.Multiply, Keys.Subtract, Keys.Add,
-        Keys.Decimal,Keys.Home, Keys.PageDown,
-        Keys.PageUp, Keys.End, Keys.Pause, Keys.CapsLock};
+        //Keys.Divide,
+        //Keys.Multiply, Keys.Subtract, Keys.Add,
+        //Keys.Decimal,Keys.Home, Keys.PageDown,
+        //Keys.PageUp, Keys.End, Keys.Pause, Keys.CapsLock
+        };
 
+        /// <summary>
+        /// /
+        /// </summary>
         Audio audio = new Audio();
 
         public readonly int[] MYACTION_HOTKEY_IDS = new int[keys.Length];
@@ -57,11 +61,11 @@ namespace MusicKeyStrokes
             if (keyId.HasValue)
             {
                 var a = new KeyEventArgs(WatcherHotKeys.keys[keyId.Value]);
-                //todo
+                audio.PlayKey(a.KeyCode);
             }
             else
             {
-              audio.PlayKey(keys[keyID]);
+            
             }
         }
     }

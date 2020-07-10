@@ -10,34 +10,41 @@ using System.Windows.Forms;
 
 namespace MusicKeyStrokes
 {
-    class Audio
+    class Audio : IAudio
     {
-        static IWavePlayer waveOutDevice { get; set; }
+        private IWavePlayer waveOutDevice { get; set; }
 
-        static AudioFileReader audioFileReader { get; set; }
+        private AudioFileReader audioFileReader { get; set; }
 
-        static Mp3FileReader reader { get; set; }
+        private Mp3FileReader reader { get; set; }
 
-        static WaveOut waveOut { get; set; }
+        private WaveOut waveOut { get; set; }
 
-        static List<WaveOuts> waweOuts = new List<WaveOuts>();
+        private LayoutSound layoutSound;
 
-        class WaveOuts
+        public Audio()
         {
-            public Mp3FileReader reader { get; set; }
 
-            public WaveOut waveOut { get; set; }
         }
 
-        static bool status = true;
-        static bool loop = false;
-        static bool looplist = false;
+         //private List<WaveOuts> waweOuts = new List<WaveOuts>();
 
-        private static  LayoutSound layoutSound = LayoutSound.Valakas1;
+         //class WaveOuts
+         //{
+         //    public Mp3FileReader reader { get; set; }
 
-        static List<Models.KeyModel> ListAudio = new List<Models.KeyModel>();
+         //    public WaveOut waveOut { get; set; }
+         //}
 
-        public static void LoadAudioModels()
+         //static bool status = true;
+         //static bool loop = false;
+         //static bool looplist = false;
+
+    
+
+        static List<KeyModel> ListAudio = new List<KeyModel>();
+
+        public void LoadAudioModels()
         {
             JsonSerializer sr = new JsonSerializer();
             var music = sr.Deserialize<KeyModel>();
@@ -46,20 +53,19 @@ namespace MusicKeyStrokes
 
         }
 
-
-        public void ChangeLayout(LayoutSound layout)
+        private void ChangeLayout(LayoutSound layout)
         {
             layoutSound = layout;
         }
 
         public void PlayKey(Keys idKey)
         {
-            var selectPathMusic = from audio in ListAudio
-                                  where audio.KeyValue == idKey
-                                  where audio.Layout == layoutSound
-                                  select audio;
-
-            Play(selectPathMusic.First().PathSound);
+            var selectPathMusic = ListAudio.FirstOrDefault(x => x.KeyValue == idKey && x.Layout == layoutSound);
+            if (selectPathMusic == null)
+            {
+                return;
+            }
+            Play(selectPathMusic.PathSound);
 
         }
 
@@ -112,6 +118,31 @@ namespace MusicKeyStrokes
             {
 
             }
+        }
+
+        public void Play(Keys idKey)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Stop()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetVolume(int value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ChangeVolume(int value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Loop(bool value)
+        {
+            throw new NotImplementedException();
         }
     }
 }
