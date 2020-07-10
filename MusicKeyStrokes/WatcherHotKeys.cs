@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace MusicKeyStrokes
 {
     class WatcherHotKeys
     {
-       public static Keys[] keys = { 
+        public WatcherHotKeys()
+        {
+            RegisterHotkeys();
+        }
+
+        public static readonly Keys[] keys = {
         Keys.Oem3, Keys.D1, Keys.D2,
         Keys.D3, Keys.D4, Keys.D5,
         Keys.D6,Keys.D7, Keys.D8,
@@ -20,7 +24,7 @@ namespace MusicKeyStrokes
         Keys.ShiftKey, Keys.A, Keys.S, Keys.D, Keys.F,
         Keys.G, Keys.H, Keys.J, Keys.K, Keys.L, Keys.Oem1,
         Keys.Oem7, Keys.Z, Keys.Left, Keys.Right,
-        Keys.Up, Keys.Down, Keys.Back, Keys.Shift, 
+        Keys.Up, Keys.Down, Keys.Back, Keys.Shift,
         Keys.X, Keys.C, Keys.V, Keys.B, Keys.N,
         Keys.M, Keys.Oemcomma, Keys.OemPeriod, Keys.Oem2,
         Keys.F1, Keys.F2, Keys.F3, Keys.F4, Keys.F5, Keys.F6,
@@ -36,43 +40,29 @@ namespace MusicKeyStrokes
 
         Audio audio = new Audio();
 
-        static int[] MYACTION_HOTKEY_IDS = new int[keys.Length];
+        public readonly int[] MYACTION_HOTKEY_IDS = new int[keys.Length];
 
-        public static void  WatcherArrayHotKey()
-        {
-            for (int i = 0; i < keys.Length; i++)
-            {
-                MYACTION_HOTKEY_IDS[i] = i;
-            }
-        }
-
-        static int[] IdKeysManager = new int[] { 1,2,3 };
-
-        public void KeyHandler(Message message)
+        private void RegisterHotkeys()
         {
             for (int i = 0; i < MYACTION_HOTKEY_IDS.Length; i++)
             {
-                if (message.Msg == MYACTION_HOTKEY_IDS[i])
-                {
-                    KeyImplementer(MYACTION_HOTKEY_IDS[i]);
-                    break;
-                }
+                MYACTION_HOTKEY_IDS[i] = i;
             }
+            
         }
 
-        private void KeyImplementer(int keyID)
+        public void WatchKey(int id) 
         {
-            if (IdKeysManager.Contains(keyID))
+            int? keyId = MYACTION_HOTKEY_IDS.FirstOrDefault(x => x == id);
+            if (keyId.HasValue)
             {
-                //doSomefunction
+                var a = new KeyEventArgs(WatcherHotKeys.keys[keyId.Value]);
+                //todo
             }
             else
             {
               audio.PlayKey(keys[keyID]);
             }
         }
-
     }
-
-   
 }
