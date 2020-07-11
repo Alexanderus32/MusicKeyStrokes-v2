@@ -22,7 +22,7 @@ namespace MusicKeyStrokes
 
         private LayoutSound layoutSound;
 
-        private string defaultNameSoundNoAction = "я-хочу-питсу.m4a";
+        private string defaultNameSoundNoAction = "я-хочу-питсу";
 
         private static List<KeyModel> listAudio;
 

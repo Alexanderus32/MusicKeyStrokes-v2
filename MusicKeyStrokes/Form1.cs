@@ -56,8 +56,8 @@ namespace MusicKeyStrokes
             if (music == null)
                 music = new List<KeyModel>();
 
-          // var model = new KeyModel() { NameSound = "ban", KeyValue = Keys.Q, Layout = LayoutSound.Valakas1,PathSound = "music/valakas1/ban.mp3" };
-          // music.Add(model);
+          // var model = new KeyModel() { NameSound = "я-хочу-питсу", KeyValue = Keys.Exsel, Layout = LayoutSound.Valakas1,PathSound = "music/valakas1/я-хочу-питсу.m4a" };
+         //  music.Add(model);
           // sr.Serialize<KeyModel>(music);
             
         }
