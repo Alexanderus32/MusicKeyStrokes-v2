@@ -22,7 +22,7 @@ namespace MusicKeyStrokes
             InitializeComponent();
             watcherHotKeys = new WatcherHotKeys();
             audio = new Audio();
-            audio.LoadAudioModels();     
+            audio.SetVolume(10);
             RegisterHotKeys();
         }
 

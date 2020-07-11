@@ -16,15 +16,21 @@ namespace MusicKeyStrokes
 
         private AudioFileReader audioFileReader { get; set; }
 
-        private Mp3FileReader reader { get; set; }
+       // private Mp3FileReader reader { get; set; }
 
-        private WaveOut waveOut { get; set; }
+      //  private WaveOut waveOut { get; set; }
 
         private LayoutSound layoutSound;
 
+        private string defaultNameSoundNoAction = "я-хочу-питсу.m4a";
+
+        private static List<KeyModel> listAudio;
+
         public Audio()
         {
-
+             listAudio = new List<KeyModel>();
+             LoadAudioModels();
+             layoutSound = LayoutSound.Valakas1;
         }
 
          //private List<WaveOuts> waweOuts = new List<WaveOuts>();
@@ -40,50 +46,45 @@ namespace MusicKeyStrokes
          //static bool loop = false;
          //static bool looplist = false;
 
-    
 
-        static List<KeyModel> ListAudio = new List<KeyModel>();
-
-        public void LoadAudioModels()
+        private void LoadAudioModels()
         {
             JsonSerializer sr = new JsonSerializer();
             var music = sr.Deserialize<KeyModel>();
-
-            ListAudio.AddRange(music);
-
+            listAudio.AddRange(music);
         }
 
-        private void ChangeLayout(LayoutSound layout)
+        public void ChangeLayout(LayoutSound layout)
         {
             layoutSound = layout;
         }
 
-        public void PlayKey(Keys idKey)
+        public void Play(Keys idKey)
         {
-            var selectPathMusic = ListAudio.FirstOrDefault(x => x.KeyValue == idKey && x.Layout == layoutSound);
+            KeyModel selectPathMusic = listAudio.FirstOrDefault(x => x.KeyValue == idKey && x.Layout == layoutSound);
             if (selectPathMusic == null)
             {
-                return;
+                selectPathMusic = listAudio.FirstOrDefault(x => x.NameSound == defaultNameSoundNoAction);
+                if (selectPathMusic == null)
+                {
+                    return;
+                }
             }
             Play(selectPathMusic.PathSound);
-
         }
-
 
         private void Play(string path)
         {
-
-            if (waveOutDevice?.PlaybackState == PlaybackState.Playing)
-                Pause();
-               //if (loop || looplist)
-             //   LoopPlay(path);
-            else
-            {
-                waveOutDevice = new WaveOut();
-                audioFileReader = new AudioFileReader(path);
-                waveOutDevice.Init(audioFileReader);
-                waveOutDevice.Play();
+            if (waveOutDevice?.PlaybackState == PlaybackState.Playing) 
+            { 
+                Stop(); 
             }
+            //if (loop || looplist)
+            //LoopPlay(path);
+            waveOutDevice = new WaveOut();
+            audioFileReader = new AudioFileReader(path);
+            waveOutDevice.Init(audioFileReader);
+            waveOutDevice.Play();
         }
 
         //private void LoopPlay(string path)
@@ -99,40 +100,34 @@ namespace MusicKeyStrokes
         //        waweOuts.Add(new WaveOuts { reader = reader, waveOut = waveOut });
         //}
 
-        private void LoopStop()
-        {
-            reader.Dispose();
-            waveOut.Stop();
-            waveOut.Dispose();
-        }
+        //private void LoopStop()
+        //{
+        //  //  reader.Dispose();
+        //    waveOut.Stop();
+        //    waveOut.Dispose();
+        //}
 
-        private void Pause()
+
+        public void Stop()
         {
             waveOutDevice.Stop();
             audioFileReader.Dispose();
             try
             {
-                waveOutDevice.Dispose();
+                waveOutDevice.Dispose();//These plase create many error 
             }
             catch
             {
-
             }
-        }
 
-        public void Play(Keys idKey)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Stop()
-        {
-            throw new NotImplementedException();
         }
 
         public void SetVolume(int value)
         {
-            throw new NotImplementedException();
+            if (value>=0 && value<=1)
+            {
+                
+            }
         }
 
         public void ChangeVolume(int value)

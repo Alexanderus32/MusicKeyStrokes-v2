@@ -61,7 +61,7 @@ namespace MusicKeyStrokes
             if (keyId.HasValue)
             {
                 var a = new KeyEventArgs(WatcherHotKeys.keys[keyId.Value]);
-                audio.PlayKey(a.KeyCode);
+                audio.Play(a.KeyCode);
             }
             else
             {
