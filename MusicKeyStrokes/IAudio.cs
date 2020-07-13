@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicKeyStrokes.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,10 @@ namespace MusicKeyStrokes
 
         void ChangeVolume(int value);
 
-        void Loop(bool value);
+        void ChangeLayoutSound(LayoutSound layout);
+
+        void Loop();
+
+        void StopAudioBeforPlaying(bool value);
     }
 }

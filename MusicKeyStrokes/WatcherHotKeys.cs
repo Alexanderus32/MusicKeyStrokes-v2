@@ -40,7 +40,7 @@ namespace MusicKeyStrokes
         };
 
         /// <summary>
-        /// /
+        /// Most likely we will change when we added the dependency inversion
         /// </summary>
         Audio audio = new Audio();
 
@@ -52,7 +52,6 @@ namespace MusicKeyStrokes
             {
                 MYACTION_HOTKEY_IDS[i] = i;
             }
-            
         }
 
         public void WatchKey(int id) 
@@ -62,10 +61,6 @@ namespace MusicKeyStrokes
             {
                 var a = new KeyEventArgs(WatcherHotKeys.keys[keyId.Value]);
                 audio.Play(a.KeyCode);
-            }
-            else
-            {
-            
             }
         }
     }

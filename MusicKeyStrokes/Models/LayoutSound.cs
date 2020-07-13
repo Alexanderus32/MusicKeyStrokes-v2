@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MusicKeyStrokes.Models
 {
 
-    enum LayoutSound
+    public enum LayoutSound
     {
         Valakas1
     }

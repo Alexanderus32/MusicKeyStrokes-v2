@@ -22,7 +22,6 @@ namespace MusicKeyStrokes
             InitializeComponent();
             watcherHotKeys = new WatcherHotKeys();
             audio = new Audio();
-            audio.SetVolume(10);
             RegisterHotKeys();
         }
 
@@ -49,17 +48,7 @@ namespace MusicKeyStrokes
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //using serializer 
-            JsonSerializer sr = new JsonSerializer();
-            var music = sr.Deserialize<KeyModel>();
 
-            if (music == null)
-                music = new List<KeyModel>();
-
-          // var model = new KeyModel() { NameSound = "я-хочу-питсу", KeyValue = Keys.Exsel, Layout = LayoutSound.Valakas1,PathSound = "music/valakas1/я-хочу-питсу.m4a" };
-         //  music.Add(model);
-          // sr.Serialize<KeyModel>(music);
-            
         }
     }
 }
