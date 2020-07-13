@@ -15,13 +15,11 @@ namespace MusicKeyStrokes
     public partial class Form1 : Form
     {
         private readonly WatcherHotKeys watcherHotKeys;
-        private readonly Audio audio;
 
         public Form1()
         {
             InitializeComponent();
             watcherHotKeys = new WatcherHotKeys();
-            audio = new Audio();
             RegisterHotKeys();
         }
 
