@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AudioSwitcher.AudioApi, Version=3.0.0.209, Culture=neutral, PublicKeyToken=fda5729e2db3a64f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AudioSwitcher.AudioApi.3.0.0\lib\net40\AudioSwitcher.AudioApi.dll</HintPath>
+    </Reference>
+    <Reference Include="AudioSwitcher.AudioApi.CoreAudio, Version=3.0.0.209, Culture=neutral, PublicKeyToken=fda5729e2db3a64f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AudioSwitcher.AudioApi.CoreAudio.3.0.0.1\lib\net40\AudioSwitcher.AudioApi.CoreAudio.dll</HintPath>
+    </Reference>
     <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
     </Reference>
@@ -61,6 +67,7 @@
     </Compile>
     <Compile Include="IAudio.cs" />
     <Compile Include="JsonSerializer.cs" />
+    <Compile Include="LoopStream.cs" />
     <Compile Include="Models\KeyModel.cs" />
     <Compile Include="Models\LayoutSound.cs" />
     <Compile Include="Program.cs" />
@@ -303,12 +310,12 @@
     <Content Include="bin\Debug\music\valakas1\Глад Валакас - Кто в вк написал.mp3" />
     <Content Include="bin\Debug\music\valakas1\глад-валакас-кушац-кушац.mp3" />
     <Content Include="bin\Debug\music\valakas1\деду-не-нравится.mp3" />
-    <Content Include="bin\Debug\music\valakas1\диспетчер-мы-падаем.m4a" />
+    <Content Include="bin\Debug\music\valakas1\диспетчер-мы-падаем.mp3" />
     <Content Include="bin\Debug\music\valakas1\извинись-гниль-валакас.mp3" />
     <Content Include="bin\Debug\music\valakas1\Лупасит .mp3" />
-    <Content Include="bin\Debug\music\valakas1\ля-вася.m4a" />
+    <Content Include="bin\Debug\music\valakas1\ля-вася.mp3" />
     <Content Include="bin\Debug\music\valakas1\меня-сбили.mp3" />
-    <Content Include="bin\Debug\music\valakas1\я-хочу-питсу.m4a" />
+    <Content Include="bin\Debug\music\valakas1\я-хочу-питсу.mp3" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

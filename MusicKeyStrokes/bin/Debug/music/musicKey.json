@@ -8,30 +8,9 @@
   },
   {
     "Layout": 0,
-    "KeyValue": 81,
-    "NameSound": "ban",
-    "PathSound": "music/valakas1/ban.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 0,
-    "KeyValue": 81,
-    "NameSound": "ban",
-    "PathSound": "music/valakas1/ban.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 0,
-    "KeyValue": 81,
-    "NameSound": "ban",
-    "PathSound": "music/valakas1/ban.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 0,
-    "KeyValue": 81,
-    "NameSound": "ban",
-    "PathSound": "music/valakas1/ban.mp3",
+    "KeyValue": 248,
+    "NameSound": "я-хочу-питсу",
+    "PathSound": "music/valakas1/я-хочу-питсу.mp3",
     "VoiceCommand": null
   }
 ]

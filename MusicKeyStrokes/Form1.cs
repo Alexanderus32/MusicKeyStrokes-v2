@@ -15,14 +15,11 @@ namespace MusicKeyStrokes
     public partial class Form1 : Form
     {
         private readonly WatcherHotKeys watcherHotKeys;
-        private readonly Audio audio;
 
         public Form1()
         {
             InitializeComponent();
             watcherHotKeys = new WatcherHotKeys();
-            audio = new Audio();
-            audio.LoadAudioModels();     
             RegisterHotKeys();
         }
 
@@ -49,17 +46,7 @@ namespace MusicKeyStrokes
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //using serializer 
-            JsonSerializer sr = new JsonSerializer();
-            var music = sr.Deserialize<KeyModel>();
 
-            if (music == null)
-                music = new List<KeyModel>();
-
-          // var model = new KeyModel() { NameSound = "ban", KeyValue = Keys.Q, Layout = LayoutSound.Valakas1,PathSound = "music/valakas1/ban.mp3" };
-          // music.Add(model);
-          // sr.Serialize<KeyModel>(music);
-            
         }
     }
 }
