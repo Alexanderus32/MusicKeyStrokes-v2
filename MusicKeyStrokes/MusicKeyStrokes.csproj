@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audio.cs" />
+    <Compile Include="Develop\LoadSoundLayout.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

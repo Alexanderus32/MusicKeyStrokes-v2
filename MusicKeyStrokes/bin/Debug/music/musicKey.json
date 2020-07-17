@@ -1,14 +1,280 @@
 [
   {
     "Layout": 0,
-    "KeyValue": 81,
+    "KeyValue": 90,
+    "NameSound": "меня-сбили",
+    "PathSound": "music/valakas1/меня-сбили.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 192,
     "NameSound": "ban",
     "PathSound": "music/valakas1/ban.mp3",
     "VoiceCommand": null
   },
   {
     "Layout": 0,
-    "KeyValue": 248,
+    "KeyValue": 49,
+    "NameSound": "ban_nahui-2",
+    "PathSound": "music/valakas1/ban_nahui-2.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 50,
+    "NameSound": "blyat_zaebala_hueta",
+    "PathSound": "music/valakas1/blyat_zaebala_hueta.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 51,
+    "NameSound": "dab_dab_dab_ya",
+    "PathSound": "music/valakas1/dab_dab_dab_ya.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 52,
+    "NameSound": "da_bda_bda",
+    "PathSound": "music/valakas1/da_bda_bda.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 53,
+    "NameSound": "da_ne_vazhno",
+    "PathSound": "music/valakas1/da_ne_vazhno.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 54,
+    "NameSound": "da_zatknis_ty_suka",
+    "PathSound": "music/valakas1/da_zatknis_ty_suka.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 55,
+    "NameSound": "delo_sdelano",
+    "PathSound": "music/valakas1/delo_sdelano.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 56,
+    "NameSound": "ebanutsya_prosto",
+    "PathSound": "music/valakas1/ebanutsya_prosto.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 57,
+    "NameSound": "glad-valakas--kto-ya-eblan",
+    "PathSound": "music/valakas1/glad-valakas--kto-ya-eblan.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 48,
+    "NameSound": "glad-valakas--nahuy-ty-napadaesh",
+    "PathSound": "music/valakas1/glad-valakas--nahuy-ty-napadaesh.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 189,
+    "NameSound": "glad-valakas-godzila-3-4-5-0-d",
+    "PathSound": "music/valakas1/glad-valakas-godzila-3-4-5-0-d.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 187,
+    "NameSound": "glad-valakas-rage",
+    "PathSound": "music/valakas1/glad-valakas-rage.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 8,
+    "NameSound": "glad-valakas-ta-za-sho",
+    "PathSound": "music/valakas1/glad-valakas-ta-za-sho.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 81,
+    "NameSound": "glad_valakas_-_da_da_ja_gagagagagaggaaaa",
+    "PathSound": "music/valakas1/glad_valakas_-_da_da_ja_gagagagagaggaaaa.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 87,
+    "NameSound": "Glad_Valakas_-_ETO_BAN",
+    "PathSound": "music/valakas1/Glad_Valakas_-_ETO_BAN.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 69,
+    "NameSound": "glad_valakas_-_godzilla",
+    "PathSound": "music/valakas1/glad_valakas_-_godzilla.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 82,
+    "NameSound": "huetu_vparivaesh_dedu",
+    "PathSound": "music/valakas1/huetu_vparivaesh_dedu.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 84,
+    "NameSound": "huyanduk",
+    "PathSound": "music/valakas1/huyanduk.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 89,
+    "NameSound": "kavo-3",
+    "PathSound": "music/valakas1/kavo-3.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 85,
+    "NameSound": "ne_beyte_moego_druga",
+    "PathSound": "music/valakas1/ne_beyte_moego_druga.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 73,
+    "NameSound": "obidno_da",
+    "PathSound": "music/valakas1/obidno_da.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 79,
+    "NameSound": "osuzhdayu",
+    "PathSound": "music/valakas1/osuzhdayu.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 80,
+    "NameSound": "osuzhdayu2",
+    "PathSound": "music/valakas1/osuzhdayu2.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 219,
+    "NameSound": "popavs_blyat",
+    "PathSound": "music/valakas1/popavs_blyat.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 221,
+    "NameSound": "Smert",
+    "PathSound": "music/valakas1/Smert.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 220,
+    "NameSound": "smeshnaya_situaciya",
+    "PathSound": "music/valakas1/smeshnaya_situaciya.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 65,
+    "NameSound": "vot_eto_mne_uszhe_nravitsya",
+    "PathSound": "music/valakas1/vot_eto_mne_uszhe_nravitsya.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 83,
+    "NameSound": "ya_obosralsya",
+    "PathSound": "music/valakas1/ya_obosralsya.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 68,
+    "NameSound": "za_eto_ban",
+    "PathSound": "music/valakas1/za_eto_ban.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 70,
+    "NameSound": "а-ну-даваи",
+    "PathSound": "music/valakas1/а-ну-даваи.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 71,
+    "NameSound": "Глад Валакас - Кто в вк написал",
+    "PathSound": "music/valakas1/Глад Валакас - Кто в вк написал.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 72,
+    "NameSound": "глад-валакас-кушац-кушац",
+    "PathSound": "music/valakas1/глад-валакас-кушац-кушац.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 74,
+    "NameSound": "деду-не-нравится",
+    "PathSound": "music/valakas1/деду-не-нравится.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 75,
+    "NameSound": "диспетчер-мы-падаем",
+    "PathSound": "music/valakas1/диспетчер-мы-падаем.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 76,
+    "NameSound": "извинись-гниль-валакас",
+    "PathSound": "music/valakas1/извинись-гниль-валакас.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 186,
+    "NameSound": "Лупасит ",
+    "PathSound": "music/valakas1/Лупасит .mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 222,
+    "NameSound": "ля-вася",
+    "PathSound": "music/valakas1/ля-вася.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 88,
     "NameSound": "я-хочу-питсу",
     "PathSound": "music/valakas1/я-хочу-питсу.mp3",
     "VoiceCommand": null

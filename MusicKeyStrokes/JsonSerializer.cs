@@ -33,5 +33,14 @@ namespace MusicKeyStrokes
             using (StreamWriter streamWritter = new StreamWriter(fileName))
                 streamWritter.Write(text);
         }
+        public void SerializeAddSingle<T>(IEnumerable<T> entities, string fileName = defaultMusicKeyFile)
+        {
+            JsonSerializer sr = new JsonSerializer();
+            var music = sr.Deserialize<T>();
+            music.AddRange(entities);
+            string text = JsonConvert.SerializeObject(music, Formatting.Indented);
+            using (StreamWriter streamWritter = new StreamWriter(fileName))
+            streamWritter.Write(text);
+        }
     }
 }

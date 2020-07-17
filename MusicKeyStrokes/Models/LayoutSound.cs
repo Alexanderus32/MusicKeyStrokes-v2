@@ -9,6 +9,14 @@ namespace MusicKeyStrokes.Models
 
     public enum LayoutSound
     {
-        Valakas1
+        Valakas1,
+        Valakas2
+    }
+    public enum ReturtStateRecordMusic
+    {
+        FreeKeysDoesNotExist,
+        AllMusicSerializeted,
+        AllMusicAlredyExist
+
     }
 }
