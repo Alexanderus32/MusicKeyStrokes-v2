@@ -5,6 +5,7 @@ using AudioSwitcher.AudioApi.CoreAudio;
 using MusicKeyStrokes.Models;
 using System.Windows.Forms;
 using MusicKeyStrokes.Interfaces;
+using System;
 
 namespace MusicKeyStrokes
 {
@@ -150,6 +151,15 @@ namespace MusicKeyStrokes
             if (this.loop)
                 waweOuts = new List<WaveOuts>();
             else LoopStop();
+        }
+
+        public bool PLayRand()
+        {
+            Random rand = new Random();
+            int number = rand.Next(listAudio.Count);
+            var selectPathMusic = listAudio[number];
+            Play(selectPathMusic.PathSound);
+            return true;
         }
 
         class WaveOuts

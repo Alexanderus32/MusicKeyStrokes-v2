@@ -1,20 +1,19 @@
-﻿using System;
+﻿using MusicKeyStrokes.Commands;
+using MusicKeyStrokes.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace MusicKeyStrokes
 {
     class WatcherHotKeys
     {
-        private delegate void KeyIvent(Keys keys);
-
-        private event KeyIvent keyIvent;
         public WatcherHotKeys()
         {
             RegisterHotkeys();
-            RegisterEventToAudio();
         }
 
         public static readonly Keys[] keys = {
@@ -32,8 +31,8 @@ namespace MusicKeyStrokes
         Keys.B,   Keys.N,   Keys.M,
         Keys.Oemcomma, Keys.OemPeriod,Keys.Oem2,      // б, ю, .
         Keys.Left,Keys.Right,
-        Keys.Up,  Keys.Down, 
-         
+        Keys.Up,  Keys.Down,
+        Keys.Capital
         //Keys.F1, Keys.F2, Keys.F3, Keys.F4, Keys.F5, Keys.F6,
         //Keys.F7, Keys.F8, Keys.F9,  Keys.F10, Keys.F11,
         //Keys.F12, 
@@ -43,13 +42,22 @@ namespace MusicKeyStrokes
         //Keys.Divide,
         //Keys.Multiply, Keys.Subtract, Keys.Add,
         //Keys.Decimal,Keys.Home, Keys.PageDown,
-        //Keys.PageUp, Keys.End, Keys.Pause, Keys.CapsLock
+        //Keys.PageUp, Keys.End, , 
         };
+
+        //private readonly Keys[] commandKeys = { Keys.CapsLock };
 
         /// <summary>
         /// Most likely we will change when we added the dependency inversion
         /// </summary>
-        Audio audio = new Audio();
+        static Audio audio = new Audio();
+        /// <summary>
+        /// /
+        /// </summary>
+        private List<Command> commands = new List<Command>
+        {
+            new PlayRandMusicCommand(audio)
+        };
 
         public readonly int[] MYACTION_HOTKEY_IDS = new int[keys.Length];
 
@@ -60,20 +68,42 @@ namespace MusicKeyStrokes
                 MYACTION_HOTKEY_IDS[i] = i;
             }
         }
-        private void RegisterEventToAudio()
-        {
-            keyIvent += audio.Play;
-        }
 
         public void WatchKey(int id) 
         {
             int? keyId = MYACTION_HOTKEY_IDS.FirstOrDefault(x => x == id);
             if (keyId.HasValue)
             {
-                var a = new KeyEventArgs(WatcherHotKeys.keys[keyId.Value]);
-                keyIvent?.Invoke(a.KeyCode);
-                //audio.Play(a.KeyCode);
+                var key = new KeyEventArgs(keys[keyId.Value]);
+                if (!IsCommandKey(key.KeyCode))
+                {
+                    audio.Play(key.KeyCode);
+                }
             }
+        }
+
+        public void ChangeLayout(int id)
+        {
+            int? keyId = MYACTION_HOTKEY_IDS.FirstOrDefault(x => x == id);
+            if (keyId.HasValue)
+            {
+                var key = new KeyEventArgs(keys[keyId.Value]);
+                //enum.(key.KeyCode.ToString());
+                //audio.ChangeLayout();
+            }
+        }
+
+        private bool IsCommandKey(Keys key)
+        {
+            foreach (var command in commands)
+            {
+                if (command.IsThisCommand(key.ToString()))
+                {
+                    command.Execute();
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

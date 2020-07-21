@@ -25,6 +25,7 @@ namespace MusicKeyStrokes.Develop
             }
             List<Keys> keys = WatcherHotKeys.keys.ToList();
             keys.RemoveAll(x => music.Any(z => z.KeyValue == x));
+            keys.Remove(Keys.Capital);
             for (int i = 0; i < filesMusic.Count; i++)
             {
                 if (keys.Count == 0)

@@ -7,6 +7,8 @@ namespace MusicKeyStrokes.Interfaces
     {
         void Play(Keys idKey);
 
+        bool PLayRand();
+
         void Stop();
 
         void SetVolume(int value);

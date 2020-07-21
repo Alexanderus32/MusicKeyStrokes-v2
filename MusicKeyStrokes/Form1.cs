@@ -44,6 +44,10 @@ namespace MusicKeyStrokes
                 int wParam = m.WParam.ToInt32();
                 watcherHotKeys.WatchKey(wParam);
             }
+            else if (m.Msg == 0x0004) //if alt
+            {
+                //
+            }
             base.WndProc(ref m);
         }
 

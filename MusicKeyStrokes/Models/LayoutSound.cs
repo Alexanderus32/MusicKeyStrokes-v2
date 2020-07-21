@@ -10,7 +10,11 @@ namespace MusicKeyStrokes.Models
     public enum LayoutSound
     {
         Valakas1,
-        Valakas2
+        Valakas2,
+        Anime1,
+        Anime2,
+        Mems1,
+        Mems2
     }
     public enum ReturtStateRecordMusic
     {
