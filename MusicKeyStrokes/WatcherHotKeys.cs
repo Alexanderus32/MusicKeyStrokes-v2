@@ -71,7 +71,9 @@ namespace MusicKeyStrokes
             if (keyId.HasValue)
             {
                 var a = new KeyEventArgs(WatcherHotKeys.keys[keyId.Value]);
-                keyIvent?.Invoke(a.KeyCode);
+             //   keyIvent?.Invoke(a.KeyCode);
+                Comands comands = new Comands();
+                comands.ProcessComandKey("KeyMusic", keys[keyId.Value]);
                 //audio.Play(a.KeyCode);
             }
         }

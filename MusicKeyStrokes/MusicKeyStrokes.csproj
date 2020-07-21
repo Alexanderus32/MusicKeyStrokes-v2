@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audio.cs" />
+    <Compile Include="Comands.cs" />
     <Compile Include="Develop\LoadSoundLayout.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -67,6 +68,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="IAudio.cs" />
+    <Compile Include="IComands.cs" />
     <Compile Include="JsonSerializer.cs" />
     <Compile Include="LoopStream.cs" />
     <Compile Include="Models\KeyModel.cs" />
