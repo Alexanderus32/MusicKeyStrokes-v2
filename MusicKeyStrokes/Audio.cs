@@ -4,6 +4,7 @@ using System.Linq;
 using AudioSwitcher.AudioApi.CoreAudio;
 using MusicKeyStrokes.Models;
 using System.Windows.Forms;
+using MusicKeyStrokes.Interfaces;
 
 namespace MusicKeyStrokes
 {
