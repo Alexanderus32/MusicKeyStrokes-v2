@@ -79,6 +79,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HotKeyManager.cs" />
     <Compile Include="Interfaces\IAudio.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="JsonSerializer.cs" />

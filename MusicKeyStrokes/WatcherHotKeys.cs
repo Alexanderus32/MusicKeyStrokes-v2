@@ -45,7 +45,7 @@ namespace MusicKeyStrokes
         //Keys.PageUp, Keys.End, , 
         };
 
-        //private readonly Keys[] commandKeys = { Keys.CapsLock };
+        public static readonly Keys[] commandKeys = { Keys.CapsLock };
 
         /// <summary>
         /// Most likely we will change when we added the dependency inversion
