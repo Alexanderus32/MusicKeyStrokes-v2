@@ -54,7 +54,7 @@ namespace MusicKeyStrokes
 
                 //for example
                 if (e.Key == Keys.Capital)
-                    audio.PLayRand();
+                    audio.Loop();
             }
         }
 

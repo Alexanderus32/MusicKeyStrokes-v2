@@ -87,26 +87,24 @@ namespace MusicKeyStrokes
 
         private void LoopPlay(string path)
         {
-            if (waveOut?.PlaybackState == PlaybackState.Playing && !loop)
-                LoopStop();
             this.reader = new Mp3FileReader(path);
             LoopStream loopStream = new LoopStream(reader);
             this.waveOut = new WaveOut();
             this.waveOut.Init(loopStream);
             this.waveOut.Play();
-            if (loop)
-                waweOuts.Add(new WaveOuts { reader = reader, waveOut = waveOut });
+            waweOuts.Add(new WaveOuts { reader = reader, waveOut = waveOut });
         }
 
         private void LoopStop()
         {
-            this.reader.Dispose(); //if music not in LoopList, create error
-            this.waveOut.Stop();
-            this.waveOut.Dispose();
-            this.waveOutDevice?.Stop();
-            this.audioFileReader?.Dispose();
-            this.waveOutDevice?.Dispose();
-            this.waweOuts = null;
+            foreach (var item in waweOuts)
+            {
+                item.reader.Dispose();
+                item.waveOut.Stop();
+                item.waveOut.Dispose();
+
+            }
+            waweOuts.Clear();
         }
 
         public void Stop()
