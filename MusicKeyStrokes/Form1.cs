@@ -19,10 +19,10 @@ namespace MusicKeyStrokes
     {
         private readonly WatcherHotKeys watcherHotKeys;
 
-        public Form1()
+        public Form1(WatcherHotKeys watcherHotKeys)
         {
             InitializeComponent();
-            watcherHotKeys = new WatcherHotKeys();
+            this.watcherHotKeys = watcherHotKeys;
             RegisterHotKeys();
         }
 
@@ -44,9 +44,10 @@ namespace MusicKeyStrokes
                 int wParam = m.WParam.ToInt32();
                 watcherHotKeys.WatchKey(wParam);
             }
-            else if (m.Msg == 0x0004) //if alt
+            else if (m.Msg == 0x4) //if alt
             {
-                //
+                int wParam = m.WParam.ToInt32();
+                watcherHotKeys.WatchKey(wParam);
             }
             base.WndProc(ref m);
         }

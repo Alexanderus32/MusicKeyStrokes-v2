@@ -71,7 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audio.cs" />
-    <Compile Include="Commands\PlayRandMusicCommand.cs" />
+    <Compile Include="Commands\CommandAudioPauseBeforPlaying.cs" />
+    <Compile Include="Commands\CommandAudioStop.cs" />
+    <Compile Include="Commands\CommandAudioChangeLoop.cs" />
+    <Compile Include="Commands\CommandAudioPlayRandMusic.cs" />
     <Compile Include="Develop\LoadSoundLayout.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -80,7 +83,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IAudio.cs" />
-    <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\Command.cs" />
     <Compile Include="JsonSerializer.cs" />
     <Compile Include="LoopStream.cs" />
     <Compile Include="Models\KeyModel.cs" />
