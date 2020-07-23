@@ -11,9 +11,47 @@ namespace MusicKeyStrokes
 {
     public static class HotKeyManager
     {
+        public static readonly Keys[] hotKeys = {
+        Keys.Oem3,                                      // Ё
+        Keys.D1,  Keys.D2,  Keys.D3, Keys.D4, Keys.D5,  //1-5
+        Keys.D6,  Keys.D7,  Keys.D8, Keys.D9, Keys.D0,  //6-0
+        Keys.OemMinus,Keys.Oemplus,  Keys.Back,         // - , + "Backspase"
+        Keys.Q,   Keys.W,   Keys.E,  Keys.R, Keys.T,
+        Keys.Y,   Keys.U,   Keys.I,  Keys.O, Keys.P,
+        Keys.Oem4,Keys.Oem6,Keys.Oem5,                  // х, ъ, \
+        Keys.A,   Keys.S,   Keys.D,  Keys.F,
+        Keys.G,   Keys.H,   Keys.J,  Keys.K, Keys.L,
+        Keys.Oem1,Keys.Oem7,                            // ж, э
+        Keys.Z,   Keys.X,   Keys.C,  Keys.V,
+        Keys.B,   Keys.N,   Keys.M,
+        Keys.Oemcomma, Keys.OemPeriod,Keys.Oem2,      // б, ю, .
+        Keys.Left,Keys.Right,
+        Keys.Up,  Keys.Down,
+        };
+
+        public static readonly Keys[] commandKeys = {
+            Keys.CapsLock
+        };
+
         public static event EventHandler<HotKeyEventArgs> HotKeyPressed;
 
-        public static int RegisterHotKey(Keys key, KeyModifiers modifiers)
+        public static void RegisterAudioKeys(KeyModifiers modifiers)
+        {
+            foreach (var key in hotKeys)
+            {
+                RegisterHotKey(key, modifiers);
+            }
+        }
+
+        public static void RegisterCommandKeys(KeyModifiers modifiers)
+        {
+            foreach (var key in commandKeys)
+            {
+                RegisterHotKey(key, modifiers);
+            }
+        }
+
+        private static int RegisterHotKey(Keys key, KeyModifiers modifiers)
         {
             _windowReadyEvent.WaitOne();
             int id = System.Threading.Interlocked.Increment(ref _id);
@@ -27,6 +65,7 @@ namespace MusicKeyStrokes
         }
 
         delegate void RegisterHotKeyDelegate(IntPtr hwnd, int id, uint modifiers, uint key);
+
         delegate void UnRegisterHotKeyDelegate(IntPtr hwnd, int id);
 
         private static void RegisterHotKeyInternal(IntPtr hwnd, int id, uint modifiers, uint key)
@@ -48,8 +87,11 @@ namespace MusicKeyStrokes
         }
 
         private static volatile MessageWindow _wnd;
+
         private static volatile IntPtr _hwnd;
+
         private static ManualResetEvent _windowReadyEvent = new ManualResetEvent(false);
+
         static HotKeyManager()
         {
             Thread messageLoop = new Thread(delegate ()
