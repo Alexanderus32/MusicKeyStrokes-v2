@@ -19,6 +19,6 @@ namespace MusicKeyStrokes.Interfaces
 
         void Loop();
 
-        void StopAudioBeforPlaying(bool value);
+        void StopAudioBeforPlaying();
     }
 }

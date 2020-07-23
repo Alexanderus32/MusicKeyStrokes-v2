@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace MusicKeyStrokes.Commands
 {
-    public class PlayRandMusicCommand : Command
+    public class CommandAudioPlayRandMusic : Command
     {
         private readonly IAudio audio;
 
-        public PlayRandMusicCommand(IAudio audio)
+        public CommandAudioPlayRandMusic(IAudio audio)
         {
             this.audio = audio;
         }

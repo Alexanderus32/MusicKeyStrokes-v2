@@ -87,8 +87,8 @@ namespace MusicKeyStrokes
 
         private void LoopPlay(string path)
         {
-            //if (waveOut?.PlaybackState == PlaybackState.Playing && !loop)
-            //    LoopStop();
+            if (waveOut?.PlaybackState == PlaybackState.Playing && !loop)
+                LoopStop();
             this.reader = new Mp3FileReader(path);
             LoopStream loopStream = new LoopStream(reader);
             this.waveOut = new WaveOut();
@@ -100,7 +100,7 @@ namespace MusicKeyStrokes
 
         private void LoopStop()
         {
-            this.reader.Dispose();
+            this.reader.Dispose(); //if music not in LoopList, create error
             this.waveOut.Stop();
             this.waveOut.Dispose();
             this.waveOutDevice?.Stop();
@@ -135,9 +135,17 @@ namespace MusicKeyStrokes
             this.defaultPlaybackDevice.Volume += value;
         }
 
-        public void StopAudioBeforPlaying(bool value)
+        public void StopAudioBeforPlaying()
         {
-            this.stopStatus = value;
+            if (stopStatus)
+            {
+                stopStatus = false;
+            }
+            else
+            {
+                stopStatus = true;
+            }
+            
         }
 
         public void ChangeLayoutSound(LayoutSound layout)
