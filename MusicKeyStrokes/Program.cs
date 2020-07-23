@@ -30,7 +30,6 @@ namespace MusicKeyStrokes
             container = new Container();
             container.Register<IAudio, Audio>(Lifestyle.Singleton);
             container.Register<Form1>(Lifestyle.Singleton);
-            container.Register<WatcherHotKeys>(Lifestyle.Singleton);
             // container.Register(typeof(Command), typeof(Command), Lifestyle.Singleton);
             //  container.Collection.Register<Command>(typeof(Command));
 
