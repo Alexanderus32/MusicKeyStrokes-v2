@@ -13,6 +13,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Drawing.Text;
 using MusicKeyStrokes.Interfaces;
+using MusicKeyStrokes.Develop;
 
 namespace MusicKeyStrokes
 {
@@ -22,6 +23,7 @@ namespace MusicKeyStrokes
 
         public Form1(IAudio audio)
         {
+            
             InitializeComponent();
             this.audio = audio;
         }
@@ -31,6 +33,7 @@ namespace MusicKeyStrokes
             HotKeyManager.RegisterAudioKeys(KeyModifiers.Alt);
             HotKeyManager.RegisterCommandKeys(KeyModifiers.Shift);
             HotKeyManager.HotKeyPressed += new EventHandler<HotKeyEventArgs>(HotKeyManager_HotKeyPressed);
+          //  LoadMusic();
         }
 
         void HotKeyManager_HotKeyPressed(object sender, HotKeyEventArgs e)
@@ -55,7 +58,19 @@ namespace MusicKeyStrokes
                 //for example
                 if (e.Key == Keys.Capital)
                     audio.Loop();
+                if (e.Key == Keys.D1)
+                    audio.ChangeLayoutSound(LayoutSound.Valakas1);
+                if (e.Key == Keys.D2)
+                    audio.ChangeLayoutSound(LayoutSound.Anime1);
+                if (e.Key == Keys.D3)
+                    audio.ChangeLayoutSound(LayoutSound.Mems1);
             }
+        }
+
+        private void LoadMusic()
+        {
+           var ff = LoadSoundLayout.LoadMusic(LayoutSound.Gachi, @".\music\Gachi\");
+            var fff = false;
         }
 
     }

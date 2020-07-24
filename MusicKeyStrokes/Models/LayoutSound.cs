@@ -14,7 +14,8 @@ namespace MusicKeyStrokes.Models
         Anime1,
         Anime2,
         Mems1,
-        Mems2
+        Mems2,
+        Gachi
     }
     public enum ReturtStateRecordMusic
     {

@@ -37,7 +37,7 @@ namespace MusicKeyStrokes
         {
             listAudio = new List<KeyModel>();
             LoadAudioModels();
-            layoutSound = LayoutSound.Valakas1;
+            layoutSound = LayoutSound.Anime1;
             this.defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
         }
 

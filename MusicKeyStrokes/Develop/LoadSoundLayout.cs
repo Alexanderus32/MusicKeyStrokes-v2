@@ -1,7 +1,10 @@
 ﻿using MusicKeyStrokes.Models;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -24,14 +27,15 @@ namespace MusicKeyStrokes.Develop
                 return ReturtStateRecordMusic.AllMusicAlredyExist;
             }
             List<Keys> keys = HotKeyManager.hotKeys.ToList();
-            keys.RemoveAll(x => music.Any(z => z.KeyValue == x));
+            // keys.RemoveAll(x => music.Any(z => z.KeyValue == x));
+            keys.RemoveAll(x => music.Any(z => z.KeyValue == x && z.Layout== layoutSound));
             for (int i = 0; i < filesMusic.Count; i++)
             {
                 if (keys.Count == 0)
                 {
                     return ReturtStateRecordMusic.FreeKeysDoesNotExist;
                 }
-                Match regex = Regex.Match(filesMusic[i], $@"{directory}.*?(\w.*?)\..*?");
+                Match regex = Regex.Match(filesMusic[i], $@"{directory.Replace("\\", "/")}.*?(\w.*?)\..*?");
                 string nameSong = regex.Groups[1]?.Value;
                 KeyModel song = new KeyModel() { NameSound = nameSong, PathSound = filesMusic[i], KeyValue = keys.First(), Layout = layoutSound };
                 keys.Remove(keys.First());
