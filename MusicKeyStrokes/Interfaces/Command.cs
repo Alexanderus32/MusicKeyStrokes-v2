@@ -10,7 +10,7 @@ namespace MusicKeyStrokes.Interfaces
     {
         public abstract string Name { get; }
 
-        public abstract void Execute();
+        public abstract void Execute(string payload);
 
         public bool IsThisCommand(string name)
         {

@@ -71,6 +71,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audio.cs" />
+    <Compile Include="Commander.cs" />
+    <Compile Include="Commands\CommandAudioChangeLayout.cs" />
     <Compile Include="Commands\CommandAudioPauseBeforPlaying.cs" />
     <Compile Include="Commands\CommandAudioStop.cs" />
     <Compile Include="Commands\CommandAudioChangeLoop.cs" />

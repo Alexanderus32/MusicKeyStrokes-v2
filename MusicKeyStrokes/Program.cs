@@ -30,19 +30,14 @@ namespace MusicKeyStrokes
             container = new Container();
             container.Register<IAudio, Audio>(Lifestyle.Singleton);
             container.Register<Form1>(Lifestyle.Singleton);
-            // container.Register(typeof(Command), typeof(Command), Lifestyle.Singleton);
-            //  container.Collection.Register<Command>(typeof(Command));
-
-            //container.Collection.Register<Command>(
-            //        typeof(CommandAudioChangeLoop),
-            //        typeof(CommandAudioPauseBeforPlaying),
-            //        typeof(CommandAudioStop),
-            //        typeof(CommandAudioPlayRandMusic));
-
-            //container.Register<Command, CommandAudioChangeLoop>(Lifestyle.Singleton);
-            //  container.Register<Command, CommandAudioPauseBeforPlaying>(Lifestyle.Singleton);
-            //   container.Register<Command, CommandAudioPlayRandMusic>(Lifestyle.Singleton);
-            // container.Register<Command, CommandAudioStop>(Lifestyle.Singleton);
+            container.Collection.Register<Command>(
+                    typeof(CommandAudioChangeLoop),
+                    typeof(CommandAudioPauseBeforPlaying),
+                    typeof(CommandAudioStop),
+                    typeof(CommandAudioPlayRandMusic),
+                    typeof(CommandAudioChangeLayout));
+            
+            
             container.Verify();
         }
     }

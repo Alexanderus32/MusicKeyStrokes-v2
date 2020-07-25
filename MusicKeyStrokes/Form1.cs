@@ -20,10 +20,10 @@ namespace MusicKeyStrokes
     public partial class Form1 : Form
     {
         private readonly IAudio audio;
+        private Commander commander { get; set; }
 
         public Form1(IAudio audio)
-        {
-            
+        {      
             InitializeComponent();
             this.audio = audio;
         }
@@ -33,7 +33,8 @@ namespace MusicKeyStrokes
             HotKeyManager.RegisterAudioKeys(KeyModifiers.Alt);
             HotKeyManager.RegisterCommandKeys(KeyModifiers.Shift);
             HotKeyManager.HotKeyPressed += new EventHandler<HotKeyEventArgs>(HotKeyManager_HotKeyPressed);
-          //  LoadMusic();
+            this.commander = new Commander();
+            //LoadMusic();
         }
 
         void HotKeyManager_HotKeyPressed(object sender, HotKeyEventArgs e)
@@ -42,35 +43,13 @@ namespace MusicKeyStrokes
                 audio.Play(e.Key);
             else if(e.Modifiers == KeyModifiers.Shift)
             {
-                //do command
-                //need incapsulate all command logic to Commander class
-                //Maybe we need something like this
-                //private List<Command> commands;
-                //    commands = new List<Command>()
-                //    {
-                //    new CommandAudioChangeLoop(audio),
-                //    new CommandAudioPauseBeforPlaying(audio),
-                //    new CommandAudioPlayRandMusic(audio),
-                //    new CommandAudioStop(audio)
-                //    };
-
-
-                //for example
-                if (e.Key == Keys.Capital)
-                    audio.Loop();
-                if (e.Key == Keys.D1)
-                    audio.ChangeLayoutSound(LayoutSound.Valakas1);
-                if (e.Key == Keys.D2)
-                    audio.ChangeLayoutSound(LayoutSound.Anime1);
-                if (e.Key == Keys.D3)
-                    audio.ChangeLayoutSound(LayoutSound.Mems1);
+                commander.ExecuteCommand(e.Key);
             }
         }
 
         private void LoadMusic()
         {
-           var ff = LoadSoundLayout.LoadMusic(LayoutSound.Gachi, @".\music\Gachi\");
-            var fff = false;
+            var result = LoadSoundLayout.LoadMusic(LayoutSound.Gachi, @".\music\Gachi\");
         }
 
     }

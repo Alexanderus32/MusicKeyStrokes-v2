@@ -18,7 +18,7 @@ namespace MusicKeyStrokes.Commands
         }
         public override string Name { get; } = Keys.Capital.ToString();
 
-        public override void Execute()
+        public override void Execute(string payload)
         {
             audio.PLayRand();
         }

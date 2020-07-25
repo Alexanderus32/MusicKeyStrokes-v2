@@ -6,7 +6,7 @@ namespace MusicKeyStrokes.Commands
 {
     public class CommandAudioChangeLoop : Command
     {
-        public override string Name { get; } = Keys.Right.ToString();
+        public override string Name { get; } = Keys.A.ToString();
 
         private readonly IAudio audio;
 
@@ -15,7 +15,7 @@ namespace MusicKeyStrokes.Commands
             this.audio = audio;
         }
 
-        public override void Execute()
+        public override void Execute(string payload)
         {
             audio.Loop();
         }

@@ -10,7 +10,7 @@ namespace MusicKeyStrokes.Commands
 {
     public class CommandAudioPauseBeforPlaying : Command
     {
-        public override string Name { get; }= Keys.Up.ToString();
+        public override string Name { get; }= Keys.D.ToString();
 
         private readonly IAudio audio;
 
@@ -19,7 +19,7 @@ namespace MusicKeyStrokes.Commands
             this.audio = audio;
         }
 
-        public override void Execute()
+        public override void Execute(string payload)
         {
             audio.StopAudioBeforPlaying();
         }
