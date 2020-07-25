@@ -30,7 +30,7 @@ namespace MusicKeyStrokes
         };
 
         public static readonly Keys[] commandKeys = {
-            Keys.CapsLock, Keys.D1, Keys.D2, Keys.D3, Keys.D4, Keys.D5,
+            Keys.CapsLock, Keys.D1, Keys.D2, Keys.D3, Keys.D4, Keys.D5, Keys.A, Keys.S, Keys.D
         };
 
         public static event EventHandler<HotKeyEventArgs> HotKeyPressed;
