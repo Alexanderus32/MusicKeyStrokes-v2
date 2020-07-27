@@ -39,6 +39,7 @@ namespace MusicKeyStrokes
             LoadAudioModels();
             layoutSound = LayoutSound.Anime1;
             this.defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
+            waveOutDevice = new WaveOut();
         }
 
         private void LoadAudioModels()
@@ -79,7 +80,7 @@ namespace MusicKeyStrokes
                 LoopPlay(path);
                 return;
             }
-            waveOutDevice = new WaveOut();
+          //  waveOutDevice = new WaveOut();
             audioFileReader = new AudioFileReader(path);
             waveOutDevice.Init(audioFileReader);
             waveOutDevice.Play();
@@ -111,13 +112,18 @@ namespace MusicKeyStrokes
         {
             this.waveOutDevice.Stop();
             this.audioFileReader.Dispose();
-            try
+            this.waveOutDevice.Dispose();
+            if (loop)
             {
-                this.waveOutDevice.Dispose();//These plase create many error 
+                LoopStop();
             }
-            catch
-            {
-            }
+            //try
+            //{
+            //    this.waveOutDevice.Dispose();//These plase create many error 
+            //}
+            //catch
+            //{
+            //}
         }
 
         public void SetVolume(int value)
