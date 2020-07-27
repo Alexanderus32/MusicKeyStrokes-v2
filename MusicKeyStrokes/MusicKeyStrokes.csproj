@@ -39,14 +39,26 @@
     <Reference Include="AudioSwitcher.AudioApi.CoreAudio, Version=3.0.0.209, Culture=neutral, PublicKeyToken=fda5729e2db3a64f, processorArchitecture=MSIL">
       <HintPath>..\packages\AudioSwitcher.AudioApi.CoreAudio.3.0.0.1\lib\net40\AudioSwitcher.AudioApi.CoreAudio.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleInjector, Version=5.0.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.5.0.3\lib\net461\SimpleInjector.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audio.cs" />
+    <Compile Include="Commander.cs" />
+    <Compile Include="Commands\CommandAudioChangeLayout.cs" />
+    <Compile Include="Commands\CommandAudioPauseBeforPlaying.cs" />
+    <Compile Include="Commands\CommandAudioStop.cs" />
+    <Compile Include="Commands\CommandAudioChangeLoop.cs" />
+    <Compile Include="Commands\CommandAudioPlayRandMusic.cs" />
     <Compile Include="Develop\LoadSoundLayout.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -66,14 +84,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="IAudio.cs" />
+    <Compile Include="HotKeyManager.cs" />
+    <Compile Include="Interfaces\IAudio.cs" />
+    <Compile Include="Interfaces\Command.cs" />
     <Compile Include="JsonSerializer.cs" />
     <Compile Include="LoopStream.cs" />
     <Compile Include="Models\KeyModel.cs" />
     <Compile Include="Models\LayoutSound.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WatcherHotKeys.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +121,52 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\music\Anime1\Baka.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Bakaaaaa.mp3" />
+    <Content Include="bin\Debug\music\Anime1\BakaaaaTachibana Miya — Miya to Tengoku to Jigoku Onii Chan.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Death Note - Тема Лайта.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Death Note.mp3" />
+    <Content Include="bin\Debug\music\Anime1\DIO 1  ICHI-BI O KEKA.wav" />
+    <Content Include="bin\Debug\music\Anime1\DIO 2 NI-BI O KEKA.wav" />
+    <Content Include="bin\Debug\music\Anime1\DIO 3 SAN-BI O KEKA.wav" />
+    <Content Include="bin\Debug\music\Anime1\DIO 4 YIOM-BI O KEKA.wav" />
+    <Content Include="bin\Debug\music\Anime1\DIO 5 GO-BI O KEKA.wav" />
+    <Content Include="bin\Debug\music\Anime1\DIO 6 ROKU-BI O KEKA.wav" />
+    <Content Include="bin\Debug\music\Anime1\DIO road-roller-damp3.mp3" />
+    <Content Include="bin\Debug\music\Anime1\hentaiNya.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo Dio kono-dio-da99.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo Dioza-warudo.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo doitsu-no-kagaku-wa-sekai-ichi.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo doppio1.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo doppio2.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo Giorno_Theme.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo jotaro-no.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo jotaro-yes-yes-yes.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo Kiro Yugo Kanno - Killer.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo peeping-jojo.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo rero-rero-rero.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo shizaaaaaa.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Jojo to be continued.mp3" />
+    <Content Include="bin\Debug\music\Anime1\monokuma-pupupu_2.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Naruto sasukeeeeee.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Naruto-sad-music-instant.mp3" />
+    <Content Include="bin\Debug\music\Anime1\Niconiconiloves.mp3" />
+    <Content Include="bin\Debug\music\Anime1\ReZero Felix Amm.mp3" />
+    <Content Include="bin\Debug\music\Anime1\ReZero weheheeeey-aa-aa-hahaa.mp3" />
+    <Content Include="bin\Debug\music\Anime1\SteinsGate gate-of-steiner.mp3" />
+    <Content Include="bin\Debug\music\Anime1\SteinsGate Kristina tina no kenshi.mp3" />
+    <Content Include="bin\Debug\music\Anime1\SteinsGate Kristina.mp3" />
+    <Content Include="bin\Debug\music\Anime1\SteinsGate okarin laugh_1.mp3" />
+    <Content Include="bin\Debug\music\Anime1\SteinsGate okarin okarin i-am-mad-scientist_ZelajJj.mp3" />
+    <Content Include="bin\Debug\music\Anime1\SteinsGate tuturu-okarin.mp3" />
+    <Content Include="bin\Debug\music\Gachi\deep-dark-fantasies.mp3" />
+    <Content Include="bin\Debug\music\Gachi\fisting-is-300.mp3" />
+    <Content Include="bin\Debug\music\Gachi\haaaaaaaaaaaaaaaaaaaaaaa.mp3" />
+    <Content Include="bin\Debug\music\Gachi\oh-shit-im-sorry_0001.mp3" />
+    <Content Include="bin\Debug\music\Gachi\right-version5.mp3" />
+    <Content Include="bin\Debug\music\Gachi\rip-ears.mp3" />
+    <Content Include="bin\Debug\music\Gachi\slaves-get-your-ass-back-here.mp3" />
+    <Content Include="bin\Debug\music\Gachi\what-the-hell-are-you-two-doing.mp3" />
     <Content Include="bin\Debug\music\garbage %28all%29\music2\aa.mp3" />
     <Content Include="bin\Debug\music\garbage %28all%29\music2\aga.mp3" />
     <Content Include="bin\Debug\music\garbage %28all%29\music2\alladin-yobannyj-rot-etogo-arabskogo-kazino_%28mp3CC.biz%29.mp3" />
@@ -277,6 +342,81 @@
     <Content Include="bin\Debug\music\garbage %28all%29\Валакас\ya_obosralsya-topsoundboard.ru.mp3" />
     <Content Include="bin\Debug\music\garbage %28all%29\Валакас\za_eto_ban-topsoundboard.ru.mp3" />
     <Content Include="bin\Debug\music\garbage %28all%29\ржомба1.mp3" />
+    <Content Include="bin\Debug\music\Mem1\aa.mp3" />
+    <Content Include="bin\Debug\music\Mem1\aga.mp3" />
+    <Content Include="bin\Debug\music\Mem1\alladin-yobannyj-rot-etogo-arabskogo-kazino.mp3" />
+    <Content Include="bin\Debug\music\Mem1\blyad_obema_-_obracshenie.mp3" />
+    <Content Include="bin\Debug\music\Mem1\blyad_obema_-_obracshenie_2.mp3" />
+    <Content Include="bin\Debug\music\Mem1\ERZHAN.mp3" />
+    <Content Include="bin\Debug\music\Mem1\GIMN_UKRAINY-_BASSBOOSTED.mp3" />
+    <Content Include="bin\Debug\music\Mem1\GIMNСССР 20.mp3" />
+    <Content Include="bin\Debug\music\Mem1\GOLOSOVANIE_NAchalos.mp3" />
+    <Content Include="bin\Debug\music\Mem1\idite nahui.mp3" />
+    <Content Include="bin\Debug\music\Mem1\Ispancy.mp3" />
+    <Content Include="bin\Debug\music\Mem1\ispanec_-_smeh.mp3" />
+    <Content Include="bin\Debug\music\Mem1\kazino1.mp3" />
+    <Content Include="bin\Debug\music\Mem1\kazino2.mp3" />
+    <Content Include="bin\Debug\music\Mem1\kazino3.mp3" />
+    <Content Include="bin\Debug\music\Mem1\kosar-otdat1.mp3" />
+    <Content Include="bin\Debug\music\Mem1\kosar-otdat2.mp3" />
+    <Content Include="bin\Debug\music\Mem1\mafioznik_-_bassboosted.mp3" />
+    <Content Include="bin\Debug\music\Mem1\minecraft_hit.mp3" />
+    <Content Include="bin\Debug\music\Mem1\minecraft_Hurt.mp3" />
+    <Content Include="bin\Debug\music\Mem1\namalna.mp3" />
+    <Content Include="bin\Debug\music\Mem1\nikolay-baskov-zolotaya-chasha.mp3" />
+    <Content Include="bin\Debug\music\Mem1\nioce.mp3" />
+    <Content Include="bin\Debug\music\Mem1\omgwow.mp3" />
+    <Content Include="bin\Debug\music\Mem1\pornhub-community-intro.mp3" />
+    <Content Include="bin\Debug\music\Mem1\Pososi.mp3" />
+    <Content Include="bin\Debug\music\Mem1\povar-kruto.mp3" />
+    <Content Include="bin\Debug\music\Mem1\povar-krutoy haha.mp3" />
+    <Content Include="bin\Debug\music\Mem1\povar-krutoy hahara.mp3" />
+    <Content Include="bin\Debug\music\Mem1\sanya.mp3" />
+    <Content Include="bin\Debug\music\Mem1\Ty_ne_pacan.mp3" />
+    <Content Include="bin\Debug\music\Mem1\viydi.mp3" />
+    <Content Include="bin\Debug\music\Mem1\Von_otsyuda_nahuj.mp3" />
+    <Content Include="bin\Debug\music\Mem1\vzyalsya-za-staroe.mp3" />
+    <Content Include="bin\Debug\music\Mem1\why are you gay.mp3" />
+    <Content Include="bin\Debug\music\Mem1\why You are gay.mp3" />
+    <Content Include="bin\Debug\music\Mem1\ВИШНЕВАЯ СЕМЕРКА.mp3" />
+    <Content Include="bin\Debug\music\Mem1\Да ты что БЛяяяяяя.mp3" />
+    <Content Include="bin\Debug\music\Mem1\ДавайПрыгай.mp3" />
+    <Content Include="bin\Debug\music\Mem1\ЗАебись.mp3" />
+    <Content Include="bin\Debug\music\Mem1\МеняЗаменировали.mp3" />
+    <Content Include="bin\Debug\music\Mem1\МеняЗаменировалиДерни.mp3" />
+    <Content Include="bin\Debug\music\Mem1\Минут10154510утра.mp3" />
+    <Content Include="bin\Debug\music\Mem1\МыНезнаемЧтоЭто.mp3" />
+    <Content Include="bin\Debug\music\Mem1\оболочка.mp3" />
+    <Content Include="bin\Debug\music\Mem1\ОтдайСало.mp3" />
+    <Content Include="bin\Debug\music\Mem1\ПолнимочияВсе.mp3" />
+    <Content Include="bin\Debug\music\Mem1\ТыВтираешьМнеДичь.mp3" />
+    <Content Include="bin\Debug\music\Mem1\ХорошаяШутеичка.mp3" />
+    <Content Include="bin\Debug\music\Mem1\ХудФильмСпиздили.mp3" />
+    <Content Include="bin\Debug\music\Mem1\ЦеТакыйТрешак.mp3" />
+    <Content Include="bin\Debug\music\Mem1\Что вы делаете в моём холодильнике.mp3" />
+    <Content Include="bin\Debug\music\Mem2\БачёкБля.mp3" />
+    <Content Include="bin\Debug\music\Mem2\БачёкПотік.mp3" />
+    <Content Include="bin\Debug\music\Mem2\БлядствоРазвратНаркотики.mp3" />
+    <Content Include="bin\Debug\music\Mem2\БудешьСосать.mp3" />
+    <Content Include="bin\Debug\music\Mem2\БыстроБлять.mp3" />
+    <Content Include="bin\Debug\music\Mem2\ВатафакМазафака.mp3" />
+    <Content Include="bin\Debug\music\Mem2\ВставайШашлык.mp3" />
+    <Content Include="bin\Debug\music\Mem2\Гавнооо.mp3" />
+    <Content Include="bin\Debug\music\Mem2\Ешкере.mp3" />
+    <Content Include="bin\Debug\music\Mem2\ЙобаныеЛошади.mp3" />
+    <Content Include="bin\Debug\music\Mem2\ЛохПидр.mp3" />
+    <Content Include="bin\Debug\music\Mem2\МыДолжниОставаться.mp3" />
+    <Content Include="bin\Debug\music\Mem2\НихуяТыБаклажан.mp3" />
+    <Content Include="bin\Debug\music\Mem2\НормальныйБуй.mp3" />
+    <Content Include="bin\Debug\music\Mem2\ПогналиНахуй.mp3" />
+    <Content Include="bin\Debug\music\Mem2\СказочнийДолбоеб.mp3" />
+    <Content Include="bin\Debug\music\Mem2\СтасМыТебяЛюбим.mp3" />
+    <Content Include="bin\Debug\music\Mem2\ТаааШаааа.mp3" />
+    <Content Include="bin\Debug\music\Mem2\Тра.mp3" />
+    <Content Include="bin\Debug\music\Mem2\ТыПоехавший.mp3" />
+    <Content Include="bin\Debug\music\Mem2\ТычеДуракчтоли.mp3" />
+    <Content Include="bin\Debug\music\Mem2\ЧеСпим.mp3" />
+    <Content Include="bin\Debug\music\Mem2\Япидарас.mp3" />
     <Content Include="bin\Debug\music\valakas1\ban.mp3" />
     <Content Include="bin\Debug\music\valakas1\ban_nahui-2.mp3" />
     <Content Include="bin\Debug\music\valakas1\blyat_zaebala_hueta.mp3" />
@@ -286,11 +426,20 @@
     <Content Include="bin\Debug\music\valakas1\da_zatknis_ty_suka.mp3" />
     <Content Include="bin\Debug\music\valakas1\delo_sdelano.mp3" />
     <Content Include="bin\Debug\music\valakas1\ebanutsya_prosto.mp3" />
+    <Content Include="bin\Debug\music\valakas1\GaldValakas Vse dolboeb Ya sdec6.mp3" />
     <Content Include="bin\Debug\music\valakas1\glad-valakas--kto-ya-eblan.mp3" />
     <Content Include="bin\Debug\music\valakas1\glad-valakas--nahuy-ty-napadaesh.mp3" />
     <Content Include="bin\Debug\music\valakas1\glad-valakas-godzila-3-4-5-0-d.mp3" />
     <Content Include="bin\Debug\music\valakas1\glad-valakas-rage.mp3" />
     <Content Include="bin\Debug\music\valakas1\glad-valakas-ta-za-sho.mp3" />
+    <Content Include="bin\Debug\music\valakas1\GladValakas Ga ga.mp3" />
+    <Content Include="bin\Debug\music\valakas1\GladValakas yasno_hueta.mp3" />
+    <Content Include="bin\Debug\music\valakas1\GladValakas yebat6.mp3" />
+    <Content Include="bin\Debug\music\valakas1\GladValakas Zavadi.mp3" />
+    <Content Include="bin\Debug\music\valakas1\GladValakas ZavadiGrigiy.mp3" />
+    <Content Include="bin\Debug\music\valakas1\GladValakas ZavadiGrisha.mp3" />
+    <Content Include="bin\Debug\music\valakas1\GladValakas ZavadiSere.mp3" />
+    <Content Include="bin\Debug\music\valakas1\GladValasTakidem_po_nekselu.mp3" />
     <Content Include="bin\Debug\music\valakas1\glad_valakas_-_da_da_ja_gagagagagaggaaaa.mp3" />
     <Content Include="bin\Debug\music\valakas1\Glad_Valakas_-_ETO_BAN.mp3" />
     <Content Include="bin\Debug\music\valakas1\glad_valakas_-_godzilla.mp3" />

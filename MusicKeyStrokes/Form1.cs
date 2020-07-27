@@ -12,44 +12,45 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Drawing.Text;
+using MusicKeyStrokes.Interfaces;
+using MusicKeyStrokes.Develop;
 
 namespace MusicKeyStrokes
 {
     public partial class Form1 : Form
     {
-        private readonly WatcherHotKeys watcherHotKeys;
+        private readonly IAudio audio;
+        private Commander commander { get; set; }
 
-        public Form1()
-        {
+        public Form1(IAudio audio)
+        {      
             InitializeComponent();
-            watcherHotKeys = new WatcherHotKeys();
-            RegisterHotKeys();
-        }
-
-        [DllImport("user32.dll")]
-        private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
-
-        private void RegisterHotKeys()
-        {
-            for (int i = 0; i < watcherHotKeys.MYACTION_HOTKEY_IDS.Length; i++)
-            {
-                RegisterHotKey(this.Handle, watcherHotKeys.MYACTION_HOTKEY_IDS[i], 1, (int)WatcherHotKeys.keys[i]);
-            }
-        }
-
-        protected override void WndProc(ref Message m)
-        {  
-            if (m.Msg == 0x0312)//if alt
-            {
-                int wParam = m.WParam.ToInt32();
-                watcherHotKeys.WatchKey(wParam);
-            }
-            base.WndProc(ref m);
+            this.audio = audio;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            HotKeyManager.RegisterAudioKeys(KeyModifiers.Alt);
+            HotKeyManager.RegisterCommandKeys(KeyModifiers.Shift);
+            HotKeyManager.HotKeyPressed += new EventHandler<HotKeyEventArgs>(HotKeyManager_HotKeyPressed);
+            this.commander = new Commander();
+            //LoadMusic();
         }
-        
+
+        void HotKeyManager_HotKeyPressed(object sender, HotKeyEventArgs e)
+        {
+            if (e.Modifiers == KeyModifiers.Alt)
+                audio.Play(e.Key);
+            else if(e.Modifiers == KeyModifiers.Shift)
+            {
+                commander.ExecuteCommand(e.Key);
+            }
+        }
+
+        private void LoadMusic()
+        {
+            var result = LoadSoundLayout.LoadMusic(LayoutSound.Gachi, @".\music\Gachi\");
+        }
+
     }
 }

@@ -4,6 +4,8 @@ using System.Linq;
 using AudioSwitcher.AudioApi.CoreAudio;
 using MusicKeyStrokes.Models;
 using System.Windows.Forms;
+using MusicKeyStrokes.Interfaces;
+using System;
 
 namespace MusicKeyStrokes
 {
@@ -35,8 +37,9 @@ namespace MusicKeyStrokes
         {
             listAudio = new List<KeyModel>();
             LoadAudioModels();
-            layoutSound = LayoutSound.Valakas1;
+            layoutSound = LayoutSound.Anime1;
             this.defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
+            waveOutDevice = new WaveOut();
         }
 
         private void LoadAudioModels()
@@ -77,7 +80,7 @@ namespace MusicKeyStrokes
                 LoopPlay(path);
                 return;
             }
-            waveOutDevice = new WaveOut();
+          //  waveOutDevice = new WaveOut();
             audioFileReader = new AudioFileReader(path);
             waveOutDevice.Init(audioFileReader);
             waveOutDevice.Play();
@@ -85,39 +88,42 @@ namespace MusicKeyStrokes
 
         private void LoopPlay(string path)
         {
-            //if (waveOut?.PlaybackState == PlaybackState.Playing && !loop)
-            //    LoopStop();
             this.reader = new Mp3FileReader(path);
             LoopStream loopStream = new LoopStream(reader);
             this.waveOut = new WaveOut();
             this.waveOut.Init(loopStream);
             this.waveOut.Play();
-            if (loop)
-                waweOuts.Add(new WaveOuts { reader = reader, waveOut = waveOut });
+            waweOuts.Add(new WaveOuts { reader = reader, waveOut = waveOut });
         }
 
         private void LoopStop()
         {
-            this.reader.Dispose();
-            this.waveOut.Stop();
-            this.waveOut.Dispose();
-            this.waveOutDevice?.Stop();
-            this.audioFileReader?.Dispose();
-            this.waveOutDevice?.Dispose();
-            this.waweOuts = null;
+            foreach (var item in waweOuts)
+            {
+                item.reader.Dispose();
+                item.waveOut.Stop();
+                item.waveOut.Dispose();
+
+            }
+            waweOuts.Clear();
         }
 
         public void Stop()
         {
             this.waveOutDevice.Stop();
             this.audioFileReader.Dispose();
-            try
+            this.waveOutDevice.Dispose();
+            if (loop)
             {
-                this.waveOutDevice.Dispose();//These plase create many error 
+                LoopStop();
             }
-            catch
-            {
-            }
+            //try
+            //{
+            //    this.waveOutDevice.Dispose();//These plase create many error 
+            //}
+            //catch
+            //{
+            //}
         }
 
         public void SetVolume(int value)
@@ -133,9 +139,17 @@ namespace MusicKeyStrokes
             this.defaultPlaybackDevice.Volume += value;
         }
 
-        public void StopAudioBeforPlaying(bool value)
+        public void StopAudioBeforPlaying()
         {
-            this.stopStatus = value;
+            if (stopStatus)
+            {
+                stopStatus = false;
+            }
+            else
+            {
+                stopStatus = true;
+            }
+            
         }
 
         public void ChangeLayoutSound(LayoutSound layout)
@@ -149,6 +163,15 @@ namespace MusicKeyStrokes
             if (this.loop)
                 waweOuts = new List<WaveOuts>();
             else LoopStop();
+        }
+
+        public bool PLayRand()
+        {
+            Random rand = new Random();
+            int number = rand.Next(listAudio.Count);
+            var selectPathMusic = listAudio[number];
+            Play(selectPathMusic.PathSound);
+            return true;
         }
 
         class WaveOuts
