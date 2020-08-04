@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MusicKeyStrokes.Commands;
+using MusicKeyStrokes.CommandsTelegram;
 using MusicKeyStrokes.Interfaces;
+using MusicKeyStrokes.Telegram;
 using SimpleInjector;
 
 namespace MusicKeyStrokes
@@ -22,6 +24,8 @@ namespace MusicKeyStrokes
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             CreateSimpleIngejector();
+            TelegramWatcher watcher = new TelegramWatcher();
+            watcher.WatchTelegram();
             Application.Run(container.GetInstance<Form1>());
         }
 
@@ -36,8 +40,8 @@ namespace MusicKeyStrokes
                     typeof(CommandAudioStop),
                     typeof(CommandAudioPlayRandMusic),
                     typeof(CommandAudioChangeLayout));
-            
-            
+            container.Collection.Register<ACommandTelegram>(
+                   typeof(CommandTelegramRandom));
             container.Verify();
         }
     }
