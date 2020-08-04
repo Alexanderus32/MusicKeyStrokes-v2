@@ -41,7 +41,8 @@ namespace MusicKeyStrokes
                     typeof(CommandAudioPlayRandMusic),
                     typeof(CommandAudioChangeLayout));
             container.Collection.Register<ACommandTelegram>(
-                   typeof(CommandTelegramRandom));
+                   typeof(CommandTelegramRandom),
+                   typeof(CommandTelegramS));
             container.Verify();
         }
     }
