@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 using System.Drawing.Text;
 using MusicKeyStrokes.Interfaces;
 using MusicKeyStrokes.Develop;
+using MusicKeyStrokes.Telegram;
 
 namespace MusicKeyStrokes
 {
@@ -34,6 +35,7 @@ namespace MusicKeyStrokes
             HotKeyManager.RegisterCommandKeys(KeyModifiers.Shift);
             HotKeyManager.HotKeyPressed += new EventHandler<HotKeyEventArgs>(HotKeyManager_HotKeyPressed);
             this.commander = new Commander();
+            TelegramWatcher watcher = new TelegramWatcher();
             //LoadMusic();
         }
 

@@ -1,10 +1,10 @@
-﻿using MusicKeyStrokes.Interfaces;
-using System;
+﻿using MusicKeyStrokes.Commands;
+using MusicKeyStrokes.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telegram.Bot;
+using Message = Telegram.Bot.Types ;
 
 namespace MusicKeyStrokes
 {
@@ -17,12 +17,14 @@ namespace MusicKeyStrokes
 
         private List<Command> commands;
 
+        private  TelegramBotClient client;
+
         private void InitializeCommand()
         {
             commands = new List<Command>();
             commands.AddRange(Program.container.GetAllInstances<Command>().ToList());
+            this.client = TelegramClient.Get();
         }
-
         public void ExecuteCommand(Keys key)
         {
             string keyName = key.ToString();
@@ -35,6 +37,22 @@ namespace MusicKeyStrokes
             {
                 commands.FirstOrDefault(x => x.Name == Keys.D1.ToString()).Execute(keyName);
             }
+        }
+        public void ExecuteCommandTelegram(Message.Message message)
+        {
+            var commandExist = commands.FirstOrDefault(x => x.Name.StartsWith(message.Text));
+            string answerTelegram = "Don't found command";
+            if (commandExist != null)
+            {
+                answerTelegram = commandExist.Execute(message.Text);
+            }
+            else if(message.Text.StartsWith(".")) 
+            {
+                IAudio audio = new Audio();
+                CommandPlayMusic command = new CommandPlayMusic(audio);
+                answerTelegram = command.Execute(message.Text);
+            }
+            client.SendTextMessageAsync(message.Chat.Id, answerTelegram);
         }
 
     }

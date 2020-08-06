@@ -67,6 +67,19 @@ namespace MusicKeyStrokes
             }
             Play(selectPathMusic.PathSound);
         }
+        public void Play(Keys idKey, LayoutSound layoutSoundIN)
+        {
+            KeyModel selectPathMusic = listAudio.FirstOrDefault(x => x.KeyValue == idKey && x.Layout == layoutSoundIN);
+            if (selectPathMusic == null)
+            {
+                selectPathMusic = listAudio.FirstOrDefault(x => x.NameSound == defaultNameSoundNoAction);
+                if (selectPathMusic == null)
+                {
+                    return;
+                }
+            }
+            Play(selectPathMusic.PathSound);
+        }
 
         private void Play(string path)
         {
@@ -165,7 +178,7 @@ namespace MusicKeyStrokes
             else LoopStop();
         }
 
-        public bool PLayRand()
+        public bool PlayRand()
         {
             Random rand = new Random();
             int number = rand.Next(listAudio.Count);

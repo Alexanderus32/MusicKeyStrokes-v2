@@ -74,12 +74,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audio.cs" />
-    <Compile Include="CommandsTelegram\CommandTelegramRandom.cs" />
-    <Compile Include="CommandsTelegram\CommandTelegramS.cs" />
-    <Compile Include="CommandsTelegram\Image.cs" />
+    <Compile Include="Commands\CommandGetCommand.cs" />
+    <Compile Include="Commands\CommandGetComputerName.cs" />
+    <Compile Include="Commands\CommandPlayMusic.cs" />
+    <Compile Include="Commands\CommandsImageSayber.cs" />
+    <Compile Include="Commands\CommandTelegramWatcherOff.cs" />
+    <Compile Include="Models\Image.cs" />
     <Compile Include="Telegram\TelegramClient.cs" />
     <Compile Include="Commander.cs" />
-    <Compile Include="CommandsTelegram\ACommandTelegram.cs" />
     <Compile Include="Commands\CommandAudioChangeLayout.cs" />
     <Compile Include="Commands\CommandAudioPauseBeforPlaying.cs" />
     <Compile Include="Commands\CommandAudioStop.cs" />
@@ -102,7 +104,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Telegram\TelegramSetings.cs" />
-    <Compile Include="Telegram\TelegramComander.cs" />
     <Compile Include="Telegram\TelegramWatcher.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

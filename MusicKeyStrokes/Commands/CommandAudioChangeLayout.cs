@@ -1,10 +1,6 @@
 ﻿using MusicKeyStrokes.Interfaces;
 using MusicKeyStrokes.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MusicKeyStrokes.Commands
@@ -15,6 +11,8 @@ namespace MusicKeyStrokes.Commands
 
         public override string Name { get; } = Keys.D1.ToString();
 
+        public override string Description => "Command change layout.Don't work in Telegram";
+
         private readonly IAudio audio;
 
         public CommandAudioChangeLayout(IAudio audio)
@@ -22,12 +20,13 @@ namespace MusicKeyStrokes.Commands
             this.audio = audio;
         }
 
-        public override void Execute(string payload)
+        public override string Execute(string payload)
         {
             Enum.TryParse(payload, out Keys key);
             int index = Array.IndexOf(layoutKeys, key);
             LayoutSound layout = (LayoutSound)index;
             audio.ChangeLayoutSound(layout);
+            return "ChangeLayout Ok";
         }
     }
 }
