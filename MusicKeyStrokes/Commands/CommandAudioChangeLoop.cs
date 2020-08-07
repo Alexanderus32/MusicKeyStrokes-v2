@@ -10,6 +10,8 @@ namespace MusicKeyStrokes.Commands
 
         public override string Description => "Change status Audio Loop";
 
+        public override string NameTelegram => "/Loop";
+
         private readonly IAudio audio;
 
         public CommandAudioChangeLoop(IAudio audio)

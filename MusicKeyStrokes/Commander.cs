@@ -1,10 +1,8 @@
-﻿using MusicKeyStrokes.Commands;
-using MusicKeyStrokes.Interfaces;
+﻿using MusicKeyStrokes.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Telegram.Bot;
-using Message = Telegram.Bot.Types ;
+
 
 namespace MusicKeyStrokes
 {
@@ -17,13 +15,10 @@ namespace MusicKeyStrokes
 
         private List<Command> commands;
 
-        private  TelegramBotClient client;
-
         private void InitializeCommand()
         {
             commands = new List<Command>();
             commands.AddRange(Program.container.GetAllInstances<Command>().ToList());
-            this.client = TelegramClient.Get();
         }
         public void ExecuteCommand(Keys key)
         {
@@ -38,21 +33,21 @@ namespace MusicKeyStrokes
                 commands.FirstOrDefault(x => x.Name == Keys.D1.ToString()).Execute(keyName);
             }
         }
-        public void ExecuteCommandTelegram(Message.Message message)
+        public string ExecuteCommandTelegram(string textTelegramMessage)
         {
-            var commandExist = commands.FirstOrDefault(x => x.Name.StartsWith(message.Text));
+            // var commandExist = commands.FirstOrDefault(x => x.NameTelegram.ToLower().Contains(textTelegramMessage.ToLower()));
+            var commandExist = commands.FirstOrDefault(x=>textTelegramMessage.ToLower().Contains(x.NameTelegram.ToLower()));
             string answerTelegram = "Don't found command";
             if (commandExist != null)
             {
-                answerTelegram = commandExist.Execute(message.Text);
+                answerTelegram = commandExist.Execute(textTelegramMessage);
             }
-            else if(message.Text.StartsWith(".")) 
+            else if(textTelegramMessage.Length<=2)
             {
-                IAudio audio = new Audio();
-                CommandPlayMusic command = new CommandPlayMusic(audio);
-                answerTelegram = command.Execute(message.Text);
+                commandExist = commands.FirstOrDefault(x=>x.NameTelegram=="/Music");
+                answerTelegram = commandExist.Execute(textTelegramMessage);
             }
-            client.SendTextMessageAsync(message.Chat.Id, answerTelegram);
+            return answerTelegram;
         }
 
     }

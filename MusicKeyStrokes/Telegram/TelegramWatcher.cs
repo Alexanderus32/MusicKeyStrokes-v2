@@ -7,7 +7,7 @@ namespace MusicKeyStrokes.Telegram
 {
     class TelegramWatcher
     {
-        private static TelegramBotClient client;
+        private TelegramBotClient client;
 
         private Commander commander { get; set; }
 
@@ -34,13 +34,15 @@ namespace MusicKeyStrokes.Telegram
         private void BotOnMessageReceived(object sender, MessageEventArgs messageEventArgs)
         {
 
-            commander.ExecuteCommandTelegram(messageEventArgs.Message);
+            string answerTelegram = commander.ExecuteCommandTelegram(messageEventArgs.Message.Text);
+
+            client.SendTextMessageAsync(messageEventArgs.Message.Chat.Id, answerTelegram);
         }
 
         public void StopRecivetTelegram()
         {
             client.StopReceiving();
-            MyTimer = new System.Timers.Timer(20000);
+            MyTimer = new System.Timers.Timer(30000);
             MyTimer.Elapsed += RecivedTime;
         }
 

@@ -11,7 +11,9 @@ namespace MusicKeyStrokes.Commands
 
         public override string Name { get; } = Keys.D1.ToString();
 
-        public override string Description => "Command change layout.Don't work in Telegram";
+        public override string Description => "Command change layout.Write -/ChangeLayout D1";
+
+        public override string NameTelegram => "/ChangeLayout";
 
         private readonly IAudio audio;
 
@@ -22,6 +24,7 @@ namespace MusicKeyStrokes.Commands
 
         public override string Execute(string payload)
         {
+            payload = payload.Replace(NameTelegram, "").Replace(" ", "");
             Enum.TryParse(payload, out Keys key);
             int index = Array.IndexOf(layoutKeys, key);
             LayoutSound layout = (LayoutSound)index;

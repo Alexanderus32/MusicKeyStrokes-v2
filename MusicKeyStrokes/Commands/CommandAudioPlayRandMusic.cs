@@ -20,6 +20,8 @@ namespace MusicKeyStrokes.Commands
 
         public override string Description => "Random music";
 
+        public override string NameTelegram => "/Random";
+
         public override string Execute(string payload)
         {
             audio.PlayRand();

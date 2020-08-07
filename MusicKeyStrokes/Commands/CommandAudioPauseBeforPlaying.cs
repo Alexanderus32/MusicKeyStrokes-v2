@@ -12,7 +12,9 @@ namespace MusicKeyStrokes.Commands
     {
         public override string Name { get; }= Keys.D.ToString();
 
-        public override string Description => "Change property PauseBeforPlaying in Audio";
+        public override string Description => "Change status PauseBeforPlaying in Audio";
+
+        public override string NameTelegram => "/PauseBeforPlaying";
 
         private readonly IAudio audio;
 

@@ -7,9 +7,11 @@ namespace MusicKeyStrokes.Commands
 {
     class CommandPlayMusic : Command
     {
-        public override string Name => ".";
+        public override string Name => "Music play";
 
         public override string Description => "Play music. Example";
+
+        public override string NameTelegram => "/Music";
 
         private IAudio audio;
 
@@ -20,21 +22,28 @@ namespace MusicKeyStrokes.Commands
 
         public override string Execute(string payload)
         {
-            try
+            payload = payload.Replace(NameTelegram, "").Replace(" ","");
+            if (payload.Length == 0)
             {
-                char layoutCharMusic = payload[1];
-                char KeyCharMusic = payload.ToUpper()[2];
-                int index = Int32.Parse(layoutCharMusic.ToString());
-                LayoutSound layoutSound = (LayoutSound)index;
-                audio.Play((Keys)KeyCharMusic, layoutSound);
-                return "Music Ok";
+                audio.PlayRand();
+                return "Music Random Ok. Chose music, plese";
             }
-            catch (Exception)
+            if (payload.Length==1)
             {
-
-                return "Music ops";
+                audio.Play((Keys)payload.ToUpper().ToCharArray()[0]);
+                return "Music OK";
             }
-            
+            else
+            {
+                int indexLayout;
+                bool IntLayout = Int32.TryParse(payload[0].ToString(), out indexLayout);
+                if (IntLayout)
+                {
+                    audio.Play((Keys)payload.ToUpper().ToCharArray()[1], (LayoutSound)indexLayout);
+                    return "Music OK";
+                }
+            }
+            return "Music Don't found LayoutSound";
         }
     }
 }

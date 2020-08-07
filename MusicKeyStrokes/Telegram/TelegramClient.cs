@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telegram.Bot;
+﻿using Telegram.Bot;
 
 namespace MusicKeyStrokes
 {
-     static class TelegramClient
+    static class TelegramClient
     {
-        private static  TelegramBotClient  clientTelegram;
+        private static TelegramBotClient clientTelegram;
 
+        static string statics = "static";
          static public TelegramBotClient Get()
         {
-            if (clientTelegram!=null)
+            if (clientTelegram != null)
             {
                 return clientTelegram;
             }

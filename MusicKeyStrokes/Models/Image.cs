@@ -51,4 +51,13 @@ namespace MusicKeyStrokes.Models
         [JsonProperty("tags")]
         public string Tags;
     }
+
+    public class YandereTags
+    {
+        [JsonProperty("id")]
+        public int ID;
+
+        [JsonProperty("name")]
+        public string Name;
+    }
 }

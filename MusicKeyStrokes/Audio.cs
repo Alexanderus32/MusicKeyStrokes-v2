@@ -123,9 +123,9 @@ namespace MusicKeyStrokes
 
         public void Stop()
         {
-            this.waveOutDevice.Stop();
-            this.audioFileReader.Dispose();
-            this.waveOutDevice.Dispose();
+            this.waveOutDevice?.Stop();
+            this.audioFileReader?.Dispose();
+            this.waveOutDevice?.Dispose();
             if (loop)
             {
                 LoopStop();
