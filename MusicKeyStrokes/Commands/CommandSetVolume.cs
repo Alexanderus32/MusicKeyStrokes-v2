@@ -9,11 +9,11 @@ namespace MusicKeyStrokes.Commands
 {
     class CommandSetVolume : Command
     {
-        public override string Name => throw new NotImplementedException();
+        public override string Name => "SetVolume";
 
-        public override string NameTelegram => "/Set volume";
+        public override string NameTelegram => "/SetVolume";
 
-        public override string Description => "Set volume 0-100";
+        public override string Description => "Set computer(\"+\") or application volume 0-100";
 
         private readonly IAudio audio;
 
@@ -24,13 +24,22 @@ namespace MusicKeyStrokes.Commands
 
         public override string Execute(string payload)
         {
-            payload = payload.Replace(NameTelegram, "").Replace(" ", "");
+            bool choseDevise = payload.Contains("+");// true = computer Volume 
+            payload = payload.Substring(NameTelegram.Length).Replace(" ", "").Replace("+","");
             int volume;
             bool IntLayout = Int32.TryParse(payload, out volume);
             if (IntLayout)
             {
-                audio.SetVolume(volume);
-                return "Change volume Ok";
+                if (choseDevise)
+                {
+                    audio.SetVolume(volume);
+                    return "Change computer volume Ok";
+                }
+                else
+                {
+                    audio.ChangeVolume(volume);
+                    return "Change application volume Ok";
+                }
             }
             return "Change volume Error";
         }

@@ -1,4 +1,6 @@
 ﻿using MusicKeyStrokes.Interfaces;
+using MusicKeyStrokes.Telegram;
+using System;
 
 namespace MusicKeyStrokes.Commands
 {
@@ -12,7 +14,10 @@ namespace MusicKeyStrokes.Commands
 
         public override string Execute(string payload)
         {
-            return "Don't work";
+            Form1.StopRecivetTelegram();
+            string domainname = Environment.UserDomainName;
+            string UserName = Environment.UserName;
+            return $"{domainname} {UserName} пВышел погулять на 30 секунд";
         }
     }
 }

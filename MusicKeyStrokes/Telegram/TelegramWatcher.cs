@@ -11,7 +11,7 @@ namespace MusicKeyStrokes.Telegram
 
         private Commander commander { get; set; }
 
-        private static System.Timers.Timer MyTimer { get; set; }
+        private  System.Timers.Timer MyTimer { get; set; }
 
         public TelegramWatcher()
         {
@@ -43,12 +43,14 @@ namespace MusicKeyStrokes.Telegram
         {
             client.StopReceiving();
             MyTimer = new System.Timers.Timer(30000);
+            MyTimer.AutoReset = true;
+            MyTimer.Enabled = true;
             MyTimer.Elapsed += RecivedTime;
         }
 
         private void RecivedTime(object sender, ElapsedEventArgs e)
         {
-            client.StartReceiving(new UpdateType[] { UpdateType.Message });
+            RecivedTelegram();
             MyTimer.Close();
         }
 

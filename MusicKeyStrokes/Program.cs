@@ -34,9 +34,13 @@ namespace MusicKeyStrokes
                     typeof(CommandAudioPlayRandMusic),
                     typeof(CommandGetCommand),
                     typeof(CommandPlayMusic),
-                    typeof(CommandsImageSaber),
+                    typeof(CommandImageSaber),
                     typeof(CommandGetComputerName),
                     typeof(CommandSetVolume),
+                    typeof(CommandTelegramWatcherOff),
+                    typeof(CommandUnregisterHotKey),
+                    typeof(CommandMessageBox),
+                    typeof(CommandAudioOutMicro),
                     typeof(CommandAudioChangeLayout));
             container.Verify();
         }

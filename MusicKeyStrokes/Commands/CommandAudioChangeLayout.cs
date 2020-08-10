@@ -11,7 +11,7 @@ namespace MusicKeyStrokes.Commands
 
         public override string Name { get; } = Keys.D1.ToString();
 
-        public override string Description => "Command change layout.Write -/ChangeLayout D1";
+        public override string Description => "Command change layout.Write -commandName D{1}";
 
         public override string NameTelegram => "/ChangeLayout";
 
@@ -24,7 +24,8 @@ namespace MusicKeyStrokes.Commands
 
         public override string Execute(string payload)
         {
-            payload = payload.Replace(NameTelegram, "").Replace(" ", "");
+            payload = payload.ToUpper();
+            payload = payload.Replace(NameTelegram.ToUpper(), "").Replace(" ", "");
             Enum.TryParse(payload, out Keys key);
             int index = Array.IndexOf(layoutKeys, key);
             LayoutSound layout = (LayoutSound)index;

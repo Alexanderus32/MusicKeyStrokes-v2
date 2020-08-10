@@ -22,7 +22,8 @@ namespace MusicKeyStrokes.Commands
 
         public override string Execute(string payload)
         {
-            payload = payload.Replace(NameTelegram, "").Replace(" ","");
+            payload = payload.Replace(NameTelegram.ToUpper(),"").Replace(" ", "");
+
             if (payload.Length == 0)
             {
                 audio.PlayRand();
@@ -30,7 +31,7 @@ namespace MusicKeyStrokes.Commands
             }
             if (payload.Length==1)
             {
-                audio.Play((Keys)payload.ToUpper().ToCharArray()[0]);
+                audio.Play((Keys)payload.ToCharArray()[0]);
                 return "Music OK";
             }
             else
@@ -39,7 +40,7 @@ namespace MusicKeyStrokes.Commands
                 bool IntLayout = Int32.TryParse(payload[0].ToString(), out indexLayout);
                 if (IntLayout)
                 {
-                    audio.Play((Keys)payload.ToUpper().ToCharArray()[1], (LayoutSound)indexLayout);
+                    audio.Play((Keys)payload.ToCharArray()[1], (LayoutSound)indexLayout);
                     return "Music OK";
                 }
             }

@@ -23,6 +23,8 @@ namespace MusicKeyStrokes
         private readonly IAudio audio;
         private Commander commander { get; set; }
 
+        private static TelegramWatcher watcher;
+
         public Form1(IAudio audio)
         {      
             InitializeComponent();
@@ -31,11 +33,10 @@ namespace MusicKeyStrokes
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            HotKeyManager.RegisterAudioKeys(KeyModifiers.Alt);
-            HotKeyManager.RegisterCommandKeys(KeyModifiers.Shift);
+            HotKeyManager.RegisterAllKeys();
             HotKeyManager.HotKeyPressed += new EventHandler<HotKeyEventArgs>(HotKeyManager_HotKeyPressed);
             this.commander = new Commander();
-            TelegramWatcher watcher = new TelegramWatcher();
+            watcher = new TelegramWatcher();
             //LoadMusic();
         }
 
@@ -48,6 +49,11 @@ namespace MusicKeyStrokes
                 commander.ExecuteCommand(e.Key);
             }
         }
+
+        public static void StopRecivetTelegram()
+        {
+            watcher.StopRecivetTelegram();
+        } 
 
         private void LoadMusic()
         {

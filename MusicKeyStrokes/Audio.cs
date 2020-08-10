@@ -149,7 +149,10 @@ namespace MusicKeyStrokes
 
         public void ChangeVolume(int value)
         {
-            this.defaultPlaybackDevice.Volume += value;
+            if (value >= 0 && value <= 100)
+            {
+                this.waveOutDevice.Volume = (float)value / 100;
+            }
         }
 
         public void StopAudioBeforPlaying()
@@ -192,6 +195,18 @@ namespace MusicKeyStrokes
             public Mp3FileReader reader { get; set; }
 
             public WaveOut waveOut { get; set; }
+        }
+
+        public string AudioMicroOut()
+        {
+            int waveInDevices = WaveIn.DeviceCount;
+            string stjjg = null;
+            for (int waveInDevice = 0; waveInDevice < waveInDevices; waveInDevice++)
+            {
+                WaveInCapabilities deviceInfo = WaveIn.GetCapabilities(waveInDevice);
+                stjjg += $"Device {waveInDevice}: {deviceInfo.ProductName}, {deviceInfo.Channels} channels";
+            }
+            return stjjg;
         }
     }
 }
