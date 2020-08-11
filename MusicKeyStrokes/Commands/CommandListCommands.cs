@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MusicKeyStrokes.Commands
 {
-    class CommandGetCommand : Command
+    class CommandListCommands : Command
     {
         public override string Name => "command";
 

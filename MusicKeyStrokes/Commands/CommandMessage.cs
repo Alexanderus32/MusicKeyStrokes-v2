@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace MusicKeyStrokes.Commands
 {
-    class CommandMessageBox : Command
+    class CommandMessage : Command
     {
         public override string Name => "MessageBox";
 
