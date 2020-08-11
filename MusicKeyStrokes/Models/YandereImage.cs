@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace MusicKeyStrokes.Models
 {
-    class Image
+    public class YandereImage
     {
         [JsonProperty("id")]
         public int ID;

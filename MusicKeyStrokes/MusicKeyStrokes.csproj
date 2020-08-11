@@ -80,10 +80,10 @@
     <Compile Include="Commands\CommandListCommands.cs" />
     <Compile Include="Commands\CommandGetComputerName.cs" />
     <Compile Include="Commands\CommandPlayMusic.cs" />
-    <Compile Include="Commands\CommandImageSaber.cs" />
+    <Compile Include="Commands\CommandArt.cs" />
     <Compile Include="Commands\CommandTelegramWatcherOff.cs" />
     <Compile Include="Commands\CommandUnregisterHotKey.cs" />
-    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\YandereImage.cs" />
     <Compile Include="Telegram\TelegramClient.cs" />
     <Compile Include="Commander.cs" />
     <Compile Include="Commands\CommandAudioChangeLayout.cs" />
@@ -109,6 +109,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Telegram\TelegramSetings.cs" />
     <Compile Include="Telegram\TelegramWatcher.cs" />
+    <Compile Include="Yandere\YandereClient.cs" />
+    <Compile Include="Yandere\YandereRating.cs" />
+    <Compile Include="Yandere\YandereTag.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

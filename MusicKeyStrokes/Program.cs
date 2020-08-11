@@ -34,7 +34,7 @@ namespace MusicKeyStrokes
                     typeof(CommandAudioPlayRandMusic),
                     typeof(CommandListCommands),
                     typeof(CommandPlayMusic),
-                    typeof(CommandImageSaber),
+                    typeof(CommandArt),
                     typeof(CommandGetComputerName),
                     typeof(CommandSetVolume),
                     typeof(CommandTelegramWatcherOff),

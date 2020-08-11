@@ -35,8 +35,10 @@ namespace MusicKeyStrokes.Telegram
         {
 
             string answerTelegram = commander.ExecuteCommandTelegram(messageEventArgs.Message.Text);
-
-            client.SendTextMessageAsync(messageEventArgs.Message.Chat.Id, answerTelegram);
+            if(answerTelegram.Contains("https://files"))
+                client.SendPhotoAsync(messageEventArgs.Message.Chat.Id, answerTelegram, replyToMessageId: messageEventArgs.Message.MessageId);
+            else
+            client.SendTextMessageAsync(messageEventArgs.Message.Chat.Id, answerTelegram, replyToMessageId: messageEventArgs.Message.MessageId);
         }
 
         public void StopRecivetTelegram()
@@ -53,17 +55,6 @@ namespace MusicKeyStrokes.Telegram
             RecivedTelegram();
             MyTimer.Close();
         }
-
-        //public static void SecondAct(Object source, System.Timers.ElapsedEventArgs e)
-        //{
-        ////    if (!Status)
-        ////    {
-        //        client.StartReceiving(new UpdateType[] { UpdateType.Message });
-        //        Thread.Sleep(100);
-        //    //    if (!Status)
-        //    //        client.StopReceiving();
-        //    //}
-        //}
 
     }
 }

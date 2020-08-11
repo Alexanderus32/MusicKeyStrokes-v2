@@ -22,6 +22,7 @@ namespace MusicKeyStrokes.Interfaces
         void Loop();
 
         void StopAudioBeforPlaying();
+
         string AudioMicroOut();
     }
 }

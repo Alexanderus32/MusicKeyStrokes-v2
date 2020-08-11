@@ -116,7 +116,6 @@ namespace MusicKeyStrokes
                 item.reader.Dispose();
                 item.waveOut.Stop();
                 item.waveOut.Dispose();
-
             }
             waweOuts.Clear();
         }
@@ -125,18 +124,19 @@ namespace MusicKeyStrokes
         {
             this.waveOutDevice?.Stop();
             this.audioFileReader?.Dispose();
-            this.waveOutDevice?.Dispose();
+            try
+            {
+                this.waveOutDevice?.Dispose();  //These plase create many error 
+            }
+            catch
+            {
+                //Need debagged if this have error
+            }
+          
             if (loop)
             {
                 LoopStop();
             }
-            //try
-            //{
-            //    this.waveOutDevice.Dispose();//These plase create many error 
-            //}
-            //catch
-            //{
-            //}
         }
 
         public void SetVolume(int value)
