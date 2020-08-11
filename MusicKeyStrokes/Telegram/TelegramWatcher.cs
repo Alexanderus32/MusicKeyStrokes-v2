@@ -43,7 +43,7 @@ namespace MusicKeyStrokes.Telegram
         public void StopRecivetTelegram()
         {
             client.StopReceiving();
-            MyTimer = new Timer(30000);
+            MyTimer = new Timer(80000);
             MyTimer.AutoReset = true;
             MyTimer.Enabled = true;
             MyTimer.Elapsed += RecivedTime;
