@@ -33,7 +33,6 @@ namespace MusicKeyStrokes.Telegram
 
         private void BotOnMessageReceived(object sender, MessageEventArgs messageEventArgs)
         {
-
             string answerTelegram = commander.ExecuteCommandTelegram(messageEventArgs.Message.Text);
             if(answerTelegram.Contains("https://files"))
                 client.SendPhotoAsync(messageEventArgs.Message.Chat.Id, answerTelegram, replyToMessageId: messageEventArgs.Message.MessageId);
@@ -44,7 +43,7 @@ namespace MusicKeyStrokes.Telegram
         public void StopRecivetTelegram()
         {
             client.StopReceiving();
-            MyTimer = new System.Timers.Timer(30000);
+            MyTimer = new Timer(30000);
             MyTimer.AutoReset = true;
             MyTimer.Enabled = true;
             MyTimer.Elapsed += RecivedTime;
