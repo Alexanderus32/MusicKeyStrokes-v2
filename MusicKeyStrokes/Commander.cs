@@ -45,7 +45,7 @@ namespace MusicKeyStrokes
             }
             else if(textTelegramMessage.Length <= 2)
             {
-                commandExist = commands.FirstOrDefault(x=>x.NameTelegram=="/Music");
+                commandExist = commands.FirstOrDefault(x=>x.NameTelegram=="/music");
                 answerTelegram = commandExist.Execute(textTelegramMessage.ToUpper());
             }
             return answerTelegram;
