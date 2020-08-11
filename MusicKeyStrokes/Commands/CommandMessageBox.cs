@@ -8,9 +8,9 @@ namespace MusicKeyStrokes.Commands
     {
         public override string Name => "MessageBox";
 
-        public override string NameTelegram => "/MessageBox";
+        public override string NameTelegram => "/mess";
 
-        public override string Description => "Creat in desktop message";
+        public override string Description => "Create desktop message";
 
         public override string Execute(string payload)
         {

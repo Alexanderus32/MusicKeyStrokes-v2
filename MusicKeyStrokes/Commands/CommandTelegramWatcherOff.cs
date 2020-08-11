@@ -10,7 +10,7 @@ namespace MusicKeyStrokes.Commands
 
         public override string Description => "Telegram watcher off 1 minute";
 
-        public override string NameTelegram => "/TelegramOff";
+        public override string NameTelegram => "/kill";
 
         public override string Execute(string payload)
         {

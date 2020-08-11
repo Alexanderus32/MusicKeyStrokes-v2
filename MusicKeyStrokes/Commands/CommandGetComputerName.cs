@@ -13,7 +13,7 @@ namespace MusicKeyStrokes.Commands
 
         public override string Description => "Get computer Name";
 
-        public override string NameTelegram => "/Computer";
+        public override string NameTelegram => "/comp";
 
         public override string Execute(string payload)
         {

@@ -11,9 +11,9 @@ namespace MusicKeyStrokes.Commands
 
         public override string Name { get; } = Keys.D1.ToString();
 
-        public override string Description => "Command change layout.Write -commandName D{1}";
+        public override string Description => "Change audio layout";
 
-        public override string NameTelegram => "/ChangeLayout";
+        public override string NameTelegram => "/l";
 
         private readonly IAudio audio;
 

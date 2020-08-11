@@ -11,7 +11,7 @@ namespace MusicKeyStrokes.Commands
     {
         public override string Name =>  Keys.Q.ToString();
 
-        public override string NameTelegram => "/UnregisterHotKey";
+        public override string NameTelegram => "/reg";
 
         public override string Description => "Unregister/Register Hot Key in aplication";
 

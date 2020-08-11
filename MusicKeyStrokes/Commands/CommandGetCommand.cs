@@ -10,15 +10,15 @@ namespace MusicKeyStrokes.Commands
 
         public override string Description => "Get list of commands";
 
-        public override string NameTelegram => "/Command";
+        public override string NameTelegram => "/com";
 
         public override string Execute(string payload)
         {
             List<Command> commands = Program.container.GetAllInstances<Command>().ToList();
-            string answer="Команды:\n";
+            string answer= "🉐Telegram commands:\n";
             foreach (var command in commands)
             {
-                answer += command.NameTelegram+" Описание: "+command.Description+"\n";
+                answer += command.NameTelegram+" - "+command.Description+"\n";
             }
             return answer;
         }

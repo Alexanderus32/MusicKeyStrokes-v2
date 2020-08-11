@@ -9,9 +9,9 @@ namespace MusicKeyStrokes.Commands
     {
         public override string Name => "Music play";
 
-        public override string Description => "Play music. Example";
+        public override string Description => "Play music";
 
-        public override string NameTelegram => "/Music";
+        public override string NameTelegram => "/music";
 
         private IAudio audio;
 

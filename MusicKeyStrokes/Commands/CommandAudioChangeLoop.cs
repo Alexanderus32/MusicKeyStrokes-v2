@@ -8,9 +8,9 @@ namespace MusicKeyStrokes.Commands
     {
         public override string Name { get; } = Keys.A.ToString();
 
-        public override string Description => "Change status Audio Loop";
+        public override string Description => "Change Audio Loop status";
 
-        public override string NameTelegram => "/Loop";
+        public override string NameTelegram => "/loop";
 
         private readonly IAudio audio;
 

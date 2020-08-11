@@ -11,9 +11,9 @@ namespace MusicKeyStrokes.Commands
     {
         public override string Name => "SetVolume";
 
-        public override string NameTelegram => "/SetVolume";
+        public override string NameTelegram => "/v";
 
-        public override string Description => "Set computer(\"+\") or application volume 0-100";
+        public override string Description => "/v+ - Set computer or /v - set application volume 0-100";
 
         private readonly IAudio audio;
 

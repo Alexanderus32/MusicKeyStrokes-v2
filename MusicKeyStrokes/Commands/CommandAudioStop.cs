@@ -9,7 +9,7 @@ namespace MusicKeyStrokes.Commands
 
         public override string Description => "Stop music";
 
-        public override string NameTelegram => "/Stop";
+        public override string NameTelegram => "/stop";
 
         private IAudio audio;
 

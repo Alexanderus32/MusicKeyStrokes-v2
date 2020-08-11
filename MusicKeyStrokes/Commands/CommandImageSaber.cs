@@ -14,7 +14,7 @@ namespace MusicKeyStrokes.Commands
 
         public override string Description => "Image art18+";
 
-        public override string NameTelegram => "/Art";
+        public override string NameTelegram => "/art";
 
         private string BaseUrl = "https://yande.re/post.json?";
 

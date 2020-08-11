@@ -7,7 +7,7 @@ namespace MusicKeyStrokes.Commands
     {
         public override string Name => "NameCommand";
 
-        public override string NameTelegram => "/Micro";
+        public override string NameTelegram => "/micro";
 
         public override string Description => "Music hear from micro";
 
