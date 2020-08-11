@@ -11,7 +11,7 @@ namespace MusicKeyStrokes.Telegram
 
         private Commander commander { get; set; }
 
-        private  System.Timers.Timer MyTimer { get; set; }
+        private Timer MyTimer { get; set; }
 
         public TelegramWatcher()
         {
