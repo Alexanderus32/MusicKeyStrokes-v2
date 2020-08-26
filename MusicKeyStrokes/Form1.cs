@@ -40,6 +40,7 @@ namespace MusicKeyStrokes
             //LoadMusic();
         }
 
+
         void HotKeyManager_HotKeyPressed(object sender, HotKeyEventArgs e)
         {
             if (e.Modifiers == KeyModifiers.Alt)
@@ -60,5 +61,9 @@ namespace MusicKeyStrokes
             var result = LoadSoundLayout.LoadMusic(LayoutSound.Gachi, @".\music\Gachi\");
         }
 
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
