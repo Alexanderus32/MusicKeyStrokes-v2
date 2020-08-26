@@ -67,6 +67,19 @@ namespace MusicKeyStrokes
             }
             Play(selectPathMusic.PathSound);
         }
+        public void Play(Keys idKey, LayoutSound layoutSoundIN)
+        {
+            KeyModel selectPathMusic = listAudio.FirstOrDefault(x => x.KeyValue == idKey && x.Layout == layoutSoundIN);
+            if (selectPathMusic == null)
+            {
+                selectPathMusic = listAudio.FirstOrDefault(x => x.NameSound == defaultNameSoundNoAction);
+                if (selectPathMusic == null)
+                {
+                    return;
+                }
+            }
+            Play(selectPathMusic.PathSound);
+        }
 
         private void Play(string path)
         {
@@ -103,27 +116,27 @@ namespace MusicKeyStrokes
                 item.reader.Dispose();
                 item.waveOut.Stop();
                 item.waveOut.Dispose();
-
             }
             waweOuts.Clear();
         }
 
         public void Stop()
         {
-            this.waveOutDevice.Stop();
-            this.audioFileReader.Dispose();
-            this.waveOutDevice.Dispose();
+            this.waveOutDevice?.Stop();
+            this.audioFileReader?.Dispose();
+            try
+            {
+                this.waveOutDevice?.Dispose();  //These plase create many error 
+            }
+            catch
+            {
+                //Need debagged if this have error
+            }
+          
             if (loop)
             {
                 LoopStop();
             }
-            //try
-            //{
-            //    this.waveOutDevice.Dispose();//These plase create many error 
-            //}
-            //catch
-            //{
-            //}
         }
 
         public void SetVolume(int value)
@@ -136,7 +149,10 @@ namespace MusicKeyStrokes
 
         public void ChangeVolume(int value)
         {
-            this.defaultPlaybackDevice.Volume += value;
+            if (value >= 0 && value <= 100)
+            {
+                this.waveOutDevice.Volume = (float)value / 100;
+            }
         }
 
         public void StopAudioBeforPlaying()
@@ -165,7 +181,7 @@ namespace MusicKeyStrokes
             else LoopStop();
         }
 
-        public bool PLayRand()
+        public bool PlayRand()
         {
             Random rand = new Random();
             int number = rand.Next(listAudio.Count);
@@ -179,6 +195,18 @@ namespace MusicKeyStrokes
             public Mp3FileReader reader { get; set; }
 
             public WaveOut waveOut { get; set; }
+        }
+
+        public string AudioMicroOut()
+        {
+            int waveInDevices = WaveIn.DeviceCount;
+            string stjjg = null;
+            for (int waveInDevice = 0; waveInDevice < waveInDevices; waveInDevice++)
+            {
+                WaveInCapabilities deviceInfo = WaveIn.GetCapabilities(waveInDevice);
+                stjjg += $"Device {waveInDevice}: {deviceInfo.ProductName}, {deviceInfo.Channels} channels";
+            }
+            return stjjg;
         }
     }
 }

@@ -10,13 +10,17 @@ namespace MusicKeyStrokes.Interfaces
     {
         public abstract string Name { get; }
 
-        public abstract void Execute(string payload);
+        public abstract string NameTelegram { get; }
 
-        public bool IsThisCommand(string name)
-        {
-            if (name == this.Name)
-                return true;
-            return false;
-        }
+        public abstract string Description { get; }
+
+        public abstract string Execute(string payload);
+
+        //public bool IsThisCommand(string name)
+        //{
+        //    if (name == this.Name)
+        //        return true;
+        //    return false;
+        //}
     }
 }

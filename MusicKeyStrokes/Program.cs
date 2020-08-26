@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MusicKeyStrokes.Commands;
 using MusicKeyStrokes.Interfaces;
@@ -35,9 +32,16 @@ namespace MusicKeyStrokes
                     typeof(CommandAudioPauseBeforPlaying),
                     typeof(CommandAudioStop),
                     typeof(CommandAudioPlayRandMusic),
+                    typeof(CommandListCommands),
+                    typeof(CommandPlayMusic),
+                    typeof(CommandArt),
+                    typeof(CommandGetComputerName),
+                    typeof(CommandSetVolume),
+                    typeof(CommandTelegramWatcherOff),
+                    typeof(CommandUnregisterHotKey),
+                    typeof(CommandMessage),
+                    typeof(CommandAudioOutMicro),
                     typeof(CommandAudioChangeLayout));
-            
-            
             container.Verify();
         }
     }

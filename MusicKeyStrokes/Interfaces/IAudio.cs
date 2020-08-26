@@ -7,7 +7,9 @@ namespace MusicKeyStrokes.Interfaces
     {
         void Play(Keys idKey);
 
-        bool PLayRand();
+        void Play(Keys idKey, LayoutSound layoutSound);
+
+        bool PlayRand();
 
         void Stop();
 
@@ -20,5 +22,7 @@ namespace MusicKeyStrokes.Interfaces
         void Loop();
 
         void StopAudioBeforPlaying();
+
+        string AudioMicroOut();
     }
 }

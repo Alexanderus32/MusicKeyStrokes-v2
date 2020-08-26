@@ -8,6 +8,10 @@ namespace MusicKeyStrokes.Commands
     {
         public override string Name { get; } = Keys.A.ToString();
 
+        public override string Description => "Change Audio Loop status";
+
+        public override string NameTelegram => "/loop";
+
         private readonly IAudio audio;
 
         public CommandAudioChangeLoop(IAudio audio)
@@ -15,9 +19,10 @@ namespace MusicKeyStrokes.Commands
             this.audio = audio;
         }
 
-        public override void Execute(string payload)
+        public override string Execute(string payload)
         {
             audio.Loop();
+            return "Loop Ok";
         }
     }
 }

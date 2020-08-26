@@ -18,9 +18,14 @@ namespace MusicKeyStrokes.Commands
         }
         public override string Name { get; } = Keys.Capital.ToString();
 
-        public override void Execute(string payload)
+        public override string Description => "Random music";
+
+        public override string NameTelegram => "/rand";
+
+        public override string Execute(string payload)
         {
-            audio.PLayRand();
+            audio.PlayRand();
+            return "Rand Ok";
         }
     }
 }

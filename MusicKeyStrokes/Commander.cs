@@ -1,10 +1,8 @@
 ﻿using MusicKeyStrokes.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace MusicKeyStrokes
 {
@@ -35,6 +33,22 @@ namespace MusicKeyStrokes
             {
                 commands.FirstOrDefault(x => x.Name == Keys.D1.ToString()).Execute(keyName);
             }
+        }
+
+        public string ExecuteCommandTelegram(string textTelegramMessage)
+        {
+            var commandExist = commands.FirstOrDefault(x=>textTelegramMessage.ToLower().Contains(x.NameTelegram.ToLower()));
+            string answerTelegram = "Don't found command";
+            if (commandExist != null)
+            {
+                answerTelegram = commandExist.Execute(textTelegramMessage);
+            }
+            else if(textTelegramMessage.Length <= 2)
+            {
+                commandExist = commands.FirstOrDefault(x=>x.NameTelegram=="/music");
+                answerTelegram = commandExist.Execute(textTelegramMessage.ToUpper());
+            }
+            return answerTelegram;
         }
 
     }

@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 using System.Drawing.Text;
 using MusicKeyStrokes.Interfaces;
 using MusicKeyStrokes.Develop;
+using MusicKeyStrokes.Telegram;
 
 namespace MusicKeyStrokes
 {
@@ -21,6 +22,8 @@ namespace MusicKeyStrokes
     {
         private readonly IAudio audio;
         private Commander commander { get; set; }
+
+        private static TelegramWatcher watcher;
 
         public Form1(IAudio audio)
         {      
@@ -30,10 +33,10 @@ namespace MusicKeyStrokes
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            HotKeyManager.RegisterAudioKeys(KeyModifiers.Alt);
-            HotKeyManager.RegisterCommandKeys(KeyModifiers.Shift);
+            HotKeyManager.RegisterAllKeys();
             HotKeyManager.HotKeyPressed += new EventHandler<HotKeyEventArgs>(HotKeyManager_HotKeyPressed);
             this.commander = new Commander();
+            watcher = new TelegramWatcher();
             //LoadMusic();
         }
 
@@ -46,6 +49,11 @@ namespace MusicKeyStrokes
                 commander.ExecuteCommand(e.Key);
             }
         }
+
+        public static void StopRecivetTelegram()
+        {
+            watcher.StopRecivetTelegram();
+        } 
 
         private void LoadMusic()
         {

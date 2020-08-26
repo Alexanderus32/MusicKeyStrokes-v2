@@ -12,6 +12,10 @@ namespace MusicKeyStrokes.Commands
     {
         public override string Name { get; }= Keys.D.ToString();
 
+        public override string Description => "Change PauseBeforPlaying status in Audio";
+
+        public override string NameTelegram => "/pbp";
+
         private readonly IAudio audio;
 
         public CommandAudioPauseBeforPlaying(IAudio audio)
@@ -19,9 +23,10 @@ namespace MusicKeyStrokes.Commands
             this.audio = audio;
         }
 
-        public override void Execute(string payload)
+        public override string Execute(string payload)
         {
             audio.StopAudioBeforPlaying();
+            return "StopAudioBeforPlaying Ok";
         }
     }
 }

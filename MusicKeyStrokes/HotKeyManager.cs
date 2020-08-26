@@ -30,12 +30,21 @@ namespace MusicKeyStrokes
         };
 
         public static readonly Keys[] commandKeys = {
-            Keys.CapsLock, Keys.D1, Keys.D2, Keys.D3, Keys.D4, Keys.D5, Keys.A, Keys.S, Keys.D
+            Keys.CapsLock, Keys.D1, Keys.D2, Keys.D3, Keys.D4,
+            Keys.D5, Keys.A, Keys.S, Keys.D, Keys.Q,
         };
+
+        public static bool RegistriAllKey = false;
 
         public static event EventHandler<HotKeyEventArgs> HotKeyPressed;
 
-        public static void RegisterAudioKeys(KeyModifiers modifiers)
+        public static void RegisterAllKeys()
+        {
+            RegisterAudioKeys(KeyModifiers.Alt);
+            RegisterCommandKeys(KeyModifiers.Shift);
+            RegistriAllKey = true;
+        }
+        private static void RegisterAudioKeys(KeyModifiers modifiers)
         {
             foreach (var key in hotKeys)
             {
@@ -43,11 +52,27 @@ namespace MusicKeyStrokes
             }
         }
 
-        public static void RegisterCommandKeys(KeyModifiers modifiers)
+        private static void RegisterCommandKeys(KeyModifiers modifiers)
         {
             foreach (var key in commandKeys)
             {
                 RegisterHotKey(key, modifiers);
+            }
+        }
+        public static void UnregistrAllKeys()
+        {
+            if (RegistriAllKey)
+            {
+                for (int i = _id; i >= 0; i--)
+                {
+                    UnregisterHotKey(i);
+                }
+                RegisterHotKey(Keys.Q, KeyModifiers.Shift);
+                RegistriAllKey = false;
+            }
+            else
+            {
+                RegisterAllKeys();
             }
         }
 
