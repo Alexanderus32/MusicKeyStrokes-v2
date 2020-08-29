@@ -10,6 +10,10 @@ using MusicKeyStrokes.Develop;
 using MusicKeyStrokes.Telegram;
 using Microsoft.Win32;
 using System.Reflection;
+using System.Net;
+using MusicKeyStrokes.Commands;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace MusicKeyStrokes
 {
@@ -35,6 +39,7 @@ namespace MusicKeyStrokes
             notifyIcon1.Visible = true;
             notifyIcon1.Text = "MusicKeyStrokes";
             SetAutorunValue(true, Assembly.GetExecutingAssembly().Location);
+
             //LoadMusic();
         }
 
@@ -59,11 +64,7 @@ namespace MusicKeyStrokes
             var result = LoadSoundLayout.LoadMusic(LayoutSound.Gachi, @".\music\Gachi\");
         }
 
-        private void Form1_Shown(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
+       
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
@@ -76,6 +77,38 @@ namespace MusicKeyStrokes
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            CommandArt commandArt = new CommandArt();
+            Task<string> task = new Task<string>(() => commandArt.Execute("/art saber+"));
+            task.Start();
+            task.Wait();
+            this.BackgroundImage = null;
+            using (WebClient wc = new WebClient())
+            {
+                using (Stream s = wc.OpenRead(task.Result))
+                {
+                    using (Bitmap bmp = new Bitmap(s,true))
+                    {
+                        bmp.Save(@".\image.jpg");
+                    }
+                }
+            }
+            if (Image.FromFile("image.jpg").Height > Image.FromFile("image.jpg").Width)
+            {
+                this.Height = 20;
+                float SizeQualiti = Image.FromFile("image.jpg").Height / 100;
+                this.Width = (int)(Image.FromFile("image.jpg").Height/100* SizeQualiti);
+            }
+            else
+            {
+                this.Width = 20;
+                float SizeQualiti = Image.FromFile("image.jpg").Width / 100;
+                this.Height = (int)(Image.FromFile("image.jpg").Width/100 * SizeQualiti);
+            }
+
+            //this.Width = Image.FromFile("image.jpg").Width;
+            //this.Height = Image.FromFile("image.jpg").Height;
+
+            this.BackgroundImage = Image.FromFile("image.jpg");
             this.Show();
             notifyIcon1.Visible = false;
             WindowState = FormWindowState.Normal;
@@ -97,6 +130,7 @@ namespace MusicKeyStrokes
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            notifyIcon1.Dispose();
         }
 
         private  bool SetAutorunValue(bool autorun, string path)
@@ -120,6 +154,18 @@ namespace MusicKeyStrokes
                 return false;
             }
             return true;
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            notifyIcon1.Dispose();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            notifyIcon1.Visible = false;
+            WindowState = FormWindowState.Normal;
         }
     }
 }
