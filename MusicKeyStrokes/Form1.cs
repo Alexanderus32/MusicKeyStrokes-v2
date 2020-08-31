@@ -78,7 +78,7 @@ namespace MusicKeyStrokes
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             CommandArt commandArt = new CommandArt();
-            Task<string> task = new Task<string>(() => commandArt.Execute("/art saber+"));
+            Task<string> task = new Task<string>(() => commandArt.Execute("/art"));
             task.Start();
             task.Wait();
             this.BackgroundImage = null;
@@ -94,20 +94,16 @@ namespace MusicKeyStrokes
             }
             if (Image.FromFile("image.jpg").Height > Image.FromFile("image.jpg").Width)
             {
-                this.Height = 20;
+                this.Height = 600;
                 float SizeQualiti = Image.FromFile("image.jpg").Height / 100;
-                this.Width = (int)(Image.FromFile("image.jpg").Height/100* SizeQualiti);
+                this.Width = (int)(Image.FromFile("image.jpg").Height/100 * SizeQualiti);
             }
             else
             {
-                this.Width = 20;
+                this.Width = 600;
                 float SizeQualiti = Image.FromFile("image.jpg").Width / 100;
                 this.Height = (int)(Image.FromFile("image.jpg").Width/100 * SizeQualiti);
             }
-
-            //this.Width = Image.FromFile("image.jpg").Width;
-            //this.Height = Image.FromFile("image.jpg").Height;
-
             this.BackgroundImage = Image.FromFile("image.jpg");
             this.Show();
             notifyIcon1.Visible = false;
