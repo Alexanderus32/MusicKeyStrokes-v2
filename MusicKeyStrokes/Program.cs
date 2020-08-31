@@ -41,6 +41,7 @@ namespace MusicKeyStrokes
                     typeof(CommandUnregisterHotKey),
                     typeof(CommandMessage),
                     typeof(CommandAudioOutMicro),
+                    typeof(CommandRandomTimeMusic),
                     typeof(CommandAudioChangeLayout));
             container.Verify();
         }
