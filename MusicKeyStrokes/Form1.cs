@@ -38,7 +38,7 @@ namespace MusicKeyStrokes
             watcher = new TelegramWatcher();
             notifyIcon1.Visible = true;
             notifyIcon1.Text = "MusicKeyStrokes";
-            SetAutorunValue(true, Assembly.GetExecutingAssembly().Location);
+            //SetAutorunValue(true, Assembly.GetExecutingAssembly().Location);
 
             //LoadMusic();
         }
@@ -75,39 +75,40 @@ namespace MusicKeyStrokes
 
         }
 
+        //TODO
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            CommandArt commandArt = new CommandArt();
-            Task<string> task = new Task<string>(() => commandArt.Execute("/art"));
-            task.Start();
-            task.Wait();
-            this.BackgroundImage = null;
-            using (WebClient wc = new WebClient())
-            {
-                using (Stream s = wc.OpenRead(task.Result))
-                {
-                    using (Bitmap bmp = new Bitmap(s,true))
-                    {
-                        bmp.Save(@".\image.jpg");
-                    }
-                }
-            }
-            if (Image.FromFile("image.jpg").Height > Image.FromFile("image.jpg").Width)
-            {
-                this.Height = 600;
-                float SizeQualiti = Image.FromFile("image.jpg").Height / 100;
-                this.Width = (int)(Image.FromFile("image.jpg").Height/100 * SizeQualiti);
-            }
-            else
-            {
-                this.Width = 600;
-                float SizeQualiti = Image.FromFile("image.jpg").Width / 100;
-                this.Height = (int)(Image.FromFile("image.jpg").Width/100 * SizeQualiti);
-            }
-            this.BackgroundImage = Image.FromFile("image.jpg");
-            this.Show();
-            notifyIcon1.Visible = false;
-            WindowState = FormWindowState.Normal;
+        //    CommandArt commandArt = new CommandArt();
+        //    Task<string> task = new Task<string>(() => commandArt.Execute("/art"));
+        //    task.Start();
+        //    task.Wait();
+        //    this.BackgroundImage = null;
+        //    using (WebClient wc = new WebClient())
+        //    {
+        //        using (Stream s = wc.OpenRead(task.Result))
+        //        {
+        //            using (Bitmap bmp = new Bitmap(s,true))
+        //            {
+        //                bmp.Save(@".\image.jpg");
+        //            }
+        //        }
+        //    }
+        //    if (Image.FromFile("image.jpg").Height > Image.FromFile("image.jpg").Width)
+        //    {
+        //        this.Height = 600;
+        //        float SizeQualiti = Image.FromFile("image.jpg").Height / 100;
+        //        this.Width = (int)(Image.FromFile("image.jpg").Height/100 * SizeQualiti);
+        //    }
+        //    else
+        //    {
+        //        this.Width = 600;
+        //        float SizeQualiti = Image.FromFile("image.jpg").Width / 100;
+        //        this.Height = (int)(Image.FromFile("image.jpg").Width/100 * SizeQualiti);
+        //    }
+        //    this.BackgroundImage = Image.FromFile("image.jpg");
+        //    this.Show();
+        //    notifyIcon1.Visible = false;
+        //    WindowState = FormWindowState.Normal;
         }
 
         private void Form1_Resize(object sender, EventArgs e)
@@ -129,28 +130,29 @@ namespace MusicKeyStrokes
             notifyIcon1.Dispose();
         }
 
-        private  bool SetAutorunValue(bool autorun, string path)
-        {
-            const string name = "Why are you gay?";
-            string ExePath = path;
-            RegistryKey reg;
-            reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
-            try
-            {
-                if (autorun)
-                    reg.SetValue(name, ExePath);
-                else
-                    reg.DeleteValue(name);
+        //TODO
+        //private  bool SetAutorunValue(bool autorun, string path)
+        //{
+        //    const string name = "Why are you gay?";
+        //    string ExePath = path;
+        //    RegistryKey reg;
+        //    reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+        //    try
+        //    {
+        //        if (autorun)
+        //            reg.SetValue(name, ExePath);
+        //        else
+        //            reg.DeleteValue(name);
 
-                reg.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка! :" + ex.Message);
-                return false;
-            }
-            return true;
-        }
+        //        reg.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Ошибка! :" + ex.Message);
+        //        return false;
+        //    }
+        //    return true;
+        //}
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
