@@ -6,7 +6,6 @@ namespace MusicKeyStrokes
     {
         private static TelegramBotClient clientTelegram;
 
-        static string statics = "static";
          static public TelegramBotClient Get()
         {
             if (clientTelegram != null)
