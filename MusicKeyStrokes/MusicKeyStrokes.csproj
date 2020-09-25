@@ -75,7 +75,9 @@
   <ItemGroup>
     <Compile Include="Audio.cs" />
     <Compile Include="Commands\CommandAudioOutMicro.cs" />
+    <Compile Include="Commands\CommandAutoRun.cs" />
     <Compile Include="Commands\CommandMessage.cs" />
+    <Compile Include="Commands\CommandRandomTimeMusic.cs" />
     <Compile Include="Commands\CommandSetVolume.cs" />
     <Compile Include="Commands\CommandListCommands.cs" />
     <Compile Include="Commands\CommandGetComputerName.cs" />
