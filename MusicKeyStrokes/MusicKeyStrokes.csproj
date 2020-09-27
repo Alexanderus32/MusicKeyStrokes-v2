@@ -76,6 +76,7 @@
     <Compile Include="Audio.cs" />
     <Compile Include="Commands\CommandAudioOutMicro.cs" />
     <Compile Include="Commands\CommandAutoRun.cs" />
+    <Compile Include="Commands\CommandChangingScreenOrientation.cs" />
     <Compile Include="Commands\CommandMessage.cs" />
     <Compile Include="Commands\CommandOpenWebSide.cs" />
     <Compile Include="Commands\CommandRandomTimeMusic.cs" />
