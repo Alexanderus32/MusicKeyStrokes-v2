@@ -18,10 +18,15 @@ namespace MusicKeyStrokes.Commands
             {
                 payload = "https://coub.com/community/anime";
             }
-            if (!payload.Contains("https://"))
+            if ((!payload.Contains("https://") || !payload.Contains("http://")) && payload.Contains("."))
+            {
+                payload = "https://" + payload;
+            }
+            else if(!payload.Contains("https://") || !payload.Contains("http://"))
             {
                 return "Not valid webside";
             }
+           
             System.Diagnostics.Process.Start(payload);
             return "Open webside Ok";
         }
