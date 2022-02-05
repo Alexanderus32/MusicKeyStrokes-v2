@@ -16,19 +16,26 @@ namespace MusicKeyStrokes.Commands
             payload = payload.Substring(NameTelegram.Length).Replace(" ","");
             if (payload=="")
             {
-                payload = "https://coub.com/community/anime";
+                payload = "coub.com/community/anime";
             }
-            if ((!payload.Contains("https://") || !payload.Contains("http://")) && payload.Contains("."))
+            else if (payload == "osu")
             {
-                payload = "https://" + payload;
+                payload = @"C:\Users\Санька\Desktop\Games\osu!";
             }
-            else if(!payload.Contains("https://") || !payload.Contains("http://"))
+            else if (payload.Contains("https://") || payload.Contains("http://"))
             {
-                return "Not valid webside";
+                try
+                {
+                    System.Diagnostics.Process.Start(payload);
+                    return "Open webside Ok";
+                }
+                catch (System.Exception)
+                {
+
+                    return "Website opening error";
+                }               
             }
-           
-            System.Diagnostics.Process.Start(payload);
-            return "Open webside Ok";
+            return "Not valid webside";
         }
     }
 }

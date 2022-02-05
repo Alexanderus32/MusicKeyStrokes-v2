@@ -41,16 +41,28 @@ namespace MusicKeyStrokes
             watcher = new TelegramWatcher();
             notifyIcon1.Visible = true;
             notifyIcon1.Text = "MusicKeyStrokes";
+
+            AddCommandsToListBox();
+            AddMusicsToListBox();
+            //SetAutorunValue(true, Assembly.GetExecutingAssembly().Location);
+            //LoadMusic();
+        }
+
+        private void AddCommandsToListBox()
+        {
             List<Command> commandsforInformation = new List<Command>();
             commandsforInformation.AddRange(Program.container.GetAllInstances<Command>());
             foreach (var Command in commandsforInformation)
             {
-                if (Command.Name.Length==1)
+                if (Command.Name.Length == 1)
                 {
-                    listBox1.Items.Add(Command.Name + " Key this will do " + Command.Description );
+                    listBox1.Items.Add(Command.Name + " Key+ will do " + Command.Description);
                 }
             }
+        }
 
+        private void AddMusicsToListBox()
+        {
             List<KeyModel> listAudio = new List<KeyModel>();
             JsonSerializer sr = new JsonSerializer();
             var music = sr.Deserialize<KeyModel>();
@@ -59,13 +71,9 @@ namespace MusicKeyStrokes
             {
                 listBox2.Items.Add(listAudio[i].Layout.ToString() + " " + listAudio[i].KeyValue.ToString() + "  -  " + listAudio[i].NameSound);
             }
-            //SetAutorunValue(true, Assembly.GetExecutingAssembly().Location);
+        }
 
-        //LoadMusic();
-    }
-
-
-        void HotKeyManager_HotKeyPressed(object sender, HotKeyEventArgs e)
+        private void HotKeyManager_HotKeyPressed(object sender, HotKeyEventArgs e)
         {
             if (e.Modifiers == KeyModifiers.Alt)
                 audio.Play(e.Key);
@@ -196,15 +204,13 @@ namespace MusicKeyStrokes
             KeyModel KeyModelSelect = music.FirstOrDefault(x => x.NameSound == listBox2.Items[listBox2.SelectedIndex]
             .ToString().Substring(listBox2.Items[listBox2.SelectedIndex].ToString().IndexOf("  -  ")+5));
 
-            object nullable = null;
-
             HotKeyEventArgs hotKeyChangeLayout = new HotKeyEventArgs((Keys)(int)KeyModelSelect.Layout + 49, KeyModifiers.Shift);
 
             HotKeyEventArgs hotKeyPlayMusic = new HotKeyEventArgs(KeyModelSelect.KeyValue, KeyModifiers.Alt);
 
-            HotKeyManager_HotKeyPressed(nullable, hotKeyChangeLayout);
+            HotKeyManager_HotKeyPressed(null, hotKeyChangeLayout);
 
-            HotKeyManager_HotKeyPressed(nullable, hotKeyPlayMusic);
+            HotKeyManager_HotKeyPressed(null, hotKeyPlayMusic);
 
         }
     }
