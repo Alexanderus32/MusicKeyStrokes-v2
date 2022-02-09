@@ -37,7 +37,12 @@ namespace MusicKeyStrokes
 
         public string ExecuteCommandTelegram(string textTelegramMessage)
         {
-            var commandExist = commands.FirstOrDefault(x=>textTelegramMessage.ToLower().Contains(x.NameTelegram.ToLower()));
+            if(!textTelegramMessage.Contains("/") || textTelegramMessage.Length <= 1)
+            {
+                return "Bad request\nList of commands - /com";
+            }
+            string croppedMessage = textTelegramMessage.ToLower();
+            var commandExist = commands.FirstOrDefault(x=> croppedMessage.StartsWith(x.NameTelegram.ToLower()));
             string answerTelegram = "Don't found command";
             if (commandExist != null)
             {

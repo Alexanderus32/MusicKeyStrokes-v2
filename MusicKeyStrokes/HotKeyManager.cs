@@ -31,7 +31,7 @@ namespace MusicKeyStrokes
 
         public static readonly Keys[] commandKeys = {
             Keys.CapsLock, Keys.D1, Keys.D2, Keys.D3, Keys.D4,
-            Keys.D5, Keys.A, Keys.S, Keys.D, Keys.Q,
+            Keys.D5, Keys.D6, Keys.D7, Keys.A, Keys.S, Keys.D, Keys.Q,
         };
 
         public static bool RegistriAllKey = false;
