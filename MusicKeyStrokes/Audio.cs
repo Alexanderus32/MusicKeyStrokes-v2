@@ -208,5 +208,10 @@ namespace MusicKeyStrokes
             }
             return stjjg;
         }
+
+        public LayoutSound getCurrentlayoutSound()
+        {
+            return layoutSound;
+        }
     }
 }

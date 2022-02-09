@@ -198,20 +198,18 @@ namespace MusicKeyStrokes
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             JsonSerializer sr = new JsonSerializer();
-
             List<KeyModel> music = sr.Deserialize<KeyModel>();
+            IAudio audio = Program.container.GetInstance<IAudio>();
+            var layoutSound = audio.GetCurrentlayoutSound();
 
             KeyModel KeyModelSelect = music.FirstOrDefault(x => x.NameSound == listBox2.Items[listBox2.SelectedIndex]
             .ToString().Substring(listBox2.Items[listBox2.SelectedIndex].ToString().IndexOf("  -  ")+5));
-
             HotKeyEventArgs hotKeyChangeLayout = new HotKeyEventArgs((Keys)(int)KeyModelSelect.Layout + 49, KeyModifiers.Shift);
-
             HotKeyEventArgs hotKeyPlayMusic = new HotKeyEventArgs(KeyModelSelect.KeyValue, KeyModifiers.Alt);
 
             HotKeyManager_HotKeyPressed(null, hotKeyChangeLayout);
-
             HotKeyManager_HotKeyPressed(null, hotKeyPlayMusic);
-
+            audio.ChangeLayoutSound(layoutSound);
         }
     }
 }

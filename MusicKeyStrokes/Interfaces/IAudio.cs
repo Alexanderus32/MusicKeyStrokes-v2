@@ -24,5 +24,7 @@ namespace MusicKeyStrokes.Interfaces
         void StopAudioBeforPlaying();
 
         string AudioMicroOut();
+        
+        LayoutSound GetCurrentlayoutSound();
     }
 }
