@@ -18,7 +18,7 @@ namespace MusicKeyStrokes.Commands
         //    Right,
         //    Left
         //}
-        public override string Name => throw new NotImplementedException();
+        public override string Name => "screen rotate";
 
         public override string NameTelegram => "/rs";
 
@@ -52,7 +52,7 @@ namespace MusicKeyStrokes.Commands
             if (SideSet.Contains(payload))
             {
                 RotateScean(payload);
-                ChangeTimerDefaultScrean();
+                //ChangeTimerDefaultScrean();
             }
 
             //int index = Array.IndexOf(SideSet, payload);
@@ -98,26 +98,25 @@ namespace MusicKeyStrokes.Commands
                 dm.dmPelsWidth = temp;
 
                 // determine new orientation
-                
-                    switch (dm.dmDisplayOrientation)
-                    {
-                        case NativeMethods.DMDO_DEFAULT:
-                            dm.dmDisplayOrientation = NativeMethods.DMDO_270;
-                            break;
-                        case NativeMethods.DMDO_270:
-                            dm.dmDisplayOrientation = NativeMethods.DMDO_180;
-                            break;
-                        case NativeMethods.DMDO_180:
-                            dm.dmDisplayOrientation = NativeMethods.DMDO_90;
-                            break;
-                        case NativeMethods.DMDO_90:
-                            dm.dmDisplayOrientation = NativeMethods.DMDO_DEFAULT;
-                            break;
-                        default:
-                            // unknown orientation value
-                            // add exception handling here
-                            break;
 
+                switch (dm.dmDisplayOrientation)
+                {
+                    case NativeMethods.DMDO_DEFAULT:
+                        dm.dmDisplayOrientation = NativeMethods.DMDO_270;
+                        break;
+                    case NativeMethods.DMDO_270:
+                        dm.dmDisplayOrientation = NativeMethods.DMDO_180;
+                        break;
+                    case NativeMethods.DMDO_180:
+                        dm.dmDisplayOrientation = NativeMethods.DMDO_90;
+                        break;
+                    case NativeMethods.DMDO_90:
+                        dm.dmDisplayOrientation = NativeMethods.DMDO_DEFAULT;
+                        break;
+                    default:
+                        // unknown orientation value
+                        // add exception handling here
+                        break;
                 }
 
                 int iRet = NativeMethods.ChangeDisplaySettings(ref dm, 0);
