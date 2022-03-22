@@ -22,7 +22,7 @@ namespace MusicKeyStrokes.Commands
 
         public override string Execute(string payload)
         {
-            payload = payload.Replace(NameTelegram.ToUpper(),"").Replace(" ", "");
+            payload = payload.ToUpper().Replace(NameTelegram.ToUpper(),"").Replace(" ", "");
 
             if (payload.Length == 0)
             {
