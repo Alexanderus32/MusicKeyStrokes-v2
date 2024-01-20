@@ -32,6 +32,8 @@ namespace MusicKeyStrokes
         public static readonly Keys[] commandKeys = {
             Keys.CapsLock, Keys.D1, Keys.D2, Keys.D3, Keys.D4,
             Keys.D5, Keys.A, Keys.S, Keys.D, Keys.Q,
+            Keys.NumPad1, Keys.NumPad2, Keys.NumPad3,
+            Keys.F1, Keys.F2, Keys.F3, Keys.F4
         };
 
         public static bool RegistriAllKey = false;
@@ -44,6 +46,7 @@ namespace MusicKeyStrokes
             RegisterCommandKeys(KeyModifiers.Shift);
             RegistriAllKey = true;
         }
+
         private static void RegisterAudioKeys(KeyModifiers modifiers)
         {
             foreach (var key in hotKeys)
@@ -59,6 +62,7 @@ namespace MusicKeyStrokes
                 RegisterHotKey(key, modifiers);
             }
         }
+
         public static void UnregistrAllKeys()
         {
             if (RegistriAllKey)
@@ -89,9 +93,9 @@ namespace MusicKeyStrokes
             _wnd.Invoke(new UnRegisterHotKeyDelegate(UnRegisterHotKeyInternal), _hwnd, id);
         }
 
-        delegate void RegisterHotKeyDelegate(IntPtr hwnd, int id, uint modifiers, uint key);
+        private delegate void RegisterHotKeyDelegate(IntPtr hwnd, int id, uint modifiers, uint key);
 
-        delegate void UnRegisterHotKeyDelegate(IntPtr hwnd, int id);
+        private delegate void UnRegisterHotKeyDelegate(IntPtr hwnd, int id);
 
         private static void RegisterHotKeyInternal(IntPtr hwnd, int id, uint modifiers, uint key)
         {
@@ -165,7 +169,6 @@ namespace MusicKeyStrokes
 
         private static int _id = 0;
     }
-
 
     public class HotKeyEventArgs : EventArgs
     {

@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace MusicKeyStrokes.Commands
 {
-    class CommandAudioStop : Command
+    internal class CommandAudioStop : Command
     {
-        public override string Name { get; } = Keys.S.ToString();
+        public override string Name { get; } = Keys.F3.ToString();
 
         public override string Description => "Stop music";
 
@@ -20,6 +20,7 @@ namespace MusicKeyStrokes.Commands
 
         public override string Execute(string payload)
         {
+            //audio.Pause();
             audio.Stop();
             return "Stop Ok";
         }

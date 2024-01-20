@@ -2,341 +2,684 @@
   {
     "Layout": 0,
     "KeyValue": 192,
+    "NameSound": "1_hi-there",
+    "PathSound": "./music/Anime1/1_hi-there.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 49,
+    "NameSound": "1_maybe",
+    "PathSound": "./music/Anime1/1_maybe.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 50,
+    "NameSound": "1_okay",
+    "PathSound": "./music/Anime1/1_okay.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 51,
+    "NameSound": "1_wait",
+    "PathSound": "./music/Anime1/1_wait.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 52,
+    "NameSound": "ara-ara-sayonara-mp3cut",
+    "PathSound": "./music/Anime1/ara-ara-sayonara-mp3cut.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 53,
+    "NameSound": "attack-on-titan-rojo",
+    "PathSound": "./music/Anime1/attack-on-titan-rojo.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 54,
+    "NameSound": "attack-on-titan-season-4-ost",
+    "PathSound": "./music/Anime1/attack-on-titan-season-4-ost.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 55,
+    "NameSound": "attack_Eren_-_TATAKAE",
+    "PathSound": "./music/Anime1/attack_Eren_-_TATAKAE.wav",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 56,
+    "NameSound": "Baka",
+    "PathSound": "./music/Anime1/Baka.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 57,
+    "NameSound": "Bakaaaa",
+    "PathSound": "./music/Anime1/Bakaaaa.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 48,
+    "NameSound": "BakaaaaTachibana music",
+    "PathSound": "./music/Anime1/BakaaaaTachibana music.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 189,
+    "NameSound": "Death Note - Тема Лайта",
+    "PathSound": "./music/Anime1/Death Note - Тема Лайта.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 187,
+    "NameSound": "Death Note",
+    "PathSound": "./music/Anime1/Death Note.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 8,
+    "NameSound": "DIO 1  ICHI-BI O KEKA",
+    "PathSound": "./music/Anime1/DIO 1  ICHI-BI O KEKA.wav",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 81,
+    "NameSound": "DIO 2 NI-BI O KEKA",
+    "PathSound": "./music/Anime1/DIO 2 NI-BI O KEKA.wav",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 87,
+    "NameSound": "DIO 3 SAN-BI O KEKA",
+    "PathSound": "./music/Anime1/DIO 3 SAN-BI O KEKA.wav",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 69,
+    "NameSound": "DIO 4 YIOM-BI O KEKA",
+    "PathSound": "./music/Anime1/DIO 4 YIOM-BI O KEKA.wav",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 82,
+    "NameSound": "DIO 5 GO-BI O KEKA",
+    "PathSound": "./music/Anime1/DIO 5 GO-BI O KEKA.wav",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 84,
+    "NameSound": "DIO 6 ROKU-BI O KEKA",
+    "PathSound": "./music/Anime1/DIO 6 ROKU-BI O KEKA.wav",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 89,
+    "NameSound": "DIO road-roller-damp3",
+    "PathSound": "./music/Anime1/DIO road-roller-damp3.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 85,
+    "NameSound": "hentaiNya",
+    "PathSound": "./music/Anime1/hentaiNya.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 73,
+    "NameSound": "Jojo Dio kono-dio-da99",
+    "PathSound": "./music/Anime1/Jojo Dio kono-dio-da99.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 79,
+    "NameSound": "Jojo Dioza-warudo",
+    "PathSound": "./music/Anime1/Jojo Dioza-warudo.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 80,
+    "NameSound": "Jojo doitsu-no-kagaku-wa-sekai-ichi",
+    "PathSound": "./music/Anime1/Jojo doitsu-no-kagaku-wa-sekai-ichi.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 219,
+    "NameSound": "Jojo doppio1",
+    "PathSound": "./music/Anime1/Jojo doppio1.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 221,
+    "NameSound": "Jojo doppio2",
+    "PathSound": "./music/Anime1/Jojo doppio2.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 220,
+    "NameSound": "Jojo Giorno_Theme",
+    "PathSound": "./music/Anime1/Jojo Giorno_Theme.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 65,
+    "NameSound": "Jojo jotaro-no",
+    "PathSound": "./music/Anime1/Jojo jotaro-no.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 83,
+    "NameSound": "Jojo jotaro-yes-yes-yes",
+    "PathSound": "./music/Anime1/Jojo jotaro-yes-yes-yes.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 68,
+    "NameSound": "Jojo Kiro Yugo Kanno - Killer",
+    "PathSound": "./music/Anime1/Jojo Kiro Yugo Kanno - Killer.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 70,
+    "NameSound": "Jojo peeping-jojo",
+    "PathSound": "./music/Anime1/Jojo peeping-jojo.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 71,
+    "NameSound": "Jojo rero-rero-rero",
+    "PathSound": "./music/Anime1/Jojo rero-rero-rero.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 72,
+    "NameSound": "Jojo shizaaaaaa",
+    "PathSound": "./music/Anime1/Jojo shizaaaaaa.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 74,
+    "NameSound": "Jojo to be continued",
+    "PathSound": "./music/Anime1/Jojo to be continued.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 75,
+    "NameSound": "kuru-kuru",
+    "PathSound": "./music/Anime1/kuru-kuru.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 76,
+    "NameSound": "monokuma-pupupu_2",
+    "PathSound": "./music/Anime1/monokuma-pupupu_2.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 186,
+    "NameSound": "Naruto sasukeeeeee",
+    "PathSound": "./music/Anime1/Naruto sasukeeeeee.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 222,
+    "NameSound": "Naruto-sad-music-instant",
+    "PathSound": "./music/Anime1/Naruto-sad-music-instant.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 90,
+    "NameSound": "Niconiconiloves",
+    "PathSound": "./music/Anime1/Niconiconiloves.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 88,
+    "NameSound": "orchastra-cut2",
+    "PathSound": "./music/Anime1/orchastra-cut2.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 67,
+    "NameSound": "ReZero Felix Amm",
+    "PathSound": "./music/Anime1/ReZero Felix Amm.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 86,
+    "NameSound": "ReZero weheheeeey-aa-aa-hahaa",
+    "PathSound": "./music/Anime1/ReZero weheheeeey-aa-aa-hahaa.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 66,
+    "NameSound": "SteinsGate gate-of-steiner",
+    "PathSound": "./music/Anime1/SteinsGate gate-of-steiner.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 78,
+    "NameSound": "SteinsGate Kristina tina no kenshi",
+    "PathSound": "./music/Anime1/SteinsGate Kristina tina no kenshi.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 77,
+    "NameSound": "SteinsGate Kristina",
+    "PathSound": "./music/Anime1/SteinsGate Kristina.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 188,
+    "NameSound": "SteinsGate okarin i-am-mad-scientist",
+    "PathSound": "./music/Anime1/SteinsGate okarin i-am-mad-scientist.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 190,
+    "NameSound": "SteinsGate okarin laugh_1",
+    "PathSound": "./music/Anime1/SteinsGate okarin laugh_1.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 191,
+    "NameSound": "SteinsGate tuturu-okarin",
+    "PathSound": "./music/Anime1/SteinsGate tuturu-okarin.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 0,
+    "KeyValue": 37,
+    "NameSound": "ultra-instinct",
+    "PathSound": "./music/Anime1/ultra-instinct.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 1,
+    "KeyValue": 192,
     "NameSound": "ban",
     "PathSound": "./music/valakas1/ban.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 49,
     "NameSound": "ban_nahui-2",
     "PathSound": "./music/valakas1/ban_nahui-2.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 50,
     "NameSound": "blyat_zaebala_hueta",
     "PathSound": "./music/valakas1/blyat_zaebala_hueta.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 51,
     "NameSound": "dab_dab_dab_ya",
     "PathSound": "./music/valakas1/dab_dab_dab_ya.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 52,
     "NameSound": "da_bda_bda",
     "PathSound": "./music/valakas1/da_bda_bda.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 53,
     "NameSound": "da_ne_vazhno",
     "PathSound": "./music/valakas1/da_ne_vazhno.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 54,
     "NameSound": "da_zatknis_ty_suka",
     "PathSound": "./music/valakas1/da_zatknis_ty_suka.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 55,
     "NameSound": "delo_sdelano",
     "PathSound": "./music/valakas1/delo_sdelano.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 56,
     "NameSound": "ebanutsya_prosto",
     "PathSound": "./music/valakas1/ebanutsya_prosto.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 57,
     "NameSound": "GaldValakas Vse dolboeb Ya sdec6",
     "PathSound": "./music/valakas1/GaldValakas Vse dolboeb Ya sdec6.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 48,
     "NameSound": "glad-valakas--kto-ya-eblan",
     "PathSound": "./music/valakas1/glad-valakas--kto-ya-eblan.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 189,
     "NameSound": "glad-valakas--nahuy-ty-napadaesh",
     "PathSound": "./music/valakas1/glad-valakas--nahuy-ty-napadaesh.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 187,
     "NameSound": "glad-valakas-godzila-3-4-5-0-d",
     "PathSound": "./music/valakas1/glad-valakas-godzila-3-4-5-0-d.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 8,
     "NameSound": "glad-valakas-rage",
     "PathSound": "./music/valakas1/glad-valakas-rage.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 81,
     "NameSound": "glad-valakas-ta-za-sho",
     "PathSound": "./music/valakas1/glad-valakas-ta-za-sho.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 87,
     "NameSound": "GladValakas Ga ga",
     "PathSound": "./music/valakas1/GladValakas Ga ga.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 69,
     "NameSound": "GladValakas yasno_hueta",
     "PathSound": "./music/valakas1/GladValakas yasno_hueta.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 82,
     "NameSound": "GladValakas yebat6",
     "PathSound": "./music/valakas1/GladValakas yebat6.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 84,
     "NameSound": "GladValakas Zavadi",
     "PathSound": "./music/valakas1/GladValakas Zavadi.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 89,
     "NameSound": "GladValakas ZavadiGrigiy",
     "PathSound": "./music/valakas1/GladValakas ZavadiGrigiy.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 85,
     "NameSound": "GladValakas ZavadiGrisha",
     "PathSound": "./music/valakas1/GladValakas ZavadiGrisha.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 73,
     "NameSound": "GladValakas ZavadiSere",
     "PathSound": "./music/valakas1/GladValakas ZavadiSere.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 79,
     "NameSound": "GladValasTakidem_po_nekselu",
     "PathSound": "./music/valakas1/GladValasTakidem_po_nekselu.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 80,
-    "NameSound": "glad_valakas_-_da_da_ja_gagagagagaggaaaa",
-    "PathSound": "./music/valakas1/glad_valakas_-_da_da_ja_gagagagagaggaaaa.mp3",
+    "NameSound": "glad_valakas_-_da_da_ja_gagaa",
+    "PathSound": "./music/valakas1/glad_valakas_-_da_da_ja_gagaa.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 219,
     "NameSound": "Glad_Valakas_-_ETO_BAN",
     "PathSound": "./music/valakas1/Glad_Valakas_-_ETO_BAN.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 221,
     "NameSound": "glad_valakas_-_godzilla",
     "PathSound": "./music/valakas1/glad_valakas_-_godzilla.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 220,
     "NameSound": "huetu_vparivaesh_dedu",
     "PathSound": "./music/valakas1/huetu_vparivaesh_dedu.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 65,
     "NameSound": "huyanduk",
     "PathSound": "./music/valakas1/huyanduk.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 83,
     "NameSound": "kavo-3",
     "PathSound": "./music/valakas1/kavo-3.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 68,
     "NameSound": "ne_beyte_moego_druga",
     "PathSound": "./music/valakas1/ne_beyte_moego_druga.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 70,
     "NameSound": "obidno_da",
     "PathSound": "./music/valakas1/obidno_da.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 71,
     "NameSound": "osuzhdayu",
     "PathSound": "./music/valakas1/osuzhdayu.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 72,
     "NameSound": "osuzhdayu2",
     "PathSound": "./music/valakas1/osuzhdayu2.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 74,
     "NameSound": "popavs_blyat",
     "PathSound": "./music/valakas1/popavs_blyat.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 75,
     "NameSound": "Smert",
     "PathSound": "./music/valakas1/Smert.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 76,
     "NameSound": "smeshnaya_situaciya",
     "PathSound": "./music/valakas1/smeshnaya_situaciya.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 186,
     "NameSound": "vot_eto_mne_uszhe_nravitsya",
     "PathSound": "./music/valakas1/vot_eto_mne_uszhe_nravitsya.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 222,
     "NameSound": "ya_obosralsya",
     "PathSound": "./music/valakas1/ya_obosralsya.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 90,
     "NameSound": "za_eto_ban",
     "PathSound": "./music/valakas1/za_eto_ban.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 88,
     "NameSound": "а-ну-даваи",
     "PathSound": "./music/valakas1/а-ну-даваи.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 67,
     "NameSound": "Глад Валакас - Кто в вк написал",
     "PathSound": "./music/valakas1/Глад Валакас - Кто в вк написал.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 86,
     "NameSound": "глад-валакас-кушац-кушац",
     "PathSound": "./music/valakas1/глад-валакас-кушац-кушац.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 66,
     "NameSound": "деду-не-нравится",
     "PathSound": "./music/valakas1/деду-не-нравится.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 78,
     "NameSound": "диспетчер-мы-падаем",
     "PathSound": "./music/valakas1/диспетчер-мы-падаем.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 77,
     "NameSound": "извинись-гниль-валакас",
     "PathSound": "./music/valakas1/извинись-гниль-валакас.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 188,
     "NameSound": "Лупасит ",
     "PathSound": "./music/valakas1/Лупасит .mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 190,
     "NameSound": "ля-вася",
     "PathSound": "./music/valakas1/ля-вася.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 191,
     "NameSound": "меня-сбили",
     "PathSound": "./music/valakas1/меня-сбили.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 0,
+    "Layout": 1,
     "KeyValue": 37,
     "NameSound": "я-хочу-питсу",
     "PathSound": "./music/valakas1/я-хочу-питсу.mp3",
@@ -345,846 +688,825 @@
   {
     "Layout": 2,
     "KeyValue": 192,
-    "NameSound": "Baka",
-    "PathSound": "./music/Anime1/Baka.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 49,
-    "NameSound": "Bakaaaaa",
-    "PathSound": "./music/Anime1/Bakaaaaa.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 50,
-    "NameSound": "BakaaaaTachibana Miya — Miya to Tengoku to Jigoku Onii Chan",
-    "PathSound": "./music/Anime1/BakaaaaTachibana Miya — Miya to Tengoku to Jigoku Onii Chan.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 51,
-    "NameSound": "Death Note - Тема Лайта",
-    "PathSound": "./music/Anime1/Death Note - Тема Лайта.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 52,
-    "NameSound": "Death Note",
-    "PathSound": "./music/Anime1/Death Note.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 53,
-    "NameSound": "DIO 1  ICHI-BI O KEKA",
-    "PathSound": "./music/Anime1/DIO 1  ICHI-BI O KEKA.wav",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 54,
-    "NameSound": "DIO 2 NI-BI O KEKA",
-    "PathSound": "./music/Anime1/DIO 2 NI-BI O KEKA.wav",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 55,
-    "NameSound": "DIO 3 SAN-BI O KEKA",
-    "PathSound": "./music/Anime1/DIO 3 SAN-BI O KEKA.wav",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 56,
-    "NameSound": "DIO 4 YIOM-BI O KEKA",
-    "PathSound": "./music/Anime1/DIO 4 YIOM-BI O KEKA.wav",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 57,
-    "NameSound": "DIO 5 GO-BI O KEKA",
-    "PathSound": "./music/Anime1/DIO 5 GO-BI O KEKA.wav",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 48,
-    "NameSound": "DIO 6 ROKU-BI O KEKA",
-    "PathSound": "./music/Anime1/DIO 6 ROKU-BI O KEKA.wav",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 189,
-    "NameSound": "DIO road-roller-damp3",
-    "PathSound": "./music/Anime1/DIO road-roller-damp3.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 187,
-    "NameSound": "hentaiNya",
-    "PathSound": "./music/Anime1/hentaiNya.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 8,
-    "NameSound": "Jojo Dio kono-dio-da99",
-    "PathSound": "./music/Anime1/Jojo Dio kono-dio-da99.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 81,
-    "NameSound": "Jojo Dioza-warudo",
-    "PathSound": "./music/Anime1/Jojo Dioza-warudo.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 87,
-    "NameSound": "Jojo doitsu-no-kagaku-wa-sekai-ichi",
-    "PathSound": "./music/Anime1/Jojo doitsu-no-kagaku-wa-sekai-ichi.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 69,
-    "NameSound": "Jojo doppio1",
-    "PathSound": "./music/Anime1/Jojo doppio1.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 82,
-    "NameSound": "Jojo doppio2",
-    "PathSound": "./music/Anime1/Jojo doppio2.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 84,
-    "NameSound": "Jojo Giorno_Theme",
-    "PathSound": "./music/Anime1/Jojo Giorno_Theme.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 89,
-    "NameSound": "Jojo jotaro-no",
-    "PathSound": "./music/Anime1/Jojo jotaro-no.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 85,
-    "NameSound": "Jojo jotaro-yes-yes-yes",
-    "PathSound": "./music/Anime1/Jojo jotaro-yes-yes-yes.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 73,
-    "NameSound": "Jojo Kiro Yugo Kanno - Killer",
-    "PathSound": "./music/Anime1/Jojo Kiro Yugo Kanno - Killer.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 79,
-    "NameSound": "Jojo peeping-jojo",
-    "PathSound": "./music/Anime1/Jojo peeping-jojo.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 80,
-    "NameSound": "Jojo rero-rero-rero",
-    "PathSound": "./music/Anime1/Jojo rero-rero-rero.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 219,
-    "NameSound": "Jojo shizaaaaaa",
-    "PathSound": "./music/Anime1/Jojo shizaaaaaa.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 221,
-    "NameSound": "Jojo to be continued",
-    "PathSound": "./music/Anime1/Jojo to be continued.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 220,
-    "NameSound": "monokuma-pupupu_2",
-    "PathSound": "./music/Anime1/monokuma-pupupu_2.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 65,
-    "NameSound": "Naruto sasukeeeeee",
-    "PathSound": "./music/Anime1/Naruto sasukeeeeee.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 83,
-    "NameSound": "Naruto-sad-music-instant",
-    "PathSound": "./music/Anime1/Naruto-sad-music-instant.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 68,
-    "NameSound": "Niconiconiloves",
-    "PathSound": "./music/Anime1/Niconiconiloves.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 70,
-    "NameSound": "ReZero Felix Amm",
-    "PathSound": "./music/Anime1/ReZero Felix Amm.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 71,
-    "NameSound": "ReZero weheheeeey-aa-aa-hahaa",
-    "PathSound": "./music/Anime1/ReZero weheheeeey-aa-aa-hahaa.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 72,
-    "NameSound": "SteinsGate gate-of-steiner",
-    "PathSound": "./music/Anime1/SteinsGate gate-of-steiner.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 74,
-    "NameSound": "SteinsGate Kristina tina no kenshi",
-    "PathSound": "./music/Anime1/SteinsGate Kristina tina no kenshi.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 75,
-    "NameSound": "SteinsGate Kristina",
-    "PathSound": "./music/Anime1/SteinsGate Kristina.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 76,
-    "NameSound": "SteinsGate okarin laugh_1",
-    "PathSound": "./music/Anime1/SteinsGate okarin laugh_1.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 186,
-    "NameSound": "SteinsGate okarin okarin i-am-mad-scientist_ZelajJj",
-    "PathSound": "./music/Anime1/SteinsGate okarin okarin i-am-mad-scientist_ZelajJj.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 2,
-    "KeyValue": 222,
-    "NameSound": "SteinsGate tuturu-okarin",
-    "PathSound": "./music/Anime1/SteinsGate tuturu-okarin.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 4,
-    "KeyValue": 192,
     "NameSound": "aa",
     "PathSound": "./music/Mem1/aa.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
+    "Layout": 2,
     "KeyValue": 49,
     "NameSound": "aga",
     "PathSound": "./music/Mem1/aga.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
+    "Layout": 2,
     "KeyValue": 50,
-    "NameSound": "alladin-yobannyj-rot-etogo-arabskogo-kazino",
-    "PathSound": "./music/Mem1/alladin-yobannyj-rot-etogo-arabskogo-kazino.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 4,
-    "KeyValue": 51,
     "NameSound": "blyad_obema_-_obracshenie",
     "PathSound": "./music/Mem1/blyad_obema_-_obracshenie.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 52,
+    "Layout": 2,
+    "KeyValue": 51,
     "NameSound": "blyad_obema_-_obracshenie_2",
     "PathSound": "./music/Mem1/blyad_obema_-_obracshenie_2.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 53,
+    "Layout": 2,
+    "KeyValue": 52,
     "NameSound": "ERZHAN",
     "PathSound": "./music/Mem1/ERZHAN.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 54,
+    "Layout": 2,
+    "KeyValue": 53,
     "NameSound": "GIMN_UKRAINY-_BASSBOOSTED",
     "PathSound": "./music/Mem1/GIMN_UKRAINY-_BASSBOOSTED.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 55,
-    "NameSound": "GIMNСССР 20",
-    "PathSound": "./music/Mem1/GIMNСССР 20.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 4,
-    "KeyValue": 56,
+    "Layout": 2,
+    "KeyValue": 54,
     "NameSound": "GOLOSOVANIE_NAchalos",
     "PathSound": "./music/Mem1/GOLOSOVANIE_NAchalos.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 57,
+    "Layout": 2,
+    "KeyValue": 55,
     "NameSound": "idite nahui",
     "PathSound": "./music/Mem1/idite nahui.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 48,
+    "Layout": 2,
+    "KeyValue": 56,
     "NameSound": "Ispancy",
     "PathSound": "./music/Mem1/Ispancy.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 189,
+    "Layout": 2,
+    "KeyValue": 57,
     "NameSound": "ispanec_-_smeh",
     "PathSound": "./music/Mem1/ispanec_-_smeh.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 187,
+    "Layout": 2,
+    "KeyValue": 48,
     "NameSound": "kazino1",
     "PathSound": "./music/Mem1/kazino1.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 8,
+    "Layout": 2,
+    "KeyValue": 189,
     "NameSound": "kazino2",
     "PathSound": "./music/Mem1/kazino2.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 81,
+    "Layout": 2,
+    "KeyValue": 187,
     "NameSound": "kazino3",
     "PathSound": "./music/Mem1/kazino3.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 87,
+    "Layout": 2,
+    "KeyValue": 8,
     "NameSound": "kosar-otdat1",
     "PathSound": "./music/Mem1/kosar-otdat1.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 69,
+    "Layout": 2,
+    "KeyValue": 81,
     "NameSound": "kosar-otdat2",
     "PathSound": "./music/Mem1/kosar-otdat2.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 82,
+    "Layout": 2,
+    "KeyValue": 87,
     "NameSound": "mafioznik_-_bassboosted",
     "PathSound": "./music/Mem1/mafioznik_-_bassboosted.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 84,
+    "Layout": 2,
+    "KeyValue": 69,
     "NameSound": "minecraft_hit",
     "PathSound": "./music/Mem1/minecraft_hit.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 89,
+    "Layout": 2,
+    "KeyValue": 82,
     "NameSound": "minecraft_Hurt",
     "PathSound": "./music/Mem1/minecraft_Hurt.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 85,
+    "Layout": 2,
+    "KeyValue": 84,
     "NameSound": "namalna",
     "PathSound": "./music/Mem1/namalna.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 73,
+    "Layout": 2,
+    "KeyValue": 89,
     "NameSound": "nikolay-baskov-zolotaya-chasha",
     "PathSound": "./music/Mem1/nikolay-baskov-zolotaya-chasha.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 79,
+    "Layout": 2,
+    "KeyValue": 85,
     "NameSound": "nioce",
     "PathSound": "./music/Mem1/nioce.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 80,
+    "Layout": 2,
+    "KeyValue": 73,
     "NameSound": "omgwow",
     "PathSound": "./music/Mem1/omgwow.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 219,
-    "NameSound": "pornhub-community-intro",
-    "PathSound": "./music/Mem1/pornhub-community-intro.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 4,
-    "KeyValue": 221,
+    "Layout": 2,
+    "KeyValue": 79,
     "NameSound": "Pososi",
     "PathSound": "./music/Mem1/Pososi.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 220,
+    "Layout": 2,
+    "KeyValue": 80,
     "NameSound": "povar-kruto",
     "PathSound": "./music/Mem1/povar-kruto.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 65,
+    "Layout": 2,
+    "KeyValue": 219,
     "NameSound": "povar-krutoy haha",
     "PathSound": "./music/Mem1/povar-krutoy haha.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 83,
+    "Layout": 2,
+    "KeyValue": 221,
     "NameSound": "povar-krutoy hahara",
     "PathSound": "./music/Mem1/povar-krutoy hahara.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 68,
+    "Layout": 2,
+    "KeyValue": 220,
     "NameSound": "sanya",
     "PathSound": "./music/Mem1/sanya.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 70,
+    "Layout": 2,
+    "KeyValue": 65,
     "NameSound": "Ty_ne_pacan",
     "PathSound": "./music/Mem1/Ty_ne_pacan.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 71,
+    "Layout": 2,
+    "KeyValue": 83,
     "NameSound": "viydi",
     "PathSound": "./music/Mem1/viydi.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 72,
+    "Layout": 2,
+    "KeyValue": 68,
     "NameSound": "Von_otsyuda_nahuj",
     "PathSound": "./music/Mem1/Von_otsyuda_nahuj.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 74,
+    "Layout": 2,
+    "KeyValue": 70,
     "NameSound": "vzyalsya-za-staroe",
     "PathSound": "./music/Mem1/vzyalsya-za-staroe.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 75,
+    "Layout": 2,
+    "KeyValue": 71,
     "NameSound": "why are you gay",
     "PathSound": "./music/Mem1/why are you gay.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
+    "Layout": 2,
+    "KeyValue": 72,
+    "NameSound": "You are gae",
+    "PathSound": "./music/Mem1/You are gae.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 2,
+    "KeyValue": 74,
+    "NameSound": "БудешьСосать",
+    "PathSound": "./music/Mem1/БудешьСосать.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 2,
+    "KeyValue": 75,
+    "NameSound": "ВатафакМазафака",
+    "PathSound": "./music/Mem1/ВатафакМазафака.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 2,
     "KeyValue": 76,
-    "NameSound": "why You are gay",
-    "PathSound": "./music/Mem1/why You are gay.mp3",
+    "NameSound": "ВставайШашлык",
+    "PathSound": "./music/Mem1/ВставайШашлык.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
+    "Layout": 2,
     "KeyValue": 186,
-    "NameSound": "ВИШНЕВАЯ СЕМЕРКА",
-    "PathSound": "./music/Mem1/ВИШНЕВАЯ СЕМЕРКА.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 4,
-    "KeyValue": 222,
     "NameSound": "Да ты что БЛяяяяяя",
     "PathSound": "./music/Mem1/Да ты что БЛяяяяяя.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 90,
+    "Layout": 2,
+    "KeyValue": 222,
     "NameSound": "ДавайПрыгай",
     "PathSound": "./music/Mem1/ДавайПрыгай.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 88,
-    "NameSound": "ЗАебись",
-    "PathSound": "./music/Mem1/ЗАебись.mp3",
+    "Layout": 2,
+    "KeyValue": 90,
+    "NameSound": "ЙобаныеЛошади",
+    "PathSound": "./music/Mem1/ЙобаныеЛошади.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 67,
+    "Layout": 2,
+    "KeyValue": 88,
     "NameSound": "МеняЗаменировали",
     "PathSound": "./music/Mem1/МеняЗаменировали.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 86,
+    "Layout": 2,
+    "KeyValue": 67,
     "NameSound": "МеняЗаменировалиДерни",
     "PathSound": "./music/Mem1/МеняЗаменировалиДерни.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 66,
+    "Layout": 2,
+    "KeyValue": 86,
     "NameSound": "Минут10154510утра",
     "PathSound": "./music/Mem1/Минут10154510утра.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 78,
+    "Layout": 2,
+    "KeyValue": 66,
     "NameSound": "МыНезнаемЧтоЭто",
     "PathSound": "./music/Mem1/МыНезнаемЧтоЭто.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 77,
+    "Layout": 2,
+    "KeyValue": 78,
     "NameSound": "оболочка",
     "PathSound": "./music/Mem1/оболочка.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 188,
+    "Layout": 2,
+    "KeyValue": 77,
     "NameSound": "ОтдайСало",
     "PathSound": "./music/Mem1/ОтдайСало.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 190,
+    "Layout": 2,
+    "KeyValue": 188,
     "NameSound": "ПолнимочияВсе",
     "PathSound": "./music/Mem1/ПолнимочияВсе.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 191,
+    "Layout": 2,
+    "KeyValue": 190,
     "NameSound": "ТыВтираешьМнеДичь",
     "PathSound": "./music/Mem1/ТыВтираешьМнеДичь.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 37,
-    "NameSound": "ХорошаяШутеичка",
-    "PathSound": "./music/Mem1/ХорошаяШутеичка.mp3",
+    "Layout": 2,
+    "KeyValue": 191,
+    "NameSound": "ТыПоехавший",
+    "PathSound": "./music/Mem1/ТыПоехавший.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 39,
+    "Layout": 2,
+    "KeyValue": 37,
     "NameSound": "ХудФильмСпиздили",
     "PathSound": "./music/Mem1/ХудФильмСпиздили.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 38,
+    "Layout": 2,
+    "KeyValue": 39,
     "NameSound": "ЦеТакыйТрешак",
     "PathSound": "./music/Mem1/ЦеТакыйТрешак.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 4,
-    "KeyValue": 40,
+    "Layout": 2,
+    "KeyValue": 38,
     "NameSound": "Что вы делаете в моём холодильнике",
     "PathSound": "./music/Mem1/Что вы делаете в моём холодильнике.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 5,
+    "Layout": 2,
+    "KeyValue": 40,
+    "NameSound": "Япидарас",
+    "PathSound": "./music/Mem1/Япидарас.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
     "KeyValue": 192,
+    "NameSound": "1_privet-eto-kto_gf9qv3G",
+    "PathSound": "./music/Mem2/1_privet-eto-kto_gf9qv3G.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 49,
+    "NameSound": "2_privet-eto-prigozhin-zhenia",
+    "PathSound": "./music/Mem2/2_privet-eto-prigozhin-zhenia.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 50,
+    "NameSound": "3_a-zdarova-a-ia-kirill-budanov",
+    "PathSound": "./music/Mem2/3_a-zdarova-a-ia-kirill-budanov.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 51,
+    "NameSound": "4_o-blia-a-my-i-ne-dumali",
+    "PathSound": "./music/Mem2/4_o-blia-a-my-i-ne-dumali.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 52,
+    "NameSound": "5_o-bliad-ni-khrena-sebe",
+    "PathSound": "./music/Mem2/5_o-bliad-ni-khrena-sebe.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 53,
+    "NameSound": "6_blia-bratan-ne-mogu",
+    "PathSound": "./music/Mem2/6_blia-bratan-ne-mogu.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 54,
+    "NameSound": "7_nu-davai-do-skorogo",
+    "PathSound": "./music/Mem2/7_nu-davai-do-skorogo.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 55,
+    "NameSound": "Babka_Da",
+    "PathSound": "./music/Mem2/Babka_Da.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 56,
+    "NameSound": "Babka_Desyat",
+    "PathSound": "./music/Mem2/Babka_Desyat.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 57,
+    "NameSound": "Babka_devyat",
+    "PathSound": "./music/Mem2/Babka_devyat.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 48,
+    "NameSound": "Babka_devyat_chi_desyat",
+    "PathSound": "./music/Mem2/Babka_devyat_chi_desyat.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 189,
+    "NameSound": "Babka_Ne_chue",
+    "PathSound": "./music/Mem2/Babka_Ne_chue.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 187,
+    "NameSound": "Babka_skiki_godin",
+    "PathSound": "./music/Mem2/Babka_skiki_godin.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 8,
+    "NameSound": "bliat-nakhui-ia-siuda-prishel",
+    "PathSound": "./music/Mem2/bliat-nakhui-ia-siuda-prishel.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 81,
+    "NameSound": "chego-bliat-eto-che-za-khuinia",
+    "PathSound": "./music/Mem2/chego-bliat-eto-che-za-khuinia.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 87,
+    "NameSound": "DAA",
+    "PathSound": "./music/Mem2/DAA.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 69,
+    "NameSound": "Desyat",
+    "PathSound": "./music/Mem2/Desyat.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 82,
+    "NameSound": "DESYATT",
+    "PathSound": "./music/Mem2/DESYATT.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 84,
+    "NameSound": "DESYYYAAT",
+    "PathSound": "./music/Mem2/DESYYYAAT.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 89,
+    "NameSound": "emotional-damage-meme",
+    "PathSound": "./music/Mem2/emotional-damage-meme.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 85,
+    "NameSound": "freddys-2-music",
+    "PathSound": "./music/Mem2/freddys-2-music.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 73,
+    "NameSound": "music_america",
+    "PathSound": "./music/Mem2/music_america.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 79,
+    "NameSound": "music_machi-no-dorufin",
+    "PathSound": "./music/Mem2/music_machi-no-dorufin.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 80,
+    "NameSound": "music_sad",
+    "PathSound": "./music/Mem2/music_sad.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 219,
+    "NameSound": "music_saul-goodman-better-call-saul",
+    "PathSound": "./music/Mem2/music_saul-goodman-better-call-saul.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 221,
+    "NameSound": "music_spiderman-meme",
+    "PathSound": "./music/Mem2/music_spiderman-meme.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 220,
+    "NameSound": "music_standing-here-i-realize",
+    "PathSound": "./music/Mem2/music_standing-here-i-realize.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 65,
+    "NameSound": "Nihuyasobi",
+    "PathSound": "./music/Mem2/Nihuyasobi.wav",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 83,
+    "NameSound": "NI_DESYAT",
+    "PathSound": "./music/Mem2/NI_DESYAT.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 68,
+    "NameSound": "prowler-sound-effect",
+    "PathSound": "./music/Mem2/prowler-sound-effect.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 70,
+    "NameSound": "talking-ben-saying-ben",
+    "PathSound": "./music/Mem2/talking-ben-saying-ben.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 71,
+    "NameSound": "talking-ben-sound",
+    "PathSound": "./music/Mem2/talking-ben-sound.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 72,
+    "NameSound": "talking-benn-yes",
+    "PathSound": "./music/Mem2/talking-benn-yes.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 74,
+    "NameSound": "talkingg-benn-laughh",
+    "PathSound": "./music/Mem2/talkingg-benn-laughh.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 75,
+    "NameSound": "udar-ot-vzgliada-skaly",
+    "PathSound": "./music/Mem2/udar-ot-vzgliada-skaly.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 76,
+    "NameSound": "vidbii-povitrianoyi-trivogi",
+    "PathSound": "./music/Mem2/vidbii-povitrianoyi-trivogi.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 186,
+    "NameSound": "ya_po_syobam",
+    "PathSound": "./music/Mem2/ya_po_syobam.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 222,
+    "NameSound": "zdarova-zaebal",
+    "PathSound": "./music/Mem2/zdarova-zaebal.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 3,
+    "KeyValue": 90,
     "NameSound": "БачёкБля",
     "PathSound": "./music/Mem2/БачёкБля.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 5,
-    "KeyValue": 49,
+    "Layout": 3,
+    "KeyValue": 88,
     "NameSound": "БачёкПотік",
     "PathSound": "./music/Mem2/БачёкПотік.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 5,
-    "KeyValue": 50,
-    "NameSound": "БлядствоРазвратНаркотики",
-    "PathSound": "./music/Mem2/БлядствоРазвратНаркотики.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 51,
-    "NameSound": "БудешьСосать",
-    "PathSound": "./music/Mem2/БудешьСосать.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 52,
-    "NameSound": "БыстроБлять",
-    "PathSound": "./music/Mem2/БыстроБлять.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 53,
-    "NameSound": "ВатафакМазафака",
-    "PathSound": "./music/Mem2/ВатафакМазафака.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 54,
-    "NameSound": "ВставайШашлык",
-    "PathSound": "./music/Mem2/ВставайШашлык.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 55,
-    "NameSound": "Гавнооо",
-    "PathSound": "./music/Mem2/Гавнооо.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 56,
-    "NameSound": "Ешкере",
-    "PathSound": "./music/Mem2/Ешкере.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 57,
-    "NameSound": "ЙобаныеЛошади",
-    "PathSound": "./music/Mem2/ЙобаныеЛошади.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 48,
+    "Layout": 3,
+    "KeyValue": 67,
     "NameSound": "ЛохПидр",
     "PathSound": "./music/Mem2/ЛохПидр.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 5,
-    "KeyValue": 189,
+    "Layout": 3,
+    "KeyValue": 86,
     "NameSound": "МыДолжниОставаться",
     "PathSound": "./music/Mem2/МыДолжниОставаться.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 5,
-    "KeyValue": 187,
+    "Layout": 3,
+    "KeyValue": 66,
     "NameSound": "НихуяТыБаклажан",
     "PathSound": "./music/Mem2/НихуяТыБаклажан.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 5,
-    "KeyValue": 8,
+    "Layout": 3,
+    "KeyValue": 78,
     "NameSound": "НормальныйБуй",
     "PathSound": "./music/Mem2/НормальныйБуй.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 5,
-    "KeyValue": 81,
+    "Layout": 3,
+    "KeyValue": 77,
     "NameSound": "ПогналиНахуй",
     "PathSound": "./music/Mem2/ПогналиНахуй.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 5,
-    "KeyValue": 87,
-    "NameSound": "СказочнийДолбоеб",
-    "PathSound": "./music/Mem2/СказочнийДолбоеб.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 69,
+    "Layout": 3,
+    "KeyValue": 188,
     "NameSound": "СтасМыТебяЛюбим",
     "PathSound": "./music/Mem2/СтасМыТебяЛюбим.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 5,
-    "KeyValue": 82,
+    "Layout": 3,
+    "KeyValue": 190,
     "NameSound": "ТаааШаааа",
     "PathSound": "./music/Mem2/ТаааШаааа.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 5,
-    "KeyValue": 84,
-    "NameSound": "Тра",
-    "PathSound": "./music/Mem2/Тра.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 89,
-    "NameSound": "ТыПоехавший",
-    "PathSound": "./music/Mem2/ТыПоехавший.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 85,
-    "NameSound": "ТычеДуракчтоли",
-    "PathSound": "./music/Mem2/ТычеДуракчтоли.mp3",
-    "VoiceCommand": null
-  },
-  {
-    "Layout": 5,
-    "KeyValue": 73,
+    "Layout": 3,
+    "KeyValue": 191,
     "NameSound": "ЧеСпим",
     "PathSound": "./music/Mem2/ЧеСпим.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 5,
-    "KeyValue": 79,
-    "NameSound": "Япидарас",
-    "PathSound": "./music/Mem2/Япидарас.mp3",
+    "Layout": 4,
+    "KeyValue": 192,
+    "NameSound": "28186-rammstein-du-hast-gachi-mix",
+    "PathSound": "./music/Gachi/28186-rammstein-du-hast-gachi-mix.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 6,
-    "KeyValue": 192,
+    "Layout": 4,
+    "KeyValue": 49,
+    "NameSound": "69008-gachi-world",
+    "PathSound": "./music/Gachi/69008-gachi-world.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 4,
+    "KeyValue": 50,
     "NameSound": "deep-dark-fantasies",
     "PathSound": "./music/Gachi/deep-dark-fantasies.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 6,
-    "KeyValue": 49,
+    "Layout": 4,
+    "KeyValue": 51,
     "NameSound": "fisting-is-300",
     "PathSound": "./music/Gachi/fisting-is-300.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 6,
-    "KeyValue": 50,
+    "Layout": 4,
+    "KeyValue": 52,
+    "NameSound": "gay-echo",
+    "PathSound": "./music/Gachi/gay-echo.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 4,
+    "KeyValue": 53,
+    "NameSound": "gravity-falls-gachi",
+    "PathSound": "./music/Gachi/gravity-falls-gachi.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 4,
+    "KeyValue": 54,
     "NameSound": "haaaaaaaaaaaaaaaaaaaaaaa",
     "PathSound": "./music/Gachi/haaaaaaaaaaaaaaaaaaaaaaa.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 6,
-    "KeyValue": 51,
+    "Layout": 4,
+    "KeyValue": 55,
+    "NameSound": "kto-myaukaet-papic-made-with-Voicemod-technology",
+    "PathSound": "./music/Gachi/kto-myaukaet-papic-made-with-Voicemod-technology.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 4,
+    "KeyValue": 56,
+    "NameSound": "minecraft-gachi",
+    "PathSound": "./music/Gachi/minecraft-gachi.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 4,
+    "KeyValue": 57,
     "NameSound": "oh-shit-im-sorry_0001",
     "PathSound": "./music/Gachi/oh-shit-im-sorry_0001.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 6,
-    "KeyValue": 52,
+    "Layout": 4,
+    "KeyValue": 48,
+    "NameSound": "papich-made-with-Voicemod-technology",
+    "PathSound": "./music/Gachi/papich-made-with-Voicemod-technology.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 4,
+    "KeyValue": 189,
     "NameSound": "right-version5",
     "PathSound": "./music/Gachi/right-version5.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 6,
-    "KeyValue": 53,
+    "Layout": 4,
+    "KeyValue": 187,
     "NameSound": "rip-ears",
     "PathSound": "./music/Gachi/rip-ears.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 6,
-    "KeyValue": 54,
+    "Layout": 4,
+    "KeyValue": 8,
     "NameSound": "slaves-get-your-ass-back-here",
     "PathSound": "./music/Gachi/slaves-get-your-ass-back-here.mp3",
     "VoiceCommand": null
   },
   {
-    "Layout": 6,
-    "KeyValue": 55,
+    "Layout": 4,
+    "KeyValue": 81,
+    "NameSound": "slavianskii-zazhim-iaitsami",
+    "PathSound": "./music/Gachi/slavianskii-zazhim-iaitsami.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 4,
+    "KeyValue": 87,
+    "NameSound": "succ-with-reverb",
+    "PathSound": "./music/Gachi/succ-with-reverb.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 4,
+    "KeyValue": 69,
+    "NameSound": "walter-put-your-d-away-walter",
+    "PathSound": "./music/Gachi/walter-put-your-d-away-walter.mp3",
+    "VoiceCommand": null
+  },
+  {
+    "Layout": 4,
+    "KeyValue": 82,
     "NameSound": "what-the-hell-are-you-two-doing",
     "PathSound": "./music/Gachi/what-the-hell-are-you-two-doing.mp3",
     "VoiceCommand": null

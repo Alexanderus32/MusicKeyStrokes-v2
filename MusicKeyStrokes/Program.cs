@@ -6,15 +6,16 @@ using SimpleInjector;
 
 namespace MusicKeyStrokes
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
-        /// 
-       public static Container container;
+        ///
+        public static Container container;
+
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -28,7 +29,6 @@ namespace MusicKeyStrokes
             container.Register<IAudio, Audio>(Lifestyle.Singleton);
             container.Register<Form1>(Lifestyle.Singleton);
             container.Collection.Register<Command>(
-                    typeof(CommandAudioChangeLoop),
                     typeof(CommandAudioPauseBeforPlaying),
                     typeof(CommandAudioStop),
                     typeof(CommandAudioPlayRandMusic),
@@ -40,9 +40,9 @@ namespace MusicKeyStrokes
                     typeof(CommandTelegramWatcherOff),
                     typeof(CommandUnregisterHotKey),
                     typeof(CommandMessage),
-                    typeof(CommandAudioOutMicro),
                     typeof(CommandRandomTimeMusic),
-                    typeof(CommandAutoRun),
+                    typeof(CommandAudioPause),
+                    typeof(CommandAudioResume),
                     typeof(CommandOpenWebSide),
                     typeof(CommandChangingScreenOrientation),
                     typeof(CommandAudioChangeLayout));

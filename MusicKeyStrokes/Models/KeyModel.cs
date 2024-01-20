@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace MusicKeyStrokes.Models
 {
-
-    class KeyModel
+    internal class KeyModel
     {
         public LayoutSound Layout { get; set; }
 
@@ -21,5 +15,31 @@ namespace MusicKeyStrokes.Models
 
         public string VoiceCommand { get; set; }
 
+        public override string ToString()
+        {
+            int nameLength = 30;
+
+            Dictionary<Keys, string> keySymbolMap = new Dictionary<Keys, string>
+            {
+                { Keys.OemMinus, "-" },
+                { Keys.Oemplus, "=" },
+                { Keys.OemOpenBrackets, "{" },
+                { Keys.Oem6, "}" },
+                { Keys.Oem5, @"\" },
+                { Keys.Oem1, ";" },
+                { Keys.Oem7, "'" },
+                { Keys.Oemtilde, "`" },
+            };
+
+            string keyValueSymbol = keySymbolMap.TryGetValue(KeyValue, out var symbol)
+                ? symbol
+                : KeyValue.ToString();
+
+            string formattedName = NameSound.Length > nameLength
+                ? NameSound.Substring(0, nameLength - 2) + "  "
+                : NameSound.PadRight(nameLength);
+
+            return $"{formattedName}  ||  {keyValueSymbol}";
+        }
     }
 }

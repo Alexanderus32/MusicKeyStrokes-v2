@@ -1,34 +1,39 @@
 ﻿using MusicKeyStrokes.Models;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace MusicKeyStrokes.Develop
 {
-    class LoadSoundLayout
+    internal class LoadSoundLayout
     {
         public static ReturtStateRecordMusic LoadMusic(LayoutSound layoutSound, string directory)
         {
             JsonSerializer sr = new JsonSerializer();
             var music = sr.Deserialize<KeyModel>();
             List<string> filesMusic = Directory.GetFiles(directory).ToList();
+
+            filesMusic.RemoveAll(x => !(x.EndsWith(".mp3") || x.EndsWith(".wav")));
+
             for (int i = 0; i < filesMusic.Count; i++)
             {
                 filesMusic[i] = filesMusic[i].Replace("\\", "/");
             }
-            filesMusic.RemoveAll(x => music.FirstOrDefault(z => z.PathSound == x) != null);
+            filesMusic.RemoveAll(x => music?.FirstOrDefault(z => z.PathSound == x) != null);
             if (filesMusic.Count == 0)
             {
                 return ReturtStateRecordMusic.AllMusicAlredyExist;
             }
             List<Keys> keys = HotKeyManager.hotKeys.ToList();
             // keys.RemoveAll(x => music.Any(z => z.KeyValue == x));
-            keys.RemoveAll(x => music.Any(z => z.KeyValue == x && z.Layout== layoutSound));
+
+            if (music != null)
+            {
+                keys.RemoveAll(x => music.Any(z => z.KeyValue == x && z.Layout == layoutSound));
+            }
+
             for (int i = 0; i < filesMusic.Count; i++)
             {
                 if (keys.Count == 0)

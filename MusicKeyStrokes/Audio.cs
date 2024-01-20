@@ -9,54 +9,68 @@ using System;
 
 namespace MusicKeyStrokes
 {
-    class Audio : IAudio
+    internal class Audio : IAudio
     {
-        private IWavePlayer waveOutDevice { get; set; }
-
-        private AudioFileReader audioFileReader { get; set; }
-
-        private LayoutSound layoutSound;
-
-        private Mp3FileReader reader { get; set; }
-
-        private WaveOut waveOut { get; set; }
+        private WaveOutEvent waveOutCableDevice { get; set; }
+        private WaveOutEvent waveOutHeadphoneDevice { get; set; }
+        private AudioFileReader audioFileCableReader { get; set; }
+        private AudioFileReader audioFileHeadphoneReader { get; set; }
+        private LayoutSound _layoutSound;
+        private CoreAudioDevice defaultPlaybackDevice;
+        private bool stopStatus = true;
+        private long cableAudioFilePosition;
+        private long headphoneAudioFilePosition;
+        private bool isPaused = false;
 
         private string defaultNameSoundNoAction = "я-хочу-питсу";
+        public static List<KeyModel> listAudio;
 
-        private static List<KeyModel> listAudio;
+        public event EventHandler LayoutSoundChanged;
 
-        private CoreAudioDevice defaultPlaybackDevice;
+        public LayoutSound LayoutSound
+        {
+            get { return _layoutSound; }
+            set
+            {
+                if (_layoutSound != value)
+                {
+                    _layoutSound = value;
+                    OnLayoutSoundChanged(EventArgs.Empty);
+                }
+            }
+        }
 
-        private List<WaveOuts> waweOuts;
-
-        private bool stopStatus = true;
-
-        private bool loop = false;
+        protected virtual void OnLayoutSoundChanged(EventArgs e)
+        {
+            LayoutSoundChanged?.Invoke(this, e);
+        }
 
         public Audio()
         {
             listAudio = new List<KeyModel>();
             LoadAudioModels();
-            layoutSound = LayoutSound.Anime1;
+            _layoutSound = LayoutSound.Anime1;
             this.defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
-            waveOutDevice = new WaveOut();
         }
 
         private void LoadAudioModels()
         {
             JsonSerializer sr = new JsonSerializer();
             var music = sr.Deserialize<KeyModel>();
-            listAudio.AddRange(music);
+            if (music != null)
+            {
+                listAudio.AddRange(music);
+            }
         }
 
         public void ChangeLayout(LayoutSound layout)
         {
-            layoutSound = layout;
+            LayoutSound = layout;
         }
 
         public void Play(Keys idKey)
         {
-            KeyModel selectPathMusic = listAudio.FirstOrDefault(x => x.KeyValue == idKey && x.Layout == layoutSound);
+            KeyModel selectPathMusic = listAudio.FirstOrDefault(x => x.KeyValue == idKey && x.Layout == _layoutSound);
             if (selectPathMusic == null)
             {
                 selectPathMusic = listAudio.FirstOrDefault(x => x.NameSound == defaultNameSoundNoAction);
@@ -65,8 +79,9 @@ namespace MusicKeyStrokes
                     return;
                 }
             }
-            Play(selectPathMusic.PathSound);
+            Play(selectPathMusic.PathSound, GetCableInputDeviceNumber());
         }
+
         public void Play(Keys idKey, LayoutSound layoutSoundIN)
         {
             KeyModel selectPathMusic = listAudio.FirstOrDefault(x => x.KeyValue == idKey && x.Layout == layoutSoundIN);
@@ -78,64 +93,94 @@ namespace MusicKeyStrokes
                     return;
                 }
             }
-            Play(selectPathMusic.PathSound);
+            Play(selectPathMusic.PathSound, GetCableInputDeviceNumber());
         }
 
-        private void Play(string path)
+        private void Play(string path, int cableInputDeviceNumber)
         {
-            if (waveOutDevice?.PlaybackState == PlaybackState.Playing)
+            if (waveOutCableDevice?.PlaybackState == PlaybackState.Playing)
             {
-                if(stopStatus)
+                if (stopStatus)
                     Stop();
             }
-            if (loop)
-            {
-                LoopPlay(path);
-                return;
-            }
-          //  waveOutDevice = new WaveOut();
-            audioFileReader = new AudioFileReader(path);
-            waveOutDevice.Init(audioFileReader);
-            waveOutDevice.Play();
+
+            audioFileCableReader = new AudioFileReader(path);
+            audioFileHeadphoneReader = new AudioFileReader(path);
+
+            waveOutHeadphoneDevice = GetWaveOutDevice();
+            waveOutHeadphoneDevice.DeviceNumber = GetHeadphonesDeviceNumber();
+            waveOutHeadphoneDevice.Init(audioFileHeadphoneReader);
+
+            waveOutCableDevice = GetWaveOutDevice();
+            waveOutCableDevice.DeviceNumber = cableInputDeviceNumber;
+            waveOutCableDevice.Init(audioFileCableReader);
+
+            waveOutHeadphoneDevice.Play();
+            waveOutCableDevice.Play();
         }
 
-        private void LoopPlay(string path)
+        private int GetCableInputDeviceNumber()
         {
-            this.reader = new Mp3FileReader(path);
-            LoopStream loopStream = new LoopStream(reader);
-            this.waveOut = new WaveOut();
-            this.waveOut.Init(loopStream);
-            this.waveOut.Play();
-            waweOuts.Add(new WaveOuts { reader = reader, waveOut = waveOut });
+            return 1;
         }
 
-        private void LoopStop()
+        private int GetHeadphonesDeviceNumber()
         {
-            foreach (var item in waweOuts)
-            {
-                item.reader.Dispose();
-                item.waveOut.Stop();
-                item.waveOut.Dispose();
-            }
-            waweOuts.Clear();
+            return 0;
+        }
+
+        private WaveOutEvent GetWaveOutDevice()
+        {
+            return new WaveOutEvent();
         }
 
         public void Stop()
         {
-            this.waveOutDevice?.Stop();
-            this.audioFileReader?.Dispose();
             try
             {
-                this.waveOutDevice?.Dispose();  //These plase create many error 
+                this.waveOutCableDevice?.Stop();
+                this.waveOutHeadphoneDevice?.Stop();
+
+                this.audioFileCableReader?.Dispose();
+                this.audioFileHeadphoneReader?.Dispose();
+
+                this.waveOutCableDevice?.Dispose();
+                this.waveOutHeadphoneDevice?.Dispose();
             }
             catch
             {
-                //Need debagged if this have error
+                // Логика обработки ошибок
             }
-          
-            if (loop)
+        }
+
+        public void Pause()
+        {
+            if (waveOutCableDevice?.PlaybackState == PlaybackState.Playing && waveOutHeadphoneDevice?.PlaybackState == PlaybackState.Playing)
             {
-                LoopStop();
+                isPaused = true;
+
+                cableAudioFilePosition = audioFileCableReader?.Position ?? 0;
+                headphoneAudioFilePosition = audioFileHeadphoneReader?.Position ?? 0;
+
+                waveOutCableDevice?.Pause();
+                waveOutHeadphoneDevice?.Pause();
+            }
+        }
+
+        public void Resume()
+        {
+            try
+            {
+                if (isPaused)
+                {
+                    isPaused = false;
+
+                    waveOutCableDevice?.Play();
+                    waveOutHeadphoneDevice?.Play();
+                }
+            }
+            catch
+            {
             }
         }
 
@@ -149,36 +194,56 @@ namespace MusicKeyStrokes
 
         public void ChangeVolume(int value)
         {
-            if (value >= 0 && value <= 100)
+            try
             {
-                this.waveOutDevice.Volume = (float)value / 100;
+                if (value >= 0 && value <= 100)
+                {
+                    this.waveOutCableDevice.Volume = (float)value / 100;
+                    this.waveOutHeadphoneDevice.Volume = (float)value / 100;
+                }
             }
+            catch { }
+        }
+
+        public void ChangeCableVolume(int value)
+        {
+            try
+            {
+                if (value >= 0 && value <= 100)
+                {
+                    this.waveOutCableDevice.Volume = (float)value / 100;
+                    this.waveOutHeadphoneDevice.Volume = (float)value / 100;
+                }
+            }
+            catch { }
+        }
+
+        public void ChangeHeadPhonesVolume(int value)
+        {
+            try
+            {
+                if (value >= 0 && value <= 100)
+                {
+                    this.waveOutCableDevice.Volume = (float)value / 100;
+                    this.waveOutHeadphoneDevice.Volume = (float)value / 100;
+                }
+            }
+            catch { }
+        }
+
+        public float GetCableVolume()
+        {
+            return this.waveOutCableDevice.Volume;
         }
 
         public void StopAudioBeforPlaying()
         {
-            if (stopStatus)
-            {
-                stopStatus = false;
-            }
-            else
-            {
-                stopStatus = true;
-            }
-            
+            stopStatus = !stopStatus;
         }
 
         public void ChangeLayoutSound(LayoutSound layout)
         {
-            this.layoutSound = layout;
-        }
-
-        public void Loop() 
-        {
-            this.loop = loop == false ? true : false;
-            if (this.loop)
-                waweOuts = new List<WaveOuts>();
-            else LoopStop();
+            LayoutSound = layout;
         }
 
         public bool PlayRand()
@@ -186,27 +251,8 @@ namespace MusicKeyStrokes
             Random rand = new Random();
             int number = rand.Next(listAudio.Count);
             var selectPathMusic = listAudio[number];
-            Play(selectPathMusic.PathSound);
+            Play(selectPathMusic.PathSound, GetCableInputDeviceNumber());
             return true;
-        }
-
-        class WaveOuts
-        {
-            public Mp3FileReader reader { get; set; }
-
-            public WaveOut waveOut { get; set; }
-        }
-
-        public string AudioMicroOut()
-        {
-            int waveInDevices = WaveIn.DeviceCount;
-            string stjjg = null;
-            for (int waveInDevice = 0; waveInDevice < waveInDevices; waveInDevice++)
-            {
-                WaveInCapabilities deviceInfo = WaveIn.GetCapabilities(waveInDevice);
-                stjjg += $"Device {waveInDevice}: {deviceInfo.ProductName}, {deviceInfo.Channels} channels";
-            }
-            return stjjg;
         }
     }
 }

@@ -28,6 +28,10 @@ namespace MusicKeyStrokes.Commands
             payload = payload.Replace(NameTelegram.ToUpper(), "").Replace(" ", "");
             Enum.TryParse(payload, out Keys key);
             int index = Array.IndexOf(layoutKeys, key);
+            if (index < 0)
+            {
+                return "Fuck Off";
+            }
             LayoutSound layout = (LayoutSound)index;
             audio.ChangeLayoutSound(layout);
             return "ChangeLayout Ok";

@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace MusicKeyStrokes
 {
-    class JsonSerializer
+    internal class JsonSerializer
     {
         private const string defaultMusicKeyFile = "music/musicKey.json";
 
@@ -24,7 +24,14 @@ namespace MusicKeyStrokes
             using (StreamReader streamReader = new StreamReader(fileName))
                 text = streamReader.ReadToEnd();
 
-            return JsonConvert.DeserializeObject<List<T>>(text);
+            var result = JsonConvert.DeserializeObject<List<T>>(text);
+
+            if (result == null)
+            {
+                return new List<T>();
+            }
+
+            return result;
         }
 
         public void Serialize<T>(IEnumerable<T> entities, string fileName = defaultMusicKeyFile)
@@ -33,6 +40,7 @@ namespace MusicKeyStrokes
             using (StreamWriter streamWritter = new StreamWriter(fileName))
                 streamWritter.Write(text);
         }
+
         public void SerializeAddSingle<T>(IEnumerable<T> entities, string fileName = defaultMusicKeyFile)
         {
             JsonSerializer sr = new JsonSerializer();
@@ -40,7 +48,7 @@ namespace MusicKeyStrokes
             music.AddRange(entities);
             string text = JsonConvert.SerializeObject(music, Formatting.Indented);
             using (StreamWriter streamWritter = new StreamWriter(fileName))
-            streamWritter.Write(text);
+                streamWritter.Write(text);
         }
     }
 }

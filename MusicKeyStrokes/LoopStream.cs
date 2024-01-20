@@ -1,15 +1,10 @@
 ﻿using NAudio.Wave;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MusicKeyStrokes
 {
-    class LoopStream : WaveStream
+    internal class LoopStream : WaveStream
     {
-        WaveStream sourceStream;
+        private WaveStream sourceStream;
 
         /// <summary>
         /// Creates a new Loop stream

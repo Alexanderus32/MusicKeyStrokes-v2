@@ -10,7 +10,7 @@ namespace MusicKeyStrokes.Commands
 {
     public class CommandAudioPauseBeforPlaying : Command
     {
-        public override string Name { get; }= Keys.D.ToString();
+        public override string Name { get; } = Keys.F5.ToString();
 
         public override string Description => "Change PauseBeforPlaying status in Audio";
 

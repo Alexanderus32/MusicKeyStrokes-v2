@@ -1,10 +1,13 @@
 ﻿using MusicKeyStrokes.Models;
+using System;
 using System.Windows.Forms;
 
 namespace MusicKeyStrokes.Interfaces
 {
     public interface IAudio
     {
+        event EventHandler LayoutSoundChanged;
+
         void Play(Keys idKey);
 
         void Play(Keys idKey, LayoutSound layoutSound);
@@ -19,10 +22,12 @@ namespace MusicKeyStrokes.Interfaces
 
         void ChangeLayoutSound(LayoutSound layout);
 
-        void Loop();
-
         void StopAudioBeforPlaying();
 
-        string AudioMicroOut();
+        void Pause();
+
+        void Resume();
+
+        float GetCableVolume();
     }
 }
